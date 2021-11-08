@@ -4,7 +4,7 @@ Este projeto colaborativo consiste em um sistema de um mercadinho que permite re
 
 Há dois tipos de usuários neste sistema: 
 - Gerente: é responsável pela administração e gerência de fornecedores e usuários.
-- Caixa: é responsável por atender os clientes e realizar transações.
+- Funcionário: é responsável por atender os clientes e operar as funções do caixa.
 
 <br>
 
@@ -45,5 +45,9 @@ Utilizando XAMPP:
 ## Versão
 
 ## Autores
+
+- Luiz Felipe Baptista Serapião
+- Ana Luiza Faria Calixto
+- Tiago de Oliveira Carlos
 
 ## Licença
