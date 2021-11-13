@@ -1,5 +1,9 @@
 
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
 <h1>Caixas</h1>
 <!--- Caixas de entrada e botões --->
 <form action="index.php">
@@ -7,10 +11,10 @@
 </form>
 
 <B>Adicionar Caixa</B>
-<form action="caixas.php" method="post">
+<form action="caixas.php" method="post" autocomplete="off">
 
-    <input type="text" name="usuario" placeholder="Usuario" required />
-    <input type="text" name="senha" placeholder="Senha" required />
+    <input type="text" name="usuario" maxlength="50" placeholder="Usuario" required />
+    <input type="text" name="senha" minlength="8" maxlength="50" placeholder="Senha" required />
 
     <input type="submit" name="add" value="Adicionar" />
 
@@ -140,4 +144,3 @@
     $conn->close();
 ?>
 </html>
-
