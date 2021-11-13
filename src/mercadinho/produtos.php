@@ -1,5 +1,9 @@
 
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
 <h1>Produtos</h1>
 <!--- Caixas de entrada e botões --->
 <form action="index.php">
@@ -7,10 +11,10 @@
 </form>
 
 <B>Adicionar produto</B>
-<form action="produtos.php" method="post">
+<form action="produtos.php" method="post" autocomplete="off">
 
-    <input type="text" name="nome" placeholder="Nome" required />
-    <input type="text" name="valor" placeholder="Valor" required />
+    <input type="text" name="nome" maxlength="50" placeholder="Nome" required />
+    <input type="number" name="valor" step="0.01" placeholder="Valor" required />
 
     <input type="submit" name="add" value="adicionar" />
 
@@ -139,4 +143,3 @@
     $conn->close();
 ?>
 </html>
-

@@ -1,19 +1,23 @@
 
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
 <h1>Fornecedores</h1>
 <form action="index.php">
     <input type="submit" value="Voltar" />
 </form>
 
 <B>Adicionar Fornecedor</B>
-<form action="fornecedores.php" method="post">
+<form action="fornecedores.php" method="post" autocomplete="off">
 
-    <input type="text" name="nome" placeholder="Nome" required/>
-    <input type="text" name="telefone" placeholder="Telefone" required/>
-    <input type="text" name="email" placeholder="Email" required/>
-    <input type="text" name="estado" placeholder="Estado" />
-    <input type="text" name="cidade" placeholder="Cidade" />
-    <input type="text" name="endereço" placeholder="endereço" />
+    <input type="text" name="nome" maxlength="50" placeholder="Nome" required/>
+    <input type="text" name="telefone" size="11" placeholder="Telefone" required/>
+    <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" required/>
+    <input type="text" name="estado" maxlength="50" placeholder="Estado" />
+    <input type="text" name="cidade" maxlength="50" placeholder="Cidade" />
+    <input type="text" name="endereço" maxlength="50" placeholder="endereço" />
 
     <input type="submit" name="add" value="adicionar" />
 </form>
@@ -31,7 +35,11 @@
 
 <form action="fornecedores.php" method="POST">
     <input type="submit" name="lst" value="Listar Fornecedores" required/>
+
+    <br><br>
+    <input type="reset" name="limpar" value="LIMPAR">
 </form>
+
 
     <br>
 <br><br>
@@ -153,4 +161,3 @@
     $conn->close();
 ?>
 </html>
-
