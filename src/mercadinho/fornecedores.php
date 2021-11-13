@@ -68,18 +68,27 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $nome = $_REQUEST['nome'];
-        
-        $sql = "DELETE FROM fornecedores 
+
+        $sql = "SELECT id, nome, telefone, email, estado, cidade, endereço 
+            FROM fornecedores
+            WHERE nome='$nome'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $sql = "DELETE FROM fornecedores 
         WHERE nome = '$nome'";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Fornecedor $nome removido com sucesso!";
+            if ($conn->query($sql) === TRUE) {
+                echo "Fornecedor $nome removido com sucesso!";
+            } else {
+                echo "Erro ao deletar caixa: " . $conn->error;
+            }
         }
-        else {
-            echo "Erro ao deletar caixa: " . $conn->error;
+
+        else{
+            echo "Não há fornecedores a serem removidos!";
         }
     }
-    else if ( isset( $_POST['edt'])) {
+     else if ( isset( $_POST['edt'])) {
         $nome = $_REQUEST['nome'];
 
         $novo_nome = $_REQUEST['novo_nome'];
@@ -144,3 +153,4 @@
     $conn->close();
 ?>
 </html>
+
