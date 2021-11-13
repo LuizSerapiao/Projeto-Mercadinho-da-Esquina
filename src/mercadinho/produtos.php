@@ -62,16 +62,26 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $nome = $_REQUEST['nome'];
-        
-        $sql = "DELETE FROM produtos 
+        $sql = "SELECT id, nome, valor 
+            FROM produtos
+            WHERE nome = '$nome'";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+            $sql = "DELETE FROM produtos 
         WHERE nome = '$nome'";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Produto $nome deletado com sucesso!";
+            if ($conn->query($sql) === TRUE) {
+                echo "Produto $nome deletado com sucesso!";
+            }
+            else {
+                echo "Erro ao deletar produto: " . $conn->error;
+            }
         }
-        else {
-            echo "Erro ao deletar produto: " . $conn->error;
+
+        else{
+            echo "Não há produtos a serem excluídos!";
         }
+
     }
     else if ( isset( $_POST['edt'])) {
         $nome = $_REQUEST['nome'];
@@ -129,3 +139,4 @@
     $conn->close();
 ?>
 </html>
+

@@ -12,7 +12,7 @@
     <input type="text" name="usuario" placeholder="Usuario" required />
     <input type="text" name="senha" placeholder="Senha" required />
 
-    <input type="submit" name="add" value="adicionar" />
+    <input type="submit" name="add" value="Adicionar" />
 
 <br>
 
@@ -62,16 +62,26 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $usuario = $_REQUEST['usuario'];
-        
-        $sql = "DELETE FROM caixas 
+        $sql = "SELECT id, usuario, senha 
+            FROM caixas
+            WHERE usuario = '$usuario'";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+            $sql = "DELETE FROM caixas 
         WHERE usuario = '$usuario'";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Caixa $usuario deletado com sucesso!";
+            if ($conn->query($sql) === TRUE) {
+                echo "Caixa $usuario deletado com sucesso!";
+            }
+            else {
+                echo "Erro ao deletar caixa: " . $conn->error;
+            }
         }
-        else {
-            echo "Erro ao deletar caixa: " . $conn->error;
+
+        else{
+            echo "Não há usuario a ser removido!";
         }
+
     }
     else if ( isset( $_POST['edt'])) {
         $usuario = $_REQUEST['usuario'];
@@ -81,6 +91,7 @@
         $sql = "UPDATE caixas
         SET usuario = '$novo_usuario', senha = '$nova_senha' 
         WHERE usuario = '$usuario'";
+
 
         if ($conn->query($sql) === TRUE) {
             echo "Caixa $usuario editado com sucesso!";
@@ -129,3 +140,4 @@
     $conn->close();
 ?>
 </html>
+
