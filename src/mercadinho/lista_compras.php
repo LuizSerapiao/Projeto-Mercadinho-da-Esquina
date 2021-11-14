@@ -30,7 +30,7 @@
          }
      }
      else {
-         echo "Nenhum produto cadastrado!";
+         echo "Lista Vazia!";
      }
 
      // Adicionar produto na lista de compras

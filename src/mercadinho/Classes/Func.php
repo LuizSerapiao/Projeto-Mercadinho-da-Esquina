@@ -6,7 +6,7 @@ class Func
     }
 
     function cadastrarFuncionario($usuario, $senha, $conn){
-        $sql = "INSERT INTO caixas (usuario, senha) 
+        $sql = "INSERT INTO funcionarios (usuario, senha)
         VALUES ('$usuario','$senha')";
 
         if ($conn->query($sql) === TRUE) {
@@ -19,26 +19,26 @@ class Func
 
     function removerFuncionario($usuario, $conn)
     {
-        $sql = "SELECT id, usuario, senha 
-            FROM caixas
+        $sql = "SELECT id_funcionario, usuario, senha
+            FROM funcionarios
             WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            $sql = "DELETE FROM caixas 
+        if ($result and $result->num_rows > 0) {
+            $sql = "DELETE FROM funcionarios
         WHERE usuario = '$usuario'";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Caixa $usuario deletado com sucesso!";
             } else {
-                echo "Erro ao deletar caixa: " . $conn->error;
+                echo "Erro ao deletar funcionario: " . $conn->error;
             }
         }
     }
 
     function editarFuncionario($usuario, $novoUsuario, $novaSenha, $conn){
 
-        $sql = "UPDATE caixas
-        SET usuario = '$novoUsuario', senha = '$novaSenha' 
+        $sql = "UPDATE funcionarios
+        SET usuario = '$novoUsuario', senha = '$novaSenha'
         WHERE usuario = '$usuario'";
 
 
@@ -46,42 +46,42 @@ class Func
             echo "Caixa $usuario editado com sucesso!";
         }
         else {
-            echo "Erro ao editar caixa: " . $conn->error;
+            echo "Erro ao editar funcionario: " . $conn->error;
         }
     }
 
     function listarUsuario($usuario, $conn){
         if($usuario == null){
-            $sql = "SELECT id, usuario, senha 
-            FROM caixas";
+            $sql = "SELECT id_funcionario, usuario, senha
+            FROM funcionarios";
             $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
+            if ($result and $result->num_rows > 0) {
                 // output data of each row
-                echo "<B>Lista de caixas</B> <br>";
+                echo "<B>Lista de funcionarios</B> <br>";
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"]. "<br>";
+                    echo "<b>id:</b> " . $row["id_funcionario"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"]. "<br>";
                 }
             }
             else {
-                echo "Nenhum caixa cadastrado!";
+                echo "Nenhum funcionario cadastrado!";
             }
         }
         else{
             echo "<b>Resultado da busca:</b> <br>";
-            $sql = "SELECT id, usuario, senha 
-            FROM caixas
+            $sql = "SELECT id_funcionario, usuario, senha
+            FROM funcionarios
             WHERE usuario = '$usuario'";
             $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
+            if ($result and $result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"]. "<br>";
+                    echo "<b>id:</b> " . $row["id_funcionario"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"]. "<br>";
                 }
             }
             else {
-                echo "Nenhum caixas encontrados!";
+                echo "Nenhum funcionario encontrados!";
             }
         }
 

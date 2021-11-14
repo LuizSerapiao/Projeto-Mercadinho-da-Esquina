@@ -30,7 +30,7 @@
 <form action="fornecedores.php" method="POST">
     <input type="text" name="nome" placeholder="Nome" required/>
     <input type="submit" name="lst" value="Procurar" required/>
-    <input type="submit" name="rmv" value="remover" /> 
+    <input type="submit" name="rmv" value="remover" />
 </form>
 
 <form action="fornecedores.php" method="POST">
@@ -84,12 +84,12 @@
         $novo_estado = $_REQUEST['novo_estado'];
         $nova_cidade = $_REQUEST['nova_cidade'];
         $novo_endereço = $_REQUEST['novo_endereço'];
-        
+
        $action->editarFornecedor($nome, $novo_nome, $novo_telefone, $novo_email, $novo_estado, $nova_cidade, $novo_endereço, $conn);
     }
     else if (isset( $_POST['lst'])) {
         if (!empty($_REQUEST['nome'])) {
-            $usuario = $_REQUEST['usuario'];
+            $usuario = $_REQUEST['nome'];
             $action->listarFornecedor($usuario, $conn);
         }
         else {
