@@ -68,6 +68,7 @@ class Func
             }
         }
         else{
+            echo "<b>Resultado da busca:</b> <br>";
             $sql = "SELECT id, usuario, senha 
             FROM caixas
             WHERE usuario = '$usuario'";

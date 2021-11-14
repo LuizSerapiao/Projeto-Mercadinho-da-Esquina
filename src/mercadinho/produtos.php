@@ -38,6 +38,9 @@
 <br><br>
 
 <?php
+
+include_once ("Classes/Prod.php");
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -49,94 +52,34 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
+   $action = new Prod();
     // Tratamento para cada opção escolhida
     if ( isset( $_POST['add'])) {
         $nome = $_REQUEST['nome'];
         $valor = $_REQUEST['valor'];
 
-        $sql = "INSERT INTO produtos (nome, valor) 
-        VALUES ('$nome','$valor')";
+        $action->adicionarProduto($nome, $valor, $conn);
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Produto $nome adicionado com sucesso!";
-        }
-        else {
-            echo "Erro ao adicionar produto: " . $sql . "<br>" . $conn->error;
-        }
     }
     else if ( isset( $_POST['rmv']) ) {
         $nome = $_REQUEST['nome'];
-        $sql = "SELECT id, nome, valor 
-            FROM produtos
-            WHERE nome = '$nome'";
-        $result = $conn->query($sql);
-        if($result->num_rows > 0){
-            $sql = "DELETE FROM produtos 
-        WHERE nome = '$nome'";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "Produto $nome deletado com sucesso!";
-            }
-            else {
-                echo "Erro ao deletar produto: " . $conn->error;
-            }
-        }
-
-        else{
-            echo "Não há produtos a serem excluídos!";
-        }
+        $action->removeProduto($nome, $conn);
 
     }
     else if ( isset( $_POST['edt'])) {
         $nome = $_REQUEST['nome'];
         $novo_nome = $_REQUEST['novo_nome'];
         $novo_valor = $_REQUEST['novo_valor'];
-        
-        $sql = "UPDATE produtos
-        SET nome = '$novo_nome', valor = '$novo_valor' 
-        WHERE nome = '$nome'";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "produto $nome editado com sucesso!";
-        }
-        else {
-            echo "Erro ao editar produto: " . $conn->error;
-        }
+        $action->editarProduto(nome, $novo_nome, $novo_valor, $conn);
     }
     else if (isset( $_POST['lst'])) {
         if (!empty($_REQUEST['nome'])) {
-            echo "<b>Resultado da busca:</b> <br>";
             $nome = $_REQUEST['nome'];
-            $sql = "SELECT id, nome, valor 
-            FROM produtos
-            WHERE nome = '$nome'";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-            // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. "<br>";
-                }
-            }
-            else {
-                echo "Nenhum produto encontrado";
-            }
+            $action->listarProduto($nome, $conn);
         }
         else {
-            $sql = "SELECT id, nome, valor 
-            FROM produtos";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-                echo "<B>Lista de produtos</B> <br>";
-                while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. "<br>";
-                }
-            }
-            else {
-                echo "Nenhum produto cadastrado!";
-            }
+           $action->listarProduto(null, $conn);
         }
     }
 
