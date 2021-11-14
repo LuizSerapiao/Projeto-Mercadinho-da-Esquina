@@ -4,7 +4,7 @@
     <input type="submit" value="Voltar" />
 </form>
 
-<form action="fornecedores.php" method="post">
+<form action="fornecedores.php" method="post" autocomplete="off">
 
     <input type="text" name="nome" placeholder="Nome" />
     <br>
