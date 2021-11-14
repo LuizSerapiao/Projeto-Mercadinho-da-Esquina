@@ -8,6 +8,9 @@
 <form action="fornecedores.php">
     <input type="submit" value="Fornecedores" />
 </form>
+<form action="lista_compras.php">
+    <input type="submit" value="Lista de Compras" />
+</form>
 
 
 </html>
