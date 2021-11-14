@@ -71,7 +71,7 @@ include_once ("Classes/Prod.php");
         $novo_nome = $_REQUEST['novo_nome'];
         $novo_valor = $_REQUEST['novo_valor'];
 
-        $action->editarProduto(nome, $novo_nome, $novo_valor, $conn);
+        $action->editarProduto($nome, $novo_nome, $novo_valor, $conn);
     }
     else if (isset( $_POST['lst'])) {
         if (!empty($_REQUEST['nome'])) {
