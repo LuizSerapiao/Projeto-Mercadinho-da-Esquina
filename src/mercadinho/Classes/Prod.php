@@ -5,9 +5,9 @@ class Prod
     function __constructor(){
     }
 
-    function adicionarProduto($nome, $valor, $conn){
-        $sql = "INSERT INTO produtos (nome, valor)
-        VALUES ('$nome','$valor')";
+    function adicionarProduto($nome, $valor, $quantidade, $conn){
+        $sql = "INSERT INTO produtos (nome, valor, quantidade) 
+        VALUES ('$nome','$valor', '$quantidade')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Produto $nome adicionado com sucesso!";
@@ -19,12 +19,12 @@ class Prod
 
     function removeProduto($nome, $conn)
     {
-        $sql = "SELECT id_produto, nome, valor
+        $sql = "SELECT *
             FROM produtos
             WHERE nome = '$nome'";
         $result = $conn->query($sql);
-        if ($result and $result->num_rows > 0) {
-            $sql = "DELETE FROM produtos
+        if ($result->num_rows > 0) {
+            $sql = "DELETE FROM produtos 
         WHERE nome = '$nome'";
 
             if ($conn->query($sql) === TRUE) {
@@ -35,10 +35,10 @@ class Prod
         }
     }
 
-    function editarProduto($nome, $novo_nome, $novo_valor, $conn){
+    function editarProduto($nome, $novo_nome, $novo_valor, $nova_quantidade, $conn){
 
         $sql = "UPDATE produtos
-        SET nome = '$novo_nome', valor = '$novo_valor'
+        SET nome = '$novo_nome', valor = '$novo_valor', quantidade = $nova_quantidade 
         WHERE nome = '$nome'";
 
         if ($conn->query($sql) === TRUE) {
@@ -51,15 +51,15 @@ class Prod
 
     function listarProduto($nome, $conn){
         if($nome == null){
-            $sql = "SELECT id_produto, nome, valor
+            $sql = "SELECT * 
             FROM produtos";
             $result = $conn->query($sql);
 
-            if ($result and $result->num_rows > 0) {
+            if ($result->num_rows > 0) {
                 // output data of each row
                 echo "<B>Lista de produtos</B> <br>";
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. "<br>";
+                    echo "<b>id:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. " - <b>Quantidade:</b> " . $row["quantidade"]. "<br>";
                 }
             }
             else {
@@ -69,15 +69,15 @@ class Prod
 
         else{
             echo "<b>Resultado da busca:</b> <br>";
-            $sql = "SELECT id_produto, nome, valor
+            $sql = "SELECT *
             FROM produtos
             WHERE nome = '$nome'";
             $result = $conn->query($sql);
 
-            if ($result and $result->num_rows > 0) {
+            if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. "<br>";
+                    echo "<b>id:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. " - <b>Quantidade:</b> " . $row["quantidade"]. "<br>";
                 }
             }
             else {
