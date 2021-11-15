@@ -7,6 +7,7 @@
     <br>
     <input type="text" name="novo_nome" placeholder="Novo nome" required/>
     <input type="number" step="0.01" name="novo_valor" placeholder="Novo Valor" required/>
+    <input type="number"  name="nova_quantidade" placeholder="Nova Quantidade" required/>
     <input type="submit" name="edt" value="editar" />
 </form>
 
