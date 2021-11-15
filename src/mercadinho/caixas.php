@@ -6,7 +6,7 @@
 </head>
 <h1>Caixas</h1>
 <!--- Caixas de entrada e botões --->
-<form action="index.php">
+<form action="gerente.php">
     <input type="submit" value="Voltar" />
 </form>
 
@@ -15,7 +15,11 @@
 
     <input type="text" name="usuario" maxlength="50" placeholder="Usuario" required />
     <input type="text" name="senha" minlength="8" maxlength="50" placeholder="Senha" required />
-
+    <b>Admin</b>
+    <select name="admin" id="admin">
+        <option value="sim">Sim</option>
+        <option value="não">Não</option>
+    </select>
     <input type="submit" name="add" value="Adicionar" />
 
     <br>
@@ -56,8 +60,9 @@ $action = new Func();
 if ( isset( $_POST['add'])) {
     $usuario = $_REQUEST['usuario'];
     $senha = $_REQUEST['senha'];
+    $admin = $_REQUEST['admin'];
 
-  $action->cadastrarFuncionario($usuario, $senha, $conn);
+    $action->cadastrarFuncionario($usuario, $senha, $conn, $admin);
 
 }
 else if ( isset( $_POST['rmv']) ) {

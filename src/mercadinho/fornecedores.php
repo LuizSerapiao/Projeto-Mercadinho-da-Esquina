@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <h1>Fornecedores</h1>
-<form action="index.php">
+<form action="gerente.php">
     <input type="submit" value="Voltar" />
 </form>
 

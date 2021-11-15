@@ -19,13 +19,14 @@ class ListaCompra
 
  //-------------------------------------------------------------------------------------------------------------
     function devolverProduto($id_produto, $id_venda, $quantidade_trocar, $conn){
-        $sql = "SELECT id_venda
+        $sql = "SELECT id_venda, valor
                  FROM vendas
                  WHERE id_venda = $id_venda";
         $result = $conn->query($sql);
         if ($result and $result->num_rows <= 0) { die ("<br> Erro: Venda não existe! <br>"); }
         else if (!$result){ die("<br> Erro procurando venda <br>"); }
-
+        $row = $result->fetch_assoc();
+        $valor_total_venda = $row["valor"];
         // Procura se o produto que deseja ser devolvido foi vendido.
         // Se for adicionado ao carrinho 2 produtos iguais, com 2 quantidades diferentes,
         // o que vai valer é o primeiro que o sistema encontrar. Da pra fazer todos contarem,
@@ -68,8 +69,8 @@ class ListaCompra
 
                 // Adiciona o produto e a quantidade devolvidos na tabela devoluçõe
                 // Essa tabela é usada para mostrar o valor real da venda apos uma devolução.
-                $sql = "INSERT INTO devolucoes (id_produto, quantidade)
-                         VALUES ('$id_produto','$quantidade_trocar')";
+                $sql = "INSERT INTO devolucoes (id_produto, quantidade, id_venda)
+                         VALUES ('$id_produto','$quantidade_trocar', '$id_venda')";
 
                 $result = $conn->query($sql);
                 if (!$result) {die ("<br>Erro inserindo produto na tabela devolucoes<br>");}
@@ -82,7 +83,15 @@ class ListaCompra
                 $result = $conn->query($sql);
                 if (!$result) {die ("<br>Erro recuperando valor da venda<br>");}
                 $row = $result->fetch_assoc();
-                echo ("<br>O valor a ser devolvido é R$<br>".$row["valor"] * $quantidade_trocar);
+                $valor_devolvido = $row["valor"] * $quantidade_trocar;
+                echo ("<br>O valor a ser devolvido é R$<br>".$valor_devolvido);
+                $update_valor = $valor_total_venda - $valor_devolvido;
+                // Update do valor final da venda.
+                $sql = "UPDATE vendas
+                        SET valor = '$update_valor'
+                        WHERE id_venda = '$id_venda'";
+                $result = $conn->query($sql);
+                if (!$result) {die ("<br>Erro atualizando o valor total da compra<br>");}
             }
         }
         else {
@@ -92,15 +101,15 @@ class ListaCompra
 //--------------------------------------------------------------------------------------------------------------
 
     function trocarProduto($id_produto_recebido, $quantidade_recebida, $id_produto_trocado, $quantidade_trocada, $id_venda, $conn){
-        // O resultado dessa query não é usada em lugar algum, visto que já temos o id_venda.
-        // Essa operação só é feita para checar se a venda consta no sistema.
-        $sql = "SELECT id_venda
+        // Procura pelo ID da venda no banco de dados
+        $sql = "SELECT id_venda, valor
                  FROM vendas
                  WHERE id_venda = $id_venda";
         $result = $conn->query($sql);
         if ($result and $result->num_rows <= 0) { die ("<br> Erro: Venda não existe! <br>"); }
         else if (!$result){ die("<br> Erro procurando venda <br>"); }
-
+        $row = $result->fetch_assoc();
+        $valor_total_venda = $row["valor"];
         // Seleciona o valor e a quantidade do produto que o cliente vai levar
         // Esses valores são escolhidos aqui para certificar no começo da operação que o
         // produto realmente existe, e, caso ele exista, já temos o a quantidade dele

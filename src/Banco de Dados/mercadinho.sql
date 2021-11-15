@@ -3,7 +3,8 @@ create DATABASE mercadinho;
 create table funcionarios (
     id_funcionario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     usuario VARCHAR(50) NOT NULL,
-    senha VARCHAR(50) NOT NULL
+    senha VARCHAR(50) NOT NULL,
+    admin TINYINT NOT NULL DEFAULT 0
 );
 
 create table produtos (
@@ -44,6 +45,7 @@ create table fornecedores (
 create table devolucoes (
     id_devolucao INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_produto INT NOT NULL,
+    id_venda INT NOT NULL,
     quantidade INT DEFAULT 1
 );
 
