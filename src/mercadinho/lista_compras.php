@@ -48,26 +48,84 @@
              echo "Erro" . $sql . "<br>" . $conn->error;
          }
      }
-     // Ainda não foi terminado, ignorar por enquanto
-     // else if ( isset( $_POST['devolver'])) {
-     //     $id_produto = $_REQUEST['id_produto'];
-     //     $id_venda = $_REQUEST['id_venda'];
-     //     $quantidade = $_REQUEST['quantidade'];
-     //     $sql = "SELECT id_produtos_vendidos, id_produto, quantidade
-     //     FROM produtos_vendidos
-     //     WHERE id_venda = $id_venda";
-     //     $result = $conn->query($sql);
-     //     if ($result and $result->num_rows > 0) {
-     //         // output data of each row
-     //         while($row = $result->fetch_assoc()) {
-     //             echo "<b>id_produto:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. " - <b>quantidade:</b> " . $row["quantidade"]."<br>";
-     //         }
-     //     }
-     //     else {
-     //         echo "Nenhum produto cadastrado!";
-     //     }
-     // }
+     // Devolver produtos
+     // Checa se a venda existe, se o produto sendo devolvido existe e está na venda
+     // e se a quantidade que vai ser devolvida é menor ou igual a vendida.
+     else if ( isset( $_POST['devolver'])) {
+         // Procura pelo ID da venda no banco de dados
+         $id_produto = $_REQUEST['id_produto'];
+         $id_venda = $_REQUEST['id_venda'];
+         $quantidade_trocar = $_REQUEST['quantidade'];
+         $sql = "SELECT id_venda
+                 FROM vendas
+                 WHERE id_venda = $id_venda";
+         $result = $conn->query($sql);
+         if ($result and $result->num_rows <= 0) { die ("<br> Erro: Venda não existe! <br>"); }
+         else if (!$result){ die("<br> Erro procurando venda <br>"); }
 
+         // Procura se o produto que deseja ser devolvido foi vendido.
+         // Se for adicionado ao carrinho 2 produtos iguais, com 2 quantidades diferentes,
+         // o que vai valer é o primeiro que o sistema encontrar. Da pra fazer todos contarem,
+         // mas não no tempo que temos.
+         $sql = "SELECT id_produto, quantidade
+                 FROM produtos_vendidos
+                 WHERE id_venda = $id_venda AND id_produto = $id_produto";
+         $result = $conn->query($sql);
+         if ($result and $result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $quantidade_vendida = $row["quantidade"];
+             if ($quantidade_vendida < $quantidade_trocar) {
+                 echo ("<br> <h2>Quantidade insuficiente para devolver! A quantidade vendida foi " . $row["quantidade"] . " </h2><br>");
+             }
+             else { // Devoluçào foi aceita
+                 // Atualiza o produto vendido, para não permitir que seja devolvido
+                 // mais que a quantidade vendida caso sejam feitas múltiplas devoluções
+                 $quantidade_update = $quantidade_vendida - $quantidade_trocar;
+                 $sql = "UPDATE produtos_vendidos
+                         SET quantidade = '$quantidade_update'
+                         WHERE id_produto = '$id_produto'";
+
+                 $result = $conn->query($sql);
+                 if (!$result) {die ("<br>Erro atualizando produtos devolucao <br>");}
+
+                 // Pega a quantidade de produtos que tem no estoque e atualiza, adicionando aqueles
+                 // que foram devolvidos.
+                 $sql = "SELECT quantidade
+                         FROM produtos
+                         WHERE id_produto = $id_produto";
+                 $result = $conn->query($sql);
+                 $row = $result->fetch_assoc();
+                 $quantidade_update = $row["quantidade"] + $quantidade_trocar;
+                 $sql = "UPDATE produtos
+                         SET quantidade = '$quantidade_update'
+                         WHERE id_produto = '$id_produto'";
+
+                 $result = $conn->query($sql);
+                 if (!$result) {die ("<br>Erro atualizando produtos devolucao <br>");}
+
+                 // Adiciona o produto e a quantidade devolvidos na tabela devoluçõe
+                 // Essa tabela é usada para mostrar o valor real da venda apos uma devolução.
+                 $sql = "INSERT INTO devolucoes (id_produto, quantidade)
+                         VALUES ('$id_produto','$quantidade_trocar')";
+
+                 $result = $conn->query($sql);
+                 if (!$result) {die ("<br>Erro inserindo produto na tabela devolucoes<br>");}
+
+                 // Pega o valor do produto devolvido para calcular o quanto deve ser
+                 // devolvido ao cliente.
+                 $sql = "SELECT valor
+                         FROM produtos
+                         WHERE id_produto = $id_produto";
+                 $result = $conn->query($sql);
+                 if (!$result) {die ("<br>Erro recuperando valor da venda<br>");}
+                 $row = $result->fetch_assoc();
+                 echo ("<br>O valor a ser devolvido é R$<br>".$row["valor"] * $quantidade_trocar);
+             }
+         }
+         else {
+             echo ("<br>Erro - Produto não consta na venda!<br>");
+         }
+     }
      // Finalizar a compra
      // Trabalha com 4 tabelas: Lista_compras, produtos, vendas e produtos_vendidos
      // Para cada produto na lista de compra, é somado o valor, e o total é armazenado em vendas.
@@ -118,7 +176,7 @@
              while($row = $result->fetch_assoc()) { $id_venda = $row["LAST_INSERT_ID()"]; }
 
              // Inserindo cada produto vendido em produtos_vendidos.
-             $sql = "SELECT lista_compras.id_produto, produtos.quantidade
+             $sql = "SELECT lista_compras.id_produto, lista_compras.quantidade
                      FROM lista_compras
                      LEFT JOIN produtos
                      ON lista_compras.id_produto = produtos.id_produto";

@@ -41,6 +41,12 @@ create table fornecedores (
     endereço VARCHAR(50) DEFAULT NULL
 );
 
+create table devolucoes (
+    id_devolucao INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_produto INT NOT NULL,
+    quantidade INT DEFAULT 1
+);
+
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Abacaxi', '3.99', '10');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Limão', '1.99', '10');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Miojo', '1.25', '10');
