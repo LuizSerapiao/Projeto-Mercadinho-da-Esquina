@@ -73,7 +73,7 @@ class Forn
 
         else{
             echo "<b>Resultado da busca:</b> <br>";
-            $sql = "SELECT id_funcionario, nome, telefone, email, estado, cidade, endereço
+            $sql = "SELECT id_fornecedor, nome, telefone, email, estado, cidade, endereço
             FROM fornecedores
             WHERE nome='$nome'";
             $result = $conn->query($sql);
@@ -81,7 +81,7 @@ class Forn
             if ($result and $result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id_funcionario"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Telefone:</b> " . $row["telefone"].
+                    echo "<b>id:</b> " . $row["id_fornecedor"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Telefone:</b> " . $row["telefone"].
                         " -<b> Email:</b> " . $row["email"]. " -<b> Estado:</b> " . $row["estado"]. " - <b>Cidade:</b> " . $row["cidade"].
                         " - <b>endereço:</b> " . $row["endereço"]."<br>";
                 }

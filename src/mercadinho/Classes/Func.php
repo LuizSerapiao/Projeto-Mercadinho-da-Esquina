@@ -5,9 +5,11 @@ class Func
     function __construct(){
     }
 
-    function cadastrarFuncionario($usuario, $senha, $conn){
-        $sql = "INSERT INTO funcionarios (usuario, senha)
-        VALUES ('$usuario','$senha')";
+    function cadastrarFuncionario($usuario, $senha, $conn, $admin){
+        if ($admin === 'sim') { $adm = 1; }
+        else { $adm = 2; }
+        $sql = "INSERT INTO funcionarios (usuario, senha, admin)
+        VALUES ('$usuario','$senha', '$adm')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Funcionário $usuario adicionado com sucesso!";
@@ -52,7 +54,7 @@ class Func
 
     function listarUsuario($usuario, $conn){
         if($usuario == null){
-            $sql = "SELECT id_funcionario, usuario, senha
+            $sql = "SELECT id_funcionario, usuario, senha, admin
             FROM funcionarios";
             $result = $conn->query($sql);
 
@@ -60,7 +62,9 @@ class Func
                 // output data of each row
                 echo "<B>Lista de funcionarios</B> <br>";
                 while($row = $result->fetch_assoc()) {
-                    echo "<b>id:</b> " . $row["id_funcionario"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"]. "<br>";
+                    echo "<b>id:</b> " . $row["id_funcionario"]. " - <b>Usuario:</b> " . $row["usuario"]. " - <b>Senha:</b> " . $row["senha"];
+                    if ($row["admin"] === '1') { echo " - Admin!"; }
+                    echo "<br>";
                 }
             }
             else {

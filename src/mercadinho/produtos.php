@@ -6,7 +6,7 @@
 </head>
 <h1>Produtos</h1>
 <!--- Caixas de entrada e botões --->
-<form action="index.php">
+<form action="gerente.php">
     <input type="submit" value="Voltar" />
 </form>
 
