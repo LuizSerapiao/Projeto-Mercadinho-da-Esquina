@@ -8,7 +8,7 @@
 <form action="gerente.php">
     <input type="submit" value="Voltar" />
 </form>
-
+<!---
 <B>Adicionar Fornecedor</B>
 <form action="fornecedores.php" method="post" autocomplete="off">
 
@@ -21,9 +21,11 @@
 
     <input type="submit" name="add" value="adicionar" />
 </form>
+--->
+<button onclick="window.location.href='cadastrar_fornecedor.php'">Cadastrar Fornecedor</button>
 
 <form action="fornecedores_editar.php">
-    <input type="submit" name="edt" value="editar" />
+    <input type="submit" name="edt" value="Editar Fornecedor" />
 </form>
 
 <B>Procurar ou deletar fornecedores</B>
