@@ -129,4 +129,26 @@ class Pedi
         }
         echo "<br>";
     }
+
+    function cancelar($id, $conn) {
+        $sql = "SELECT id_produto, recebido, quantidade
+                FROM pedidos
+                WHERE id_pedido = '$id'";
+        $result = $conn->query($sql);
+        if ($result and $result->num_rows > 0) { // Pedido existe
+            $row = $result->fetch_assoc();
+            if ($row["recebido"] === '1') { echo "ERRO: Esse pedido já foi recebido, não pode ser cancelado!"; }
+            else {
+                $sql = "DELETE FROM pedidos
+                        WHERE id_pedido = '$id'";
+                $result = $conn->query($sql);
+                if ($result) {header("Refresh:0");}
+                else {echo "Erro ao deletar no banco de dados.<br>";}
+
+            }
+        }
+        else {
+            echo "ERRO: pedido não encontrado!";
+        }
+    }
 }

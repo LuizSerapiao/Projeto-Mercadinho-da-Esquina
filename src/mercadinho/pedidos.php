@@ -27,12 +27,17 @@
          $id = $_REQUEST['id'];
          $action->recebido($id, $conn);
      }
+     else if ( isset( $_POST["cancelar"])) {
+         $id = $_REQUEST['id'];
+         $action->cancelar($id, $conn);
+     }
 
 ?>
 <br>
 <form action="pedidos.php" method="post">
     <input type="number" name="id" placeholder="Código do pedido"/>
     <input type="submit" name="completar" value="Marcar como recebido!" />
+    <input type="submit" name="cancelar" value="Cancelar pedido!" />
 </form>
 
 <form action="fazer_pedido.php" method="post">
