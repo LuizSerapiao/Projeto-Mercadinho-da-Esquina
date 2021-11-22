@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto:wght@100&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -7,6 +9,10 @@
 html, body, #root {
   height: 100%;
   width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto';
 }
 
 .header{
@@ -23,7 +29,7 @@ html, body, #root {
 
 .header-title{
   color:white;
-  font-family: Comfortaa;
+  font-family: 'Comfortaa';
   font-size: 36px;
 }
 
@@ -41,17 +47,6 @@ html, body, #root {
   padding-bottom: 94;
 }
 
-.img-botao-gerente{
-  height: 90px;
-}
-
-.botao-log-out{
-  height: 50px;
-  align-self: end; 
-  margin-right: 13px;
-  margin-top: 11px;
-}
-
 .content-gerente{
   display: flex;
   flex: 1;
@@ -59,12 +54,4 @@ html, body, #root {
   align-items: center;
   margin-left: 149px;
   margin-top: 94px;
-}
-
-input.logout{
-  background-color: rgb(0,0,0,0); 
-  border: 0; 
-  align-self: end; 
-  margin-right: 13px; 
-  margin-top: 11px;
 }

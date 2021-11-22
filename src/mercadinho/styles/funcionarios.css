@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto:wght@100&display=swap');
+
 .title{
-  font-family: Comfortaa;
-  font-style: regular;
+  font-family: 'Comfortaa', cursive;
   font-size: 64px;
 }
 

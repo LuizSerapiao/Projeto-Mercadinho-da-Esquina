@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
   <link rel="stylesheet" type="text/css" href="styles/fornecedores.css"/>
-  <link rel="stylesheet" type="text/css" href="https://fonts.google.com/specimen/Roboto"/>
-  <link rel="stylesheet" type="text/css" href="https://fonts.google.com/specimen/Comfortaa"/>
   <title></title>
 </head>
 
@@ -49,13 +47,13 @@
 <body>
   
   <div class="leftbar-gerente">
-    <a href="http://localhost/src/mercadinho/fornecedores.php?">
+    <a href="http://localhost/src/mercadinho/pedidos.php?">
       <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
     </a>
-    <a href="http://localhost/src/mercadinho/fornecedores.php?">
+    <a href="http://localhost/src/mercadinho/vendas.php?">
       <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="http://localhost/src/mercadinho/fornecedores.php?">
+    <a href="http://localhost/src/mercadinho/produtos.php?">
       <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
     <a href="http://localhost/src/mercadinho/fornecedores.php?">

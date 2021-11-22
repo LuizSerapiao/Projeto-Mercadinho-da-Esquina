@@ -1,30 +1,38 @@
 
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles/funcionarios.css"/>
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/funcionarios.css"/>
 </head>
 <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
 </header>
+<style>
+  button{
+    background-color: rgb(0,0,0,0); 
+    border: 0;
+    margin: 5px;
+  }
+
+</style>
 <body>
     <div class="layout">
       <div class="leftbar-gerente">
-          <button class="botao-gerente">
-            <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
-          </button>
-          <button class="botao-gerente">
-            <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
-          </button>
-          <button class="botao-gerente">
-            <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
-          </button>
-          <button class="botao-gerente">
-            <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
-          </button>
-          <button class="botao-gerente">
-            <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
-          </button>
+        <a href="http://localhost/mercadinho/pedidos.php?">
+          <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
+        </a>
+        <a href="http://localhost/mercadinho/vendas.php?">
+          <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
+        </a>
+        <a href="http://localhost/mercadinho/produtos.php?">
+          <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
+        </a>
+        <a href="http://localhost/mercadinho/fornecedores.php?">
+          <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
+        </a>
+        <a href="http://localhost/mercadinho/funcionarios.php?">
+          <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
+        </a>
       </div>
       <div class="content-gerente">
         <img src="assets/log-out-circle.png" class="botao-log-out">
@@ -43,7 +51,7 @@
           <div></div>
 
           <div style="display: flex; align-items: center">
-            <button class="botao-gerente">
+            <button>
               <h1 class="texto-grid">Luiz Felipe</h1>
             </button>
           </div>
@@ -51,16 +59,16 @@
             <h1 class="texto-grid">(16) 99247-3476</h1>
           </div>
           <div class="item-grid">
-            <button class="botao-gerente">
+            <button>
               <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
             </button>
-            <button class="botao-gerente">
+            <button>
               <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
             </button>
           </div>
 
           <div style="display: flex; align-items: center">
-            <button class="botao-gerente">
+            <button>
               <h1 class="texto-grid">Luiz Felipe</h1>
             </button>
           </div>
@@ -68,16 +76,16 @@
             <h1 class="texto-grid">(16) 99247-3476</h1>
           </div>
           <div class="item-grid">
-            <button class="botao-gerente">
+            <button>
               <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
             </button>
-            <button class="botao-gerente">
+            <button>
               <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
             </button>
           </div>
 
           <div style="display: flex; align-items: center">
-            <button class="botao-gerente">
+            <button>
               <h1 class="texto-grid">Luiz Felipe</h1>
             </button>
           </div>
@@ -85,10 +93,10 @@
             <h1 class="texto-grid">(16) 99247-3476</h1>
           </div>
           <div class="item-grid">
-            <button class="botao-gerente">
+            <button>
               <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
             </button>
-            <button class="botao-gerente">
+            <button>
               <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
             </button>
           </div>
