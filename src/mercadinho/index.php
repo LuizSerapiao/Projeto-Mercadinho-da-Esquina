@@ -16,7 +16,7 @@
     <header class="header-login">
         <h1 class="title-login">Log-in</h1>
     </header>
-    <form class="form-login">
+    <form class="form-login" method="post">
         <div>
             <h1 style="font-size: 36px; margin-top: 37px;">Usuário</h1>
             <input style="width: 603px;" type="text" name="usuario" required/>
@@ -25,7 +25,7 @@
             <h1 style="font-size: 36px; margin-top: 37px;">Senha</h1>
             <input style="width: 603px;" type="password" name="senha" required/>
         </div>
-        <input class="salvar" type="submit" name="add" value="ENTRAR" name="login"/>
+        <input class="salvar" type="submit" name="login" value="ENTRAR" />
     </form>
 </body>
 
@@ -52,7 +52,7 @@
         if ($result and $result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if ($row['admin'] === '1') {
-                header("Location: gerente.php");
+                header("Location: pedidos.php");
             }
             else {
                 header("Location: lista_compras.php");

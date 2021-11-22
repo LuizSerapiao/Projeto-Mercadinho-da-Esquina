@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    
+
     <title></title>
 </head>
 <header class="header">
@@ -12,19 +12,19 @@
 <body>
 
   <div class="leftbar-gerente">
-    <a href="http://localhost/mercadinho/pedidos.php?">
+    <a href="pedidos.php">
       <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
     </a>
-    <a href="http://localhost/mercadinho/vendas.php?">
+    <a href="vendas.php">
       <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="http://localhost/mercadinho/produtos.php?">
+    <a href="produtos.php">
       <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
-    <a href="http://localhost/mercadinho/fornecedores.php?">
+    <a href="fornecedores.php">
       <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
-    <a href="http://localhost/mercadinho/funcionarios.php?">
+    <a href="funcionarios.php">
       <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
