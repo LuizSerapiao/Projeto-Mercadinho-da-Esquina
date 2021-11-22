@@ -1,106 +1,69 @@
 
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/search.css"/>
-    <title></title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 </head>
 
-<header class="header">
-  <h1 class="header-title">Mercadinho da Esquina</h1>
-</header>
-
 <style>
-td {
-    height: 70px;
-}
+  .input-txt{
+    width: 402px;
+  }
 </style>
 
 <body>
-
+  <header class="header">
+    <h1 class="header-title">Mercadinho da Esquina</h1>
+  </header>  
   <div class="leftbar-gerente">
     <a href="http://localhost/mercadinho/pedidos.php?">
-      <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
+      <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
     </a>
     <a href="http://localhost/mercadinho/vendas.php?">
-      <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
+      <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
     <a href="http://localhost/mercadinho/produtos.php?">
-      <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
+      <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
     <a href="http://localhost/mercadinho/fornecedores.php?">
-      <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
+      <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
     <a href="http://localhost/mercadinho/funcionarios.php?">
-      <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
+      <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
-
+  
   <div class="content-gerente">
-    <!-- <button class="botao-logout"> -->
-    <button style="background-color: rgb(0,0,0,0); border: 0; align-self: end; margin-right: 13px; margin-top: 11px;">
+    <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
-
-    <div style="margin-top: 76px">
-      <h1 class="searchfield-title">Nome do Fornecedor:</h1>
-      <div class="search-field-layout">
-        <input class="search-field" type="text"/>
-        <button class="search-button">
-          <img class="search-icon" src="assets/Search.png"/>
-        </button>
+    <h1 class="title">Cadastrar Fornecedor</h1>
+    <form>
+      <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
+        <div class="input-column">
+          <h1 style="margin-top: 45px;">Nome</h1>
+          <input class="input-txt" type="text" name="nome" maxlength="50" required/>
+          <h1 style="margin-top: 45px;">Telefone de Contato</h1>
+          <input class="input-txt" type="text" name="telefone" size="11" required/>
+          <h1 style="margin-top: 45px;">E-mail</h1>
+          <input class="input-txt" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+        </div>
+        <div class="input-column">
+          <h1 style="margin-top: 45px;">Estado</h1>
+          <input class="input-txt" type="text" name="estado" maxlength="50" />
+          <h1 style="margin-top: 45px;">Cidade</h1>
+          <input class="input-txt" type="text" name="cidade" maxlength="50" />
+          <h1 style="margin-top: 45px;">Endereço</h1>
+          <input class="input-txt" type="text" name="endereço" maxlength="50" />
+        </div>
       </div>
-    </div>
-
-    <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
-      <table style="width: 100%; margin-left: 5%">
-        <tr>
-          <td>
-            <h1>Nome:</h1>
-          </td>
-          <td>
-            <h1>Código:</h1>
-          </td>
-          <td>
-            <h1>Telefone:</h1>
-          </td>
-          <td>
-            <h1>E-mail:</h1>
-          </td>
-          <td>
-            <button style="background-color: rgb(0,0,0,0); border: 0;">
-              <img src="assets/dashicons_insert.png" style="height: 43px;">
-            </button>
-          </td>
-        </tr>
-        <?php
-          echo "<tr>".
-              "<td>"."Nestle"."</td>".
-              "<td>"."012"."</td>".
-              "<td>"."(15)98390-7423"."</td>".
-              "<td>"."nestle@gmail.com"."</td>"."<td>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
-              '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
-              '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
-          // if( $ven->num_rows > 0){
-          //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
-          //         "<tr>".
-          //           "<td>".$registro['idVenda']."</td>".
-          //           "<td>".$registro['valTotal']."</td>".
-          //         "<tr>";
-          //   }
-          // }
-        ?>
-      </table>
-    </div>
+      <input class="salvar" type="submit" name="add" value="SALVAR" />
+    </form>
   </div>
 </body>
 
 <!-- <h1>Fornecedores</h1>
-<form action="gerente.php">
+<form action="index.php">
     <input type="submit" value="Voltar" />
 </form>
 
@@ -125,15 +88,12 @@ td {
 <form action="fornecedores.php" method="POST">
     <input type="text" name="nome" placeholder="Nome" required/>
     <input type="submit" name="lst" value="Procurar" required/>
-    <input type="submit" name="rmv" value="remover" />
+    <input type="submit" name="rmv" value="remover" /> 
 </form>
 
 <form action="fornecedores.php" method="POST">
-    <input type="submit" name="lst" value="Listar Fornecedores" required/>
-
+    <input type="submit" name="lst" value="Listar Fornecedores" required/> 
     <br><br>
-</form> -->
-
 
     <br>
 <br><br>
@@ -179,12 +139,12 @@ td {
         $novo_estado = $_REQUEST['novo_estado'];
         $nova_cidade = $_REQUEST['nova_cidade'];
         $novo_endereço = $_REQUEST['novo_endereço'];
-
+        
        $action->editarFornecedor($nome, $novo_nome, $novo_telefone, $novo_email, $novo_estado, $nova_cidade, $novo_endereço, $conn);
     }
     else if (isset( $_POST['lst'])) {
         if (!empty($_REQUEST['nome'])) {
-            $usuario = $_REQUEST['nome'];
+            $usuario = $_REQUEST['usuario'];
             $action->listarFornecedor($usuario, $conn);
         }
         else {

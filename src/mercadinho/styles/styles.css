@@ -7,12 +7,84 @@
 }
 
 html, body, #root {
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+body{
+  padding-top: 94px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1, h2, h3 {
   font-family: 'Roboto';
+}
+
+input[type=text], input[type=password], input[type=number]{
+  margin-top: 5px;
+  height: 88px;
+  background-color: #F5F2F2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-size: 36px;
+}
+
+input[type=submit]{
+  margin-top: 81px;
+  width: 357px;
+  height: 106px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #25ABD6;
+  font-family: 'Roboto';
+  font-size: 48px;
+  color: #FFFFFF;
+}
+
+button{
+  background-color: rgb(0,0,0,0); 
+  border: 0;
+}
+
+table{
+  width: 100%;
+  margin-left: 10%;
+}
+
+td{
+  height: 70px;
+}
+
+.content{
+  width: 100%;
+  max-width: 1366px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botao-substyle{
+  margin-top: 81px;
+  width: 357px;
+  height: 106px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #25ABD6;
+  font-family: 'Roboto';
+  font-size: 48px;
+  color: #FFFFFF;
+}
+
+.title{
+  margin-top: 40px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 64px;
 }
 
 .header{
@@ -33,6 +105,56 @@ h1, h2, h3 {
   font-size: 36px;
 }
 
+.header-login{
+  top: 0;
+  background-color: #25ABD6;
+  height: 306px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-login{
+  color:white;
+  font-family: 'Comfortaa';
+  font-size: 144px;
+  margin-bottom: 35px;
+}
+
+.img-botao-gerente{
+  height: 70px;
+}
+
+.botao-logout{
+  align-self: end; 
+  margin-right: 13px; 
+  margin-top: 11px;
+}
+
+.imagem-logout{
+  height: 50px;
+}
+
+.display{
+  height: 117px; 
+  width: 100%; 
+  max-width: 1100px; 
+  background-color: #C4C4C4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .leftbar-gerente{
   position: fixed;
   top: 94;
@@ -43,15 +165,45 @@ h1, h2, h3 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  align-self: flex-start;
   z-index: 1000;
   padding-bottom: 94;
 }
 
 .content-gerente{
+  width: 100%;
   display: flex;
-  flex: 1;
   flex-direction: column;
   align-items: center;
-  margin-left: 149px;
-  margin-top: 94px;
+  padding-left: 149px;
+}
+
+.search-title{
+  font-size: 36px;
+}
+
+.search-field{
+  width: 603px;
+  padding-right: 64px;
+}
+
+.search-field-layout{
+  margin-top: 23px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+
+.search-button{
+  margin-left: -64px;
+}
+
+.search-icon{
+  height: 40px;
+}
+
+.caixa-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }

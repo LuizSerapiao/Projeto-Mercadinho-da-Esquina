@@ -2,109 +2,80 @@
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/funcionarios.css"/>
 </head>
-<header class="header">
-    <h1 class="header-title">Mercadinho da Esquina</h1>
-</header>
-<style>
+<!-- <style>
   button{
     background-color: rgb(0,0,0,0); 
     border: 0;
-    margin: 5px;
   }
 
-</style>
+  td{
+    height: 70px;
+  }
+</style> -->
 <body>
-    <div class="layout">
-      <div class="leftbar-gerente">
-        <a href="http://localhost/mercadinho/pedidos.php?">
-          <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
-        </a>
-        <a href="http://localhost/mercadinho/vendas.php?">
-          <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
-        </a>
-        <a href="http://localhost/mercadinho/produtos.php?">
-          <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
-        </a>
-        <a href="http://localhost/mercadinho/fornecedores.php?">
-          <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
-        </a>
-        <a href="http://localhost/mercadinho/funcionarios.php?">
-          <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
-        </a>
-      </div>
-      <div class="content-gerente">
-        <img src="assets/log-out-circle.png" class="botao-log-out">
-        <div style="display: flex; flex-direction: line; margin-top: 40px">
-          <div style="display: flex; flex-direction: column; align-items: center; margin-left: 198px">
-            <h1 class="title">Funcionários</h1>
-            <h1 class="title">cadastrados</h1>
-          </div>
-          <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 198px">
-            <img src="assets/dashicons_insert.png" style="height: 50px;">
-          </button>
-        </div>
-        <div class="container-funcionarios">
-          <h1 class="texto-grid">Nome</h1>
-          <h1 class="texto-grid">Telefone</h1>
-          <div></div>
+  <header class="header">
+      <h1 class="header-title">Mercadinho da Esquina</h1>
+  </header>
+  <div class="leftbar-gerente">
+    <a href="http://localhost/mercadinho/pedidos.php?">
+      <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
+    </a>
+    <a href="http://localhost/mercadinho/vendas.php?">
+      <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
+    </a>
+    <a href="http://localhost/mercadinho/produtos.php?">
+      <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
+    </a>
+    <a href="http://localhost/mercadinho/fornecedores.php?">
+      <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
+    </a>
+    <a href="http://localhost/mercadinho/funcionarios.php?">
+      <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
+    </a>
+  </div>
+  <div class="content-gerente">
+    <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
+      <img src="assets/log-out-circle.png" style="height: 50px">
+    </button>
+    <h1 class="title">Funcionários</h1>
+    <h1 class="title" style="margin-top: 0;">cadastrados</h1>
 
-          <div style="display: flex; align-items: center">
+    <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
+      <table style="width: 100%; margin-left: 15%">
+        <tr>
+          <td>
+            <h1>Nome:</h1>
+          </td>
+          <td>
+            <h1>Telefone:</h1>
+          </td>
+          <td>
             <button>
-              <h1 class="texto-grid">Luiz Felipe</h1>
+              <img src="assets/dashicons_insert.png" style="height: 43px;">
             </button>
-          </div>
-          <div style="display: flex; align-items: center">
-            <h1 class="texto-grid">(16) 99247-3476</h1>
-          </div>
-          <div class="item-grid">
-            <button>
-              <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
-            </button>
-            <button>
-              <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
-            </button>
-          </div>
-
-          <div style="display: flex; align-items: center">
-            <button>
-              <h1 class="texto-grid">Luiz Felipe</h1>
-            </button>
-          </div>
-          <div style="display: flex; align-items: center">
-            <h1 class="texto-grid">(16) 99247-3476</h1>
-          </div>
-          <div class="item-grid">
-            <button>
-              <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
-            </button>
-            <button>
-              <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
-            </button>
-          </div>
-
-          <div style="display: flex; align-items: center">
-            <button>
-              <h1 class="texto-grid">Luiz Felipe</h1>
-            </button>
-          </div>
-          <div style="display: flex; align-items: center">
-            <h1 class="texto-grid">(16) 99247-3476</h1>
-          </div>
-          <div class="item-grid">
-            <button>
-              <img src="assets/Edit.png" style="height: 45px;" alt="EDITAR FUNCIONARIO">
-            </button>
-            <button>
-              <img src="assets/delete.png" style="height: 50px;" alt="DELETAR FUNCIONARIO">
-            </button>
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
+          </td>
+        </tr>
+        <?php
+          echo "<tr>".
+              "<td>".'<button>'."Luiz Felipe"."</button>"."</td>".
+              "<td>"."(15)98390-7423"."</td>"."<td>".
+              '<button">'.'<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
+              '<button style="margin-left: 10px">'.'<img src="assets/delete.png" style="height: 36px"/>'.
+              "</button>"."</td>"."<tr>";
+          // if( $ven->num_rows > 0){
+          //   while( $registro = $res->fetch_assoc() ){
+          //     echo 
+          //         "<tr>".
+          //           "<td>".$registro['idVenda']."</td>".
+          //           "<td>".$registro['valTotal']."</td>".
+          //         "<tr>";
+          //   }
+          // }
+        ?>
+    </table> 
+  </div>
+  </div>
     <!-- <h1 class="title">Caixas</h1>
     <form action="index.php">
         <input type="submit" value="Voltar" />
