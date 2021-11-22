@@ -22,17 +22,21 @@ class Func
     function removerFuncionario($usuario, $conn)
     {
         $sql = "SELECT id_funcionario, usuario, senha
-            FROM funcionarios
-            WHERE usuario = '$usuario'";
+                FROM funcionarios
+                WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
         if ($result and $result->num_rows > 0) {
-            $sql = "DELETE FROM funcionarios
-        WHERE usuario = '$usuario'";
+            $row = $result->fetch_assoc();
+            if ($row["id_funcionario"] == 1) { echo "<b>Não é possível deletar o usuário padrão!</b>"; }
+            else {
+                $sql = "DELETE FROM funcionarios
+                        WHERE usuario = '$usuario'";
 
-            if ($conn->query($sql) === TRUE) {
-                echo "Caixa $usuario deletado com sucesso!";
-            } else {
-                echo "Erro ao deletar funcionario: " . $conn->error;
+                if ($conn->query($sql) === TRUE) {
+                    echo "Caixa $usuario deletado com sucesso!";
+                } else {
+                    echo "Erro ao deletar funcionario: " . $conn->error;
+                }
             }
         }
     }
