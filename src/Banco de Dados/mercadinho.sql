@@ -11,7 +11,8 @@ create table produtos (
     id_produto INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     valor DECIMAL(5,2) NOT NULL,
-    quantidade INT DEFAULT 0
+    quantidade INT DEFAULT 0,
+    quantidade_pedida INT DEFAULT 0
 );
 
 create table lista_compras (
@@ -49,6 +50,21 @@ create table devolucoes (
     quantidade INT DEFAULT 1
 );
 
+create table produtos_fornecidos (
+    id_produtos_fornecidos INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_fornecedor INT NOT NULL,
+    id_produto INT NOT NULL,
+    valor DECIMAL(5,2) NOT NULL
+);
+
+create table pedidos (
+    id_pedido INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_produto INT NOT NULL,
+    quantidade INT NOT NULL,
+    valor_total DECIMAL(5,2) NOT NULL,
+    recebido TINYINT NOT NULL DEFAULT 0
+);
+
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Abacaxi', '3.99', '10');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Limão', '1.99', '10');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Miojo', '1.25', '10');
@@ -56,4 +72,4 @@ INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NUL
 INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '1', '1');
 INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '3', '2');
 
-INSERT INTO `funcionarios` (`id_funcionario`, `usuario`, `senha`) VALUES (NULL, 'admin', 'admin');
+INSERT INTO `funcionarios` (`id_funcionario`, `usuario`, `senha`, `admin`) VALUES (NULL, 'admin', 'admin', '1');

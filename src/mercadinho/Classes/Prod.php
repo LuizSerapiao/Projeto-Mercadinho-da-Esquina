@@ -6,7 +6,7 @@ class Prod
     }
 
     function adicionarProduto($nome, $valor, $quantidade, $conn){
-        $sql = "INSERT INTO produtos (nome, valor, quantidade) 
+        $sql = "INSERT INTO produtos (nome, valor, quantidade)
         VALUES ('$nome','$valor', '$quantidade')";
 
         if ($conn->query($sql) === TRUE) {
@@ -24,7 +24,7 @@ class Prod
             WHERE nome = '$nome'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            $sql = "DELETE FROM produtos 
+            $sql = "DELETE FROM produtos
         WHERE nome = '$nome'";
 
             if ($conn->query($sql) === TRUE) {
@@ -38,7 +38,7 @@ class Prod
     function editarProduto($nome, $novo_nome, $novo_valor, $nova_quantidade, $conn){
 
         $sql = "UPDATE produtos
-        SET nome = '$novo_nome', valor = '$novo_valor', quantidade = $nova_quantidade 
+        SET nome = '$novo_nome', valor = '$novo_valor', quantidade = $nova_quantidade
         WHERE nome = '$nome'";
 
         if ($conn->query($sql) === TRUE) {
@@ -51,7 +51,7 @@ class Prod
 
     function listarProduto($nome, $conn){
         if($nome == null){
-            $sql = "SELECT * 
+            $sql = "SELECT *
             FROM produtos";
             $result = $conn->query($sql);
 
@@ -61,6 +61,7 @@ class Prod
                 while($row = $result->fetch_assoc()) {
                     echo "<b>id:</b> " . $row["id_produto"]. " - <b>Nome:</b> " . $row["nome"]. " - <b>Valor:</b> R$ " . $row["valor"]. " - <b>Quantidade:</b> " . $row["quantidade"]. "<br>";
                 }
+                echo "<br>";
             }
             else {
                 echo "Nenhum produto cadastrado!";

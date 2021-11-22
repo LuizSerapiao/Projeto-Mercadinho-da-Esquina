@@ -16,7 +16,9 @@
 <form action="caixas.php">
     <input type="submit" value="Usuarios" />
 </form>
-
+<form action="pedidos.php">
+    <input type="submit" value="Pedidos" />
+</form>
 <!--- Talvez seja melhor remover esse botão da tela do gerente --->
 <!---
 <form action="lista_compras.php">
