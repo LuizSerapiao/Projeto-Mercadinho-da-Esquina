@@ -65,6 +65,7 @@ class Forn
                         " -<b> Email:</b> " . $row["email"]. " -<b> Estado:</b> " . $row["estado"]. " - <b>Cidade:</b> " . $row["cidade"].
                         " - <b>endereço:</b> " . $row["endereço"]."<br>";
                 }
+                echo "<br>";
             }
             else {
                 echo "Nenhum fornecedor cadastrado";

@@ -32,7 +32,7 @@
     }
 
 ?>
-<br>
+
  <form action="fazer_pedido.php" method="post" autocomplete="off">
      <input type="text" name="fornecedor" placeholder="id_fornecedor" required />
      <br>

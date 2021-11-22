@@ -39,6 +39,11 @@
     <br><br>
 </form>
 
+<form action="ligar_fornecedor_produto.php">
+    <input type="submit" value="Conectar produto a um fornecedor" required/>
+
+    <br><br>
+</form>
 
     <br>
 <br><br>

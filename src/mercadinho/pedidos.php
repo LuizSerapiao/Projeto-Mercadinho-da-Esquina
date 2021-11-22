@@ -31,7 +31,7 @@
 ?>
 <br>
 <form action="pedidos.php" method="post">
-    <input type="number" name="id" value="Código do pedido"/>
+    <input type="number" name="id" placeholder="Código do pedido"/>
     <input type="submit" name="completar" value="Marcar como recebido!" />
 </form>
 

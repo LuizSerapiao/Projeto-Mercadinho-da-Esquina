@@ -6,10 +6,11 @@ class Pedi
     }
 
     function listar_pedidos($conn){
-        $sql = "SELECT *
-                FROM pedidos";
+        $sql = "SELECT produtos.nome, pedidos.id_pedido, produtos.id_produto, pedidos.quantidade, pedidos.valor_total, pedidos.recebido
+                FROM pedidos
+                JOIN produtos
+                ON pedidos.id_produto = produtos.id_produto";
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
             // output data of each row
             echo "<B>Lista de pedidos</B> <br>";
@@ -110,7 +111,7 @@ class Pedi
         if ($result and $result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $id_fornecedor = $row["id_fornecedor"];
-                echo "<b>Nome fornecedor: " . $row["nome"] . "</b>";
+                echo "<b>Fornecedor -> </b>ID " . $id_fornecedor . "; Nome: " . $row["nome"];
                 $sql = "SELECT produtos.id_produto, produtos_fornecidos.valor, produtos.nome
                         FROM produtos
                         JOIN produtos_fornecidos
@@ -120,7 +121,7 @@ class Pedi
                 if ($result1 and $result1->num_rows > 0) {
                     echo "<ol>";
                     while ($row1 = $result1->fetch_assoc()) {
-                        echo "<dt>Id Produto: " . $row1["id_produto"] . " Nome: " . $row1["nome"] . " Valor de compra: " . $row1["valor"] . "</dt>";
+                        echo "<dt><b>-Produto -> </b>Id: " . $row1["id_produto"] . " Nome: " . $row1["nome"] . " Valor de compra: R$" . $row1["valor"] . "</dt>";
                     }
                     echo "</ol>";
                 }
