@@ -38,7 +38,7 @@
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
     <h1 class="title">Deletar Funcionario</h1>
-    <form>
+    <form action="funcionarios.php"  method="post" autocomplete="off">
       <h1 style="margin-top: 45px;">id_funcionario</h1>
       <input class="input-txt" type="text" name="id_funcionario" maxlength="10"  required/>
       <!-- <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
@@ -59,66 +59,7 @@
           <input class="input-txt" type="password" name="senha" maxlength="10"  required/>
         </div>
       </div> -->
-      <input class="salvar" type="submit" name="add" value="CONFIRMAR" />
+      <input class="salvar" type="submit" name="rmv" value="CONFIRMAR" />
     </form>
   </div>
 </body>
-
-<?php
-    include_once ("Classes/Forn.php");
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "mercadinho";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    }
-
-    $action = new Forn();
-    if ( isset( $_POST['add'])) {
-        $nome = $_REQUEST['nome'];
-        $telefone = $_REQUEST['telefone'];
-        $email = $_REQUEST['email'];
-        $estado = $_REQUEST['estado'];
-        $cidade = $_REQUEST['cidade'];
-        $endereco = $_REQUEST['endereço'];
-
-        $action->insereFornecedor($nome, $telefone, $email, $estado, $cidade, $endereco, $conn);
-
-
-    }
-    else if ( isset( $_POST['rmv']) ) {
-        $nome = $_REQUEST['nome'];
-        $action->removeFornecedor($nome, $conn);
-
-    }
-     else if ( isset( $_POST['edt'])) {
-        $nome = $_REQUEST['nome'];
-
-        $novo_nome = $_REQUEST['novo_nome'];
-        $novo_telefone = $_REQUEST['novo_telefone'];
-        $novo_email = $_REQUEST['novo_email'];
-        $novo_estado = $_REQUEST['novo_estado'];
-        $nova_cidade = $_REQUEST['nova_cidade'];
-        $novo_endereço = $_REQUEST['novo_endereço'];
-        
-       $action->editarFornecedor($nome, $novo_nome, $novo_telefone, $novo_email, $novo_estado, $nova_cidade, $novo_endereço, $conn);
-    }
-    else if (isset( $_POST['lst'])) {
-        if (!empty($_REQUEST['nome'])) {
-            $usuario = $_REQUEST['usuario'];
-            $action->listarFornecedor($usuario, $conn);
-        }
-        else {
-            $action->listarFornecedor(null, $conn);
-        }
-    }
-
-    $conn->close();
-?>
-</html>
