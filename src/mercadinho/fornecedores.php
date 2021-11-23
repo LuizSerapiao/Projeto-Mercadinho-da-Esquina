@@ -20,19 +20,19 @@ td {
 <body>
 
   <div class="leftbar-gerente">
-    <a href="pedidos.php">
+    <a href="http://localhost/mercadinho/pedidos.php?">
       <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
     </a>
-    <a href="vendas.php">
+    <a href="http://localhost/mercadinho/vendas.php?">
       <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="produtos.php">
+    <a href="http://localhost/mercadinho/produtos.php?">
       <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
-    <a href="fornecedores.php">
+    <a href="http://localhost/mercadinho/fornecedores.php?">
       <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
-    <a href="funcionarios.php">
+    <a href="http://localhost/mercadinho/funcionarios.php?">
       <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
@@ -86,7 +86,7 @@ td {
               '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
-          //     echo
+          //     echo 
           //         "<tr>".
           //           "<td>".$registro['idVenda']."</td>".
           //           "<td>".$registro['valTotal']."</td>".
@@ -134,11 +134,6 @@ td {
     <br><br>
 </form> -->
 
-<form action="ligar_fornecedor_produto.php">
-    <input type="submit" value="Conectar produto a um fornecedor" required/>
-
-    <br><br>
-</form>
 
     <br>
 <br><br>
