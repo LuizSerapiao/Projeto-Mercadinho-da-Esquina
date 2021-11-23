@@ -5,7 +5,7 @@
 </head>
 <!-- <style>
   button{
-    background-color: rgb(0,0,0,0);
+    background-color: rgb(0,0,0,0); 
     border: 0;
   }
 
@@ -50,16 +50,16 @@
           <td>
             <h1>Telefone:</h1>
           </td>
-          <td>
+          <td> 
             <a href="cadastrar-funcionario.php">
               <button style="background-color: rgb(0,0,0,0); border: 0; ">
             <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
 
-
+          
             <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
             <img src="assets/Edit.png" style="height: 36px" /></button>
-
-
+            
+          
             <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
             <img src="assets/delete.png" style="height: 36px" /></button>
           </td>
@@ -71,14 +71,14 @@
          $username = "root";
          $password = "";
          $dbname = "mercadinho";
-
+     
          // Create connection
          $conn = new mysqli($servername, $username, $password, $dbname);
          // Check connection
          if ($conn->connect_error) {
          die("Connection failed: " . $conn->connect_error);
          }
-
+     
          $action = new Func();
          $sql = "SELECT id_funcionario, nome, telefone
          FROM funcionarios";
@@ -95,7 +95,7 @@
              echo "Nenhum funcionário cadastrado";
          }
         ?>
-    </table>
+    </table> 
   </div>
   </div>
     <!-- <h1 class="title">Caixas</h1>
@@ -122,7 +122,7 @@
     <form action="caixas.php" method="POST">
         <input type="text" name="usuario" placeholder="Usuario" required />
         <input type="submit" name="lst" value="Procurar" required/>
-        <input type="submit" name="rmv" value="remover" />
+        <input type="submit" name="rmv" value="remover" /> 
     </form>
 
     <form action="caixas.php" method="POST">
@@ -153,7 +153,7 @@
         $usuario = $_REQUEST['usuario'];
         $senha = $_REQUEST['senha'];
 
-        $sql = "INSERT INTO funcionarios (nome, endereco, telefone, email, usuario, senha)
+        $sql = "INSERT INTO funcionarios (nome, endereco, telefone, email, usuario, senha) 
         VALUES ('$nome', '$endereco', '$telefone', '$email', '$usuario','$senha')";
 
         if ($conn->query($sql) === TRUE) {
@@ -165,12 +165,12 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $usuario = $_REQUEST['usuario'];
-        $sql = "SELECT id, usuario, senha
+        $sql = "SELECT id, usuario, senha 
             FROM caixas
             WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
-            $sql = "DELETE FROM funcionarios
+            $sql = "DELETE FROM funcionarios 
         WHERE usuario = '$usuario'";
 
             if ($conn->query($sql) === TRUE) {
@@ -190,9 +190,9 @@
         $usuario = $_REQUEST['usuario'];
         $novo_usuario = $_REQUEST['novo_usuario'];
         $nova_senha = $_REQUEST['nova_senha'];
-
+        
         $sql = "UPDATE funcionarios
-        SET usuario = '$novo_usuario', senha = '$nova_senha'
+        SET usuario = '$novo_usuario', senha = '$nova_senha' 
         WHERE usuario = '$usuario'";
 
 
@@ -207,7 +207,7 @@
         if (!empty($_REQUEST['usuario'])) {
             echo "<b>Resultado da busca:</b> <br>";
             $usuario = $_REQUEST['usuario'];
-            $sql = "SELECT id, usuario, senha
+            $sql = "SELECT id, usuario, senha 
             FROM funcionarios
             WHERE usuario = '$usuario'";
             $result = $conn->query($sql);
@@ -223,7 +223,7 @@
             }
         }
         else {
-            $sql = "SELECT id, usuario, senha
+            $sql = "SELECT id, usuario, senha 
             FROM caixas";
             $result = $conn->query($sql);
 
@@ -243,3 +243,4 @@
     $conn->close();
 ?>
 </html>
+
