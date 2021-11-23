@@ -37,26 +37,28 @@
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
     <h1 class="title">Editar Fornecedor</h1>
-    <form  action= "fornecedores.php" method="post" autocomplete="off">
+    <form action="fornecedores.php"  method="post" autocomplete="off">
       <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
         <div class="input-column">
-          <h1 style="margin-top: 45px;">Nome</h1>
+          <h1 style="margin-top: 45px;">Nome atual</h1>
           <input class="input-txt" type="text" name="nome" maxlength="50" required/>
+          <h1 style="margin-top: 45px;">Nome</h1>
+          <input class="input-txt" type="text" name="novo_nome" maxlength="50" required/>
           <h1 style="margin-top: 45px;">Telefone de Contato</h1>
-          <input class="input-txt" type="text" name="telefone" size="11" required/>
+          <input class="input-txt" type="text" name="novo_telefone" size="11" required/>
           <h1 style="margin-top: 45px;">E-mail</h1>
-          <input class="input-txt" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+          <input class="input-txt" type="text" name="novo_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
         </div>
         <div class="input-column">
           <h1 style="margin-top: 45px;">Estado</h1>
-          <input class="input-txt" type="text" name="estado" maxlength="50" />
+          <input class="input-txt" type="text" name="novo_estado" maxlength="50" />
           <h1 style="margin-top: 45px;">Cidade</h1>
-          <input class="input-txt" type="text" name="cidade" maxlength="50" />
+          <input class="input-txt" type="text" name="nova_cidade" maxlength="50" />
           <h1 style="margin-top: 45px;">Endereço</h1>
-          <input class="input-txt" type="text" name="endereço" maxlength="50" />
+          <input class="input-txt" type="text" name="novo_endereço" maxlength="50" />
         </div>
       </div>
-      <input class="salvar" type="submit" name="add" value="SALVAR" />
+      <input class="salvar" type="submit" name="edt" value="SALVAR" />
     </form>
   </div>
 </body>
