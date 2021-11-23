@@ -69,42 +69,56 @@ td {
             <h1>E-mail:</h1>
           </td>
           <td> 
-            <button style="background-color: rgb(0,0,0,0); border: 0;">
-              <img src="assets/dashicons_insert.png" style="height: 36px;name="edt value="editar">
-            </button>
-            </button>
+          <a href="editar-fornecedor.php">
+                <button style="background-color: rgb(0,0,0,0); border: 0;">
+               <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>  
           </td>
         </tr>
-
-        <tr>
-        <td> Nestle </td>".
-         <td> 012</td>".
-         <td> (15)98390-7423</td>
-         <td> nestle@gmail.com </td>
-
-         <td>
-         <a href="fornecedores_editar.php">  
-         <button style="background-color: rgb(0,0,0,0); border: 0;">
-              <img src="assets/Edit.png" style="height: 36px"/></button></a>
-         </td>
-
-         <td> 
-         <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-              <img src="assets/delete.png" style="height: 36px"/></button>
-         </td> 
                 
       </tr>
         <?php
-          // echo "<tr>".
-              // "<td>"."Nestle"."</td>".
-              // "<td>"."012"."</td>".
-              // "<td>"."(15)98390-7423"."</td>".
-              // "<td>"."nestle@gmail.com"."</td>"."<td>".
-              // '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
-              //  '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
-              // '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
-              // '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
-          // if( $ven->num_rows > 0){
+         include_once ("Classes/Forn.php");
+
+         $servername = "localhost";
+         $username = "root";
+         $password = "";
+         $dbname = "mercadinho";
+     
+         // Create connection
+         $conn = new mysqli($servername, $username, $password, $dbname);
+         // Check connection
+         if ($conn->connect_error) {
+         die("Connection failed: " . $conn->connect_error);
+         }
+     
+         $action = new Forn();
+         $sql = "SELECT id_fornecedor, nome, telefone, email, estado, cidade, endereço
+         FROM fornecedores";
+         $result = $conn->query($sql);
+
+         echo "<B>Lista de Fornecedores:</B> <br>";
+         if ($result and $result->num_rows > 0) {
+             // output data of each row
+             while($row = $result->fetch_assoc()) {
+              echo "<tr>".
+              "<td>".$row['nome']."</td>".
+              "<td>".$row['id_fornecedor']."</td>".
+              "<td>".$row['telefone']."</td>".
+              "<td>".$row['email']."</td>"."<td>".
+               '<a href="editar-fornecedor.php">'.
+                '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
+               '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".'</a>'.
+              '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
+              '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
+             }
+         }
+         else {
+             echo "Nenhum fornecedor cadastrado";
+         }
+           
+         
+         
+               // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
           //     echo 
           //         "<tr>".

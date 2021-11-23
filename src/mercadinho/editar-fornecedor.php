@@ -37,7 +37,7 @@
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
     <h1 class="title">Editar Fornecedor</h1>
-    <form>
+    <form  action= "fornecedores.php" method="post" autocomplete="off">
       <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
         <div class="input-column">
           <h1 style="margin-top: 45px;">Nome</h1>
