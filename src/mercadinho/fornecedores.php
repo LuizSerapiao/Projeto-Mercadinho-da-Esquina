@@ -70,14 +70,14 @@ td {
           </td>
           <td> 
             <a href="cadastrar-fornecedor.php">
-              <button style="background-color: rgb(0,0,0,0); border: 0; ">
-            <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
-
-            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-            <img src="assets/Edit.png" style="height: 36px" /></button>
-            
-            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-            <img src="assets/delete.png" style="height: 36px" /></button>
+              <img src="assets/dashicons_insert.png" style="height: 36px"/>
+            </a>
+            <a href="editar-fornecedor.php">
+              <img src="assets/Edit.png" style="height: 36px" />
+            </a>
+            <a href="deletar-fornecedor.php">
+              <img src="assets/delete.png" style="height: 36px" />
+            </a>
           </td>
           <td> 
         </tr>
