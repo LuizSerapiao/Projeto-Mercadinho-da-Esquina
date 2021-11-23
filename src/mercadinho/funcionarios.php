@@ -51,18 +51,21 @@
             <h1>Telefone:</h1>
           </td>
           <td>
-            <button>
-              <img src="assets/dashicons_insert.png" style="height: 43px;">
-            </button>
+            <a href="cadastrar-funcionario.php">
+              <button><img src="assets/dashicons_insert.png" style="height: 43px;"></button>
+            </a>
+            <a style="margin-left: 10px" href="editar-funcionario.php">
+              <button><img src="assets/Edit.png" style="height: 36px"/></button>
+            </a>
+            <a style="margin-left: 10px" href="deletar-funcionario.php">
+              <button>'.'<img src="assets/delete.png" style="height: 36px"/></button>
+            </a>
           </td>
         </tr>
         <?php
           echo "<tr>".
               "<td>".'<button>'."Luiz Felipe"."</button>"."</td>".
-              "<td>"."(15)98390-7423"."</td>"."<td>".
-              '<button">'.'<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
-              '<button style="margin-left: 10px">'.'<img src="assets/delete.png" style="height: 36px"/>'.
-              "</button>"."</td>"."<tr>";
+              "<td>"."(15)98390-7423"."</td>"."<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
           //     echo 
