@@ -41,7 +41,7 @@ table {
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
 
-    <div style="margin-top: 76px">
+    <!-- <div style="margin-top: 76px">
       <h1 class="search-title">Código da Venda</h1>
       <div class="search-field-layout">
         <input class="search-field" type="text"/>
@@ -49,9 +49,10 @@ table {
           <img class="search-icon" src="assets/Search.png"/>
         </button>
       </div>
-    </div>
+    </div> -->
+    <h1 class="title">Vendas:</h1>
     <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
-      <table style="width: 100%; margin-left: 10%">
+      <table style="width: 100%; margin-left: 3%; margin-top: 38px;">
         <tr>
           <td>
             <h1>Código de Venda:</h1>
@@ -59,15 +60,33 @@ table {
           <td>
             <h1>Valor(R$):</h1>
           </td>
+          <!-- <td>
+            <h1>Detalhes</h1>
+          </td>
+          <td>
+            <h1>Deletar</h1>
+          </td> -->
         </tr>
         <?php
-          echo "<tr>".
-              "<td>"."Código de Venda:"."</td>".
-              "<td>"."Valor(R$):"."</td>".
-              "<tr>";
+            include_once ("Classes/Venda.php");
+
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "mercadinho";
+
+            // Conexao com o servidor
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+
+            $action = new Venda();
+            $action ->mostrarVenda($conn);
+
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
+          //     echo
           //         "<tr>".
           //           "<td>".$registro['idVenda']."</td>".
           //           "<td>".$registro['valTotal']."</td>".
@@ -80,8 +99,7 @@ table {
   </div>
 </body>
 
- <?php
-
+<!-- antigo codigo php
      include_once ("Classes/Venda.php");
 
      $servername = "localhost";
@@ -106,10 +124,9 @@ table {
      if(isset($_POST['excluir'])){
          $id_venda = $_REQUEST['id_venda'];
          $action->excluirVenda($id_venda, $conn);
-     }
- ?>
+     }  -->
  <br><b>Buscar detalhes sobre uma venda</b>
- <form action="vendas.php" method="post">
+ <form action="venda.php" method="GET">
      <input type="text" name="id_venda" placeholder="Código da venda" required />
      <input type="submit" name="procurar" value="Procurar" />
      <input type="submit" name="excluir" value="Excluir" />

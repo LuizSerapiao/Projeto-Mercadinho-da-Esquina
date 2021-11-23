@@ -52,7 +52,8 @@ table {
     <div style="display: flex; margin-top: 30px">
       <h1>Código de Venda: </h1>
       <?php
-        echo "<h1>12345</h1>";
+          $id_venda = $_REQUEST['id_venda'];
+          if ($id_venda) {echo "<h1>" .$id_venda. "</h1>";}
       ?>
     </div>
     <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
@@ -69,14 +70,31 @@ table {
           </td>
         </tr>
         <?php
-          echo "<tr>".
-              "<td>"."<h2>Shampoo Dove</h2>"."</td>".
-              "<td>"."<h2>2</h2>"."</td>".
-              "<td>"."<h2>23,50</h2>"."</td>".
-              "<tr>";
+            include_once ("Classes/Venda.php");
+
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "mercadinho";
+
+            // Conexao com o servidor
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+
+            $action = new Venda();
+            if ( isset( $_GET['procurar'] )) {
+                $id_venda = $_REQUEST['id_venda'];
+                $valor = $action->procurarVenda($id_venda, $conn);
+            }
+            else if (isset($_GET['excluir'])){
+                $id_venda = $_REQUEST['id_venda'];
+                $valor = $action->excluirVenda($id_venda, $conn);
+            }
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
+          //     echo
           //         "<tr>".
           //           "<td>".$registro['idVenda']."</td>".
           //           "<td>".$registro['valTotal']."</td>".
@@ -85,18 +103,9 @@ table {
           // }
         ?>
         <tr>
-          <th><h1>Total:</h1></th>
+          <th><h1>Valor Total:</h1></th>
           <?php
-          echo "<th><h1>"."19"."</h1></th>";
-          // if( $ven->num_rows > 0){
-          //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
-          //         "<tr>".
-          //           "<td>".$registro['idVenda']."</td>".
-          //           "<td>".$registro['valTotal']."</td>".
-          //         "<tr>";
-          //   }
-          // }
+          if ($valor) {echo "<th><h1>R$".$valor."</h1></th>";}
         ?>
         <tr>
       </table>
