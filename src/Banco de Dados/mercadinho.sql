@@ -69,11 +69,17 @@ create table pedidos (
     recebido TINYINT NOT NULL DEFAULT 0
 );
 
-INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Abacaxi', '3.99', '10');
-INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Limão', '1.99', '10');
-INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NULL, 'Miojo', '1.25', '10');
-
-INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '1', '1');
-INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '3', '2');
-
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `endereco`,`telefone`, `email`, `usuario`, `senha`, `admin`) VALUES (NULL, 'gerente', 'endereco', '34998770098', 'ger@contato.com','admin', 'admin', '1');
+
+INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Nescau 700g', '15,00', '30', '0');
+INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Arroz Tipo 1 1kg', '5', '50', '0');
+INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Macarrão Instantâneo', '2', '25', '0');
+INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Café Tipuana Especial', '15.99', '10', '0');
+
+INSERT INTO `fornecedores` (`id_fornecedor`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`) VALUES (NULL, 'Cafesal', '3512345678', 'Cafesal@ufla.com', 'Minas Gerais', 'Lavras', 'Ufla');
+INSERT INTO `fornecedores` (`id_fornecedor`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`) VALUES (NULL, 'Rex', '3598765432', 'Rex@outlook.com', 'Minas Gerais', 'Lavras', 'Avenida Evaristo Gomes Guerra, 123');
+
+INSERT INTO `produtos_fornecidos` (`id_produtos_fornecidos`, `id_fornecedor`, `id_produto`, `valor`) VALUES (NULL, '1', '1', '13.5');
+INSERT INTO `produtos_fornecidos` (`id_produtos_fornecidos`, `id_fornecedor`, `id_produto`, `valor`) VALUES (NULL, '1', '4', '12.99');
+INSERT INTO `produtos_fornecidos` (`id_produtos_fornecidos`, `id_fornecedor`, `id_produto`, `valor`) VALUES (NULL, '2', '2', '3.5');
+INSERT INTO `produtos_fornecidos` (`id_produtos_fornecidos`, `id_fornecedor`, `id_produto`, `valor`) VALUES (NULL, '2', '3', '1.5');
