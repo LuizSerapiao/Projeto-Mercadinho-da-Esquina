@@ -52,7 +52,7 @@
         if ($result and $result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if ($row['admin'] === '1') {
-                header("Location: gerente.php");
+                header("Location: pedidos.php");
             }
             else {
                 header("Location: caixa.php");
