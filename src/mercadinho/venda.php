@@ -40,7 +40,7 @@ table {
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
 
-    <div style="margin-top: 76px">
+    <!-- <div style="margin-top: 76px">
       <h1 class="search-title">Código da Venda</h1>
       <div class="search-field-layout">
         <input class="search-field" type="text"/>
@@ -48,7 +48,7 @@ table {
           <img class="search-icon" src="assets/Search.png"/>
         </button>
       </div>
-    </div>
+    </div> -->
     <div style="display: flex; margin-top: 30px">
       <h1>Código de Venda: </h1>
       <?php
@@ -59,6 +59,9 @@ table {
     <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
       <table style="width: 100%; margin-left: 15%">
         <tr>
+          <td>
+            <h1>Código:</h1>
+          </td>
           <td>
             <h1>Produtos:</h1>
           </td>
@@ -111,4 +114,7 @@ table {
       </table>
     </div>
   </div>
+  <form action="vendas.php">
+      <input type="submit" name="voltar" value="Voltar" />
+  </form>
 </body>
