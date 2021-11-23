@@ -49,11 +49,20 @@ table {
         </button>
       </div>
     </div>
+    <div style="display: flex; margin-top: 30px">
+      <h1>Código de Venda: </h1>
+      <?php
+        echo "<h1>12345</h1>";
+      ?>
+    </div>
     <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
-      <table style="width: 100%; margin-left: 10%">
+      <table style="width: 100%; margin-left: 15%">
         <tr>
           <td>
-            <h1>Código de Venda:</h1>
+            <h1>Produtos:</h1>
+          </td>
+          <td>
+            <h1>Quantidade:</h1>
           </td>
           <td>
             <h1>Valor(R$):</h1>
@@ -61,8 +70,9 @@ table {
         </tr>
         <?php
           echo "<tr>".
-              "<td>"."Código de Venda:"."</td>".
-              "<td>"."Valor(R$):"."</td>".
+              "<td>"."<h2>Shampoo Dove</h2>"."</td>".
+              "<td>"."<h2>2</h2>"."</td>".
+              "<td>"."<h2>23,50</h2>"."</td>".
               "<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
@@ -74,6 +84,21 @@ table {
           //   }
           // }
         ?>
+        <tr>
+          <th><h1>Total:</h1></th>
+          <?php
+          echo "<th><h1>"."19"."</h1></th>";
+          // if( $ven->num_rows > 0){
+          //   while( $registro = $res->fetch_assoc() ){
+          //     echo 
+          //         "<tr>".
+          //           "<td>".$registro['idVenda']."</td>".
+          //           "<td>".$registro['valTotal']."</td>".
+          //         "<tr>";
+          //   }
+          // }
+        ?>
+        <tr>
       </table>
     </div>
   </div>
