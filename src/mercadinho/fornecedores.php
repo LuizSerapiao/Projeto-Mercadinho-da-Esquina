@@ -69,13 +69,17 @@ td {
             <h1>E-mail:</h1>
           </td>
           <td> 
-          <a href="cadastrar-fornecedor.php">
-                <button style="background-color: rgb(0,0,0,0); border: 0; ">
-               <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
+            <a href="cadastrar-fornecedor.php">
+              <button style="background-color: rgb(0,0,0,0); border: 0; ">
+            <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
 
-               <a href="editar-fornecedor.php">
-                <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-               <img src="assets/Edit.png" style="height: 36px" /></button></a>              
+            <a href="editar-fornecedor.php">
+            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+            <img src="assets/Edit.png" style="height: 36px" /></button></a>
+            
+            <a href="deletar-fornecedor.php">
+            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+            <img src="assets/delete.png" style="height: 36px" /></button></a> 
           </td>
           <td> 
         </tr>
