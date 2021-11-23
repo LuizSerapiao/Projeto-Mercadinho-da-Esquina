@@ -26,7 +26,9 @@
     <div class="content-gerente">
 
       <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
-        <img src="assets/log-out-circle.png" style="height: 50px">
+          <a href="index.php">
+              <img src="assets/log-out-circle.png" style="height: 50px">
+          </a>
       </button>
 
       <h1 class="title">Status dos seus pedidos:</h1>
@@ -35,13 +37,13 @@
       <table style="width: 100%; margin-left: 3%; margin-top: 38px;">
         <tr>
           <td>
+            <h1>Id Pedido:</h1>
+          </td>
+          <td>
             <h1>Produto:</h1>
           </td>
           <td>
             <h1>Unidades:</h1>
-          </td>
-          <td>
-            <h1>Fornecedor:</h1>
           </td>
           <td>
             <h1>Valor(R$):</h1>
@@ -49,29 +51,39 @@
           <td>
             <h1>Status:</h1>
           </td>
-          <!-- <td>
+          <td>
             <button>
-              <img src="assets/dashicons_insert.png" style="height: 43px;">
+                <a href="fazer_pedido.php">
+                    <img src="assets/dashicons_insert.png" style="height: 43px;">
+                </a>
             </button>
-          </td> -->
+          </td>
         </tr>
         <?php
-          echo "<tr>".
-              "<td>".'<button>'."Açúcar Refinado União"."</button>"."</td>".
-              "<td>"."30"."</td>".
-              "<td>"."União"."</td>".
-              "<td>"."Valor(R$)"."</td>".
-              "<td>"."Aguardando"."</td>".
-              "<tr>";
-          // if( $ven->num_rows > 0){
-          //   while( $registro = $res->fetch_assoc() ){
-          //     echo
-          //         "<tr>".
-          //           "<td>".$registro['idVenda']."</td>".
-          //           "<td>".$registro['valTotal']."</td>".
-          //         "<tr>";
-          //   }
-          // }
+            include_once ("Classes/Pedi.php");
+
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "mercadinho";
+
+            // Conexao com o servidor
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+
+            $action = new Pedi();
+            $action->listar_pedidos($conn);
+
+            if ( isset( $_GET["completar"])) {
+                $id = $_REQUEST['id'];
+                $action->recebido($id, $conn);
+            }
+            else if ( isset( $_GET["cancelar"])) {
+                $id = $_REQUEST['id'];
+                $action->cancelar($id, $conn);
+            }
         ?>
       </table>
   </div>

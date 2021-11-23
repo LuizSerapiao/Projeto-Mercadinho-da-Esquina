@@ -13,11 +13,24 @@ class Pedi
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
-            echo "<B>Lista de pedidos</B> <br>";
             while($row = $result->fetch_assoc()) {
-                if ($row["recebido"] === '1') { $text = " - <b>Recebido!</b>"; }
-                else { $text = " - <b>Feito!</b>"; }
-                echo "<b>id_pedido:</b> " . $row["id_pedido"] . " - <b>id_produto:</b> ".$row["id_produto"]." - <b>Quantidade:</b> " . $row["quantidade"]." - <b>valor: R$</b> ". $row["valor_total"] . $text. "<br>";
+                if ($row["recebido"] === '1') { $text = "<b>Recebido!</b>"; }
+                else { $text = "<b>Feito!</b>"; }
+                $id_pedido = $row["id_pedido"];
+                echo "<tr>".
+                     "<td>".$id_pedido."</td>".
+                     "<td>".$row["nome"]."</td>".
+                     "<td>".$row["quantidade"]."</td>".
+                     "<td>R$".$row["valor_total"]."</td>".
+                     "<td>".$text."</td>".
+                     '<td><a href="pedidos.php?id='.$id_pedido.'&completar=Marcar+como+recebido%21"/>'.
+                        '<img src="assets/confirm.png" style="height: 43px;">'.
+                     "</a></td>".
+                     '<td><a href="pedidos.php?id='.$id_pedido.'&cancelar=Cancelar+pedido%21"/>'.
+                        '<img src="assets/delete.png" style="height: 43px;">'.
+                     "</a></td>".
+                     "<tr>" //teste.php?id=1&completar=Marcar+como+recebido%21
+                     ;
             }
         }
         else {
