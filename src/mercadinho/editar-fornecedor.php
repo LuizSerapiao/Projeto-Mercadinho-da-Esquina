@@ -13,7 +13,7 @@
 <body>
   <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
-  </header>  
+  </header>
   <div class="leftbar-gerente">
     <a href="pedidos.php">
       <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
@@ -31,10 +31,12 @@
       <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
-  
+
   <div class="content-gerente">
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
-      <img src="assets/log-out-circle.png" style="height: 50px">
+        <a href="index.php">
+            <img src="assets/log-out-circle.png" style="height: 50px">
+        </a>
     </button>
     <h1 class="title">Editar Fornecedor</h1>
     <form action="fornecedores.php"  method="post" autocomplete="off">
@@ -64,7 +66,7 @@
 </body>
 
 <!-- <html>
-    
+
 <form action="fornecedores.php">
     <input type="submit" value="Voltar" />
 </form>

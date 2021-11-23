@@ -115,7 +115,7 @@ class Pedi
                             quantidade_pedida = '$nova_quantidade_pedida'
                         WHERE id_produto = '$produto'";
                 $result = $conn->query($sql);
-                header("Location: pedidos.php");
+                header("Location:pedidos.php");
             }
         }
         else {
