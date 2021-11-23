@@ -39,7 +39,9 @@ td {
   <div class="content-gerente">
     <!-- <button class="botao-logout"> -->
     <button style="background-color: rgb(0,0,0,0); border: 0; align-self: end; margin-right: 13px; margin-top: 11px;">
-      <img src="assets/log-out-circle.png" style="height: 50px"/>
+        <a href="index.php">
+            <img src="assets/log-out-circle.png" style="height: 50px"/>
+        </a>
     </button>
 
     <div style="margin-top: 76px">
