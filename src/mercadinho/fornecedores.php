@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/search.css"/>
     <title></title>
 </head>
 
@@ -50,6 +49,12 @@ td {
         <button class="search-button">
           <img class="search-icon" src="assets/Search.png"/>
         </button>
+        <div style="display: flex; flex-direction: column; align-items: center; margin-left: 30px">
+          <a href="fornece.php">
+            <img class="search-icon" src="assets/fornece.png"/>
+          </a>
+          <h1 style="font-size: 15px;">Criar relação fornecedor/produto</h1>
+        </div>
       </div>
     </div>
 
