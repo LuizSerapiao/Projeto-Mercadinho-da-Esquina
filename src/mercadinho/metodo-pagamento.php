@@ -21,8 +21,8 @@
     <form action="cartao.php" method="get">
       <input type="submit" style="font-size: 38px" value="Cartão de Crédito" />
     </form>
-    <form action="/mercadinho/trocar_produto.php?" method="get">
-      <input type="submit" style="font-size: 38px" value="Dinheiro" />
+    <form action="finalizar-compra.php" method="POST">
+      <input type="submit" style="font-size: 38px" name="finalizar" value="Dinheiro" />
     </form>
     <a href="caixa.php">
       <input class="botao-substyle" type="button" name="add" value="CANCELAR" />

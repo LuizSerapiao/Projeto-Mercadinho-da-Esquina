@@ -55,7 +55,7 @@
                 header("Location: gerente.php");
             }
             else {
-                header("Location: lista_compras.php");
+                header("Location: caixa.php");
             }
         }
         else {

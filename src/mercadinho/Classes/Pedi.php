@@ -29,7 +29,7 @@ class Pedi
                      '<td><a href="pedidos.php?id='.$id_pedido.'&cancelar=Cancelar+pedido%21"/>'.
                         '<img src="assets/delete.png" style="height: 43px;">'.
                      "</a></td>".
-                     "<tr>" //teste.php?id=1&completar=Marcar+como+recebido%21
+                     "</tr>" //teste.php?id=1&completar=Marcar+como+recebido%21
                      ;
             }
         }
@@ -109,7 +109,7 @@ class Pedi
                             quantidade_pedida = '$nova_quantidade_pedida'
                         WHERE id_produto = '$produto'";
                 $result = $conn->query($sql);
-                header("Refresh:0");
+                header("Location: pedidos.php");
             }
         }
         else {

@@ -8,32 +8,32 @@
     <h1 class="header-title">Mercadinho da Esquina</h1>
     </header>
     <h1 class="title">Trocar Produto</h1>
-    <form>
+    <form action="caixa.php" method="post" autocomplete="off">
         <div>
             <h1 style="margin-top: 32px;">Código do Produto Devolvido</h1>
             <div style="display: flex; align-items: center;">
-                <input style ="width: 603px;" type="text" required/>
+                <input style ="width: 603px;" name="id_produto_recebido" type="text" required/>
                 <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
-                <input style ="width: 109px; margin-left: 18px;" type="number" value="1" required/>
+                <input style ="width: 109px; margin-left: 18px;" name="quantidade_recebida" type="number" value="1" required/>
             </div>
         </div>
         <div>
             <h1 style="margin-top: 32px;">Código do novo Produto</h1>
             <div style="display: flex; align-items: center;">
-                <input style ="width: 603px;" type="text" required/>
+                <input style ="width: 603px;" name="id_produto_trocado" type="text" required/>
                 <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
-                <input style ="width: 109px; margin-left: 18px;" type="number" value="1" required/>
+                <input style ="width: 109px; margin-left: 18px;" name="quantidade_trocada" type="number" value="1" required/>
             </div>
         </div>
         <div>
             <h1 style="margin-top: 32px;">Código de Venda</h1>
-            <input style ="width: 780px;" type="text" required/>
+            <input style ="width: 780px;" type="text" name="id_venda" required/>
         </div>
         <div style="width: 780px; display: flex; justify-content: space-between">
             <a href="caixa.php">
-                <input class="botao-substyle" type="button" name="add" value="CANCELAR" />
+                <input class="botao-substyle" type="button" name="cancel" value="CANCELAR" />
             </a>
-            <input type="submit" name="add" value="CONFIRMAR" />
+            <input type="submit" name="trocar" value="CONFIRMAR" />
         </div>
     </form>
 
