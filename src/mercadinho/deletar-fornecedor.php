@@ -40,7 +40,7 @@
     <form action="fornecedores.php"  method="post" autocomplete="off">
       <h1 style="margin-top: 45px;">Nome do fornecedor para ser deletado:</h1>
       <input class="input-txt" type="text" name="nome" maxlength="50" required/>
-      <input class="salvar" type="submit" name="edt" value="DELETAR" />
+      <input class="salvar" type="submit" name="rmv" value="DELETAR" />
     </form>
   </div>
 </body>
