@@ -7,19 +7,19 @@
         <h1 class="header-title">Mercadinho da Esquina</h1>
     </header>
     <div class="leftbar-gerente">
-      <a href="pedidos.php">
+      <a href="http://localhost/mercadinho/pedidos.php?">
         <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
       </a>
-      <a href="vendas.php">
+      <a href="http://localhost/mercadinho/vendas.php?">
         <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
       </a>
-      <a href="produtos.php">
+      <a href="http://localhost/mercadinho/produtos.php?">
         <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
       </a>
-      <a href="fornecedores.php">
+      <a href="http://localhost/mercadinho/fornecedores.php?">
         <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
       </a>
-      <a href="funcionarios.php">
+      <a href="http://localhost/mercadinho/funcionarios.php?">
         <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
       </a>
     </div>
@@ -31,7 +31,7 @@
 
       <h1 class="title">Status dos seus pedidos:</h1>
 
-
+      
       <table style="width: 100%; margin-left: 3%; margin-top: 38px;">
         <tr>
           <td>
@@ -65,7 +65,7 @@
               "<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
-          //     echo
+          //     echo 
           //         "<tr>".
           //           "<td>".$registro['idVenda']."</td>".
           //           "<td>".$registro['valTotal']."</td>".
@@ -73,7 +73,7 @@
           //   }
           // }
         ?>
-      </table>
+      </table> 
   </div>
 </body>
 </html>

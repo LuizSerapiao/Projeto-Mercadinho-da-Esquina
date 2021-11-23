@@ -30,7 +30,9 @@
             <input style ="width: 780px;" type="text" required/>
         </div>
         <div style="width: 780px; display: flex; justify-content: space-between">
-            <input type="submit" name="add" value="CANCELAR" />
+            <a href="caixa.php">
+                <input class="botao-substyle" type="button" name="add" value="CANCELAR" />
+            </a>
             <input type="submit" name="add" value="CONFIRMAR" />
         </div>
     </form>

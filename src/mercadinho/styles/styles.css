@@ -81,6 +81,23 @@ td{
   color: #FFFFFF;
 }
 
+.link-substyle{
+  margin-top: 81px;
+  width: 357px;
+  height: 106px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #25ABD6;
+  font-family: 'Roboto';
+  font-size: 48px;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .title{
   margin-top: 40px;
   font-family: 'Comfortaa', cursive;

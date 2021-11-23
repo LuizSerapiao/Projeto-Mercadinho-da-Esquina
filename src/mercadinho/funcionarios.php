@@ -5,7 +5,7 @@
 </head>
 <!-- <style>
   button{
-    background-color: rgb(0,0,0,0);
+    background-color: rgb(0,0,0,0); 
     border: 0;
   }
 
@@ -18,19 +18,19 @@
       <h1 class="header-title">Mercadinho da Esquina</h1>
   </header>
   <div class="leftbar-gerente">
-    <a href="pedidos.php">
+    <a href="http://localhost/mercadinho/pedidos.php?">
       <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
     </a>
-    <a href="vendas.php">
+    <a href="http://localhost/mercadinho/vendas.php?">
       <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="produtos.php">
+    <a href="http://localhost/mercadinho/produtos.php?">
       <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
-    <a href="fornecedores.php">
+    <a href="http://localhost/mercadinho/fornecedores.php?">
       <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
-    <a href="funcionarios.php">
+    <a href="http://localhost/mercadinho/funcionarios.php?">
       <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
@@ -65,7 +65,7 @@
               "</button>"."</td>"."<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
-          //     echo
+          //     echo 
           //         "<tr>".
           //           "<td>".$registro['idVenda']."</td>".
           //           "<td>".$registro['valTotal']."</td>".
@@ -73,7 +73,7 @@
           //   }
           // }
         ?>
-    </table>
+    </table> 
   </div>
   </div>
     <!-- <h1 class="title">Caixas</h1>
@@ -100,7 +100,7 @@
     <form action="caixas.php" method="POST">
         <input type="text" name="usuario" placeholder="Usuario" required />
         <input type="submit" name="lst" value="Procurar" required/>
-        <input type="submit" name="rmv" value="remover" />
+        <input type="submit" name="rmv" value="remover" /> 
     </form>
 
     <form action="caixas.php" method="POST">
@@ -127,7 +127,7 @@
         $usuario = $_REQUEST['usuario'];
         $senha = $_REQUEST['senha'];
 
-        $sql = "INSERT INTO caixas (usuario, senha)
+        $sql = "INSERT INTO caixas (usuario, senha) 
         VALUES ('$usuario','$senha')";
 
         if ($conn->query($sql) === TRUE) {
@@ -139,12 +139,12 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $usuario = $_REQUEST['usuario'];
-        $sql = "SELECT id, usuario, senha
+        $sql = "SELECT id, usuario, senha 
             FROM caixas
             WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
-            $sql = "DELETE FROM caixas
+            $sql = "DELETE FROM caixas 
         WHERE usuario = '$usuario'";
 
             if ($conn->query($sql) === TRUE) {
@@ -164,9 +164,9 @@
         $usuario = $_REQUEST['usuario'];
         $novo_usuario = $_REQUEST['novo_usuario'];
         $nova_senha = $_REQUEST['nova_senha'];
-
+        
         $sql = "UPDATE caixas
-        SET usuario = '$novo_usuario', senha = '$nova_senha'
+        SET usuario = '$novo_usuario', senha = '$nova_senha' 
         WHERE usuario = '$usuario'";
 
 
@@ -181,7 +181,7 @@
         if (!empty($_REQUEST['usuario'])) {
             echo "<b>Resultado da busca:</b> <br>";
             $usuario = $_REQUEST['usuario'];
-            $sql = "SELECT id, usuario, senha
+            $sql = "SELECT id, usuario, senha 
             FROM caixas
             WHERE usuario = '$usuario'";
             $result = $conn->query($sql);
@@ -197,7 +197,7 @@
             }
         }
         else {
-            $sql = "SELECT id, usuario, senha
+            $sql = "SELECT id, usuario, senha 
             FROM caixas";
             $result = $conn->query($sql);
 
@@ -217,3 +217,4 @@
     $conn->close();
 ?>
 </html>
+

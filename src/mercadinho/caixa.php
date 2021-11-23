@@ -50,13 +50,13 @@
       ?>
     </table>
     <div class="caixa-buttons">
-      <form action="/mercadinho/caixa.php?" method="get">
+      <form action="/mercadinho/devolver_produto.php?" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Devolver Produto" />
       </form>
       <form action="/mercadinho/trocar_produto.php?" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Trocar Produto" />
       </form>
-      <form action="/mercadinho/caixa.php?" method="get">
+      <form action="metodo-pagamento.php" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Finalizar Compra" />
       </form>
     </div>
