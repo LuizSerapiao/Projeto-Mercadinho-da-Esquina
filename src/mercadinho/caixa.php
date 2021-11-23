@@ -86,6 +86,7 @@
           }
       ?>
     </table>
+    <div style="width: 95%; height: 10px; background-color: #25ABD6; margin-top: 93px"></div>
     <div class="caixa-buttons">
       <form action="devolver_produto.php" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Devolver Produto" />

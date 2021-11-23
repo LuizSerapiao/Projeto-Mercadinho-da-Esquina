@@ -66,11 +66,10 @@
 ?>
 
  <form action="fazer_pedido.php" method="post" autocomplete="off">
-     <input type="text" name="fornecedor" placeholder="id_fornecedor" required />
-     <br>
-     <input type="text" name="produto" placeholder="id_produto" required/>
-     <input type="number" step="1" name="quantidade" placeholder="Quantidade" required/>
-     <input type="submit" name="pedir" value="Fazer Pedido" />
+    <input type="text" name="fornecedor" placeholder="id_fornecedor" required />
+    <br>
+    <input type="text" name="produto" placeholder="id_produto" required/>
+    <input type="submit" name="pedir" value="Confirmar" />
  </form>
 
 </html>

@@ -36,16 +36,23 @@
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
-    <h1 class="title">Editar Produto</h1>
+    <h1 class="title">Adicionar Produto</h1>
     <form>
       <div class="input-column">
         <h1 style="margin-top: 45px;">Nome</h1>
-        <input class="input-txt" type="text" name="nome" value="nomeAtual" required/>
-        <div>
-          <h1 style="margin-top: 45px;">Valor</h1>
-          <input class="input-txt" type="number" name="valor" value="1" required/>
+        <input class="input-txt" type="text" name="nome" required/>
+        <div style="display: flex; gap: 20px">
+          <div>
+            <h1 style="margin-top: 45px;">Quantidade</h1>
+            <input class="input-txt" style="width: 191px" type="number" name="quantidade" value="1" required/>
+          </div>
+          <div>
+            <h1 style="margin-top: 45px;">Valor</h1>
+            <input class="input-txt" style="width: 191px" type="number" name="valor" value="1" required/>
+          </div>
         </div>
-        <input class="salvar" type="submit" name="add" value="SALVAR" />
+      </div>   
+      <input class="salvar" type="submit" name="add" value="SALVAR" />
     </form>
   </div>
 </body>

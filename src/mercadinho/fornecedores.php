@@ -19,21 +19,21 @@ td {
 
 <body>
 
-  <div class="leftbar-gerente">
-    <a href="http://localhost/mercadinho/pedidos.php?">
-      <img class="img-botao-gerente" src="assets/Botao Pedidos.png" alt="PEDIDOS">
+<div class="leftbar-gerente">
+    <a href="pedidos.php">
+      <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
     </a>
-    <a href="http://localhost/mercadinho/vendas.php?">
-      <img class="img-botao-gerente" src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
+    <a href="vendas.php">
+      <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="http://localhost/mercadinho/produtos.php?">
-      <img class="img-botao-gerente" src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
+    <a href="produtos.php">
+      <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
-    <a href="http://localhost/mercadinho/fornecedores.php?">
-      <img class="img-botao-gerente" src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
+    <a href="fornecedores.php">
+      <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
-    <a href="http://localhost/mercadinho/funcionarios.php?">
-      <img class="img-botao-gerente" src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
+    <a href="funcionarios.php">
+      <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
 
@@ -68,22 +68,42 @@ td {
           <td>
             <h1>E-mail:</h1>
           </td>
-          <td>
+          <td> 
             <button style="background-color: rgb(0,0,0,0); border: 0;">
-              <img src="assets/dashicons_insert.png" style="height: 43px;">
+              <img src="assets/dashicons_insert.png" style="height: 36px;name="edt value="editar">
+            </button>
             </button>
           </td>
         </tr>
+
+        <tr>
+        <td> Nestle </td>".
+         <td> 012</td>".
+         <td> (15)98390-7423</td>
+         <td> nestle@gmail.com </td>
+
+         <td>
+         <a href="fornecedores_editar.php">  
+         <button style="background-color: rgb(0,0,0,0); border: 0;">
+              <img src="assets/Edit.png" style="height: 36px"/></button></a>
+         </td>
+
+         <td> 
+         <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+              <img src="assets/delete.png" style="height: 36px"/></button>
+         </td> 
+                
+      </tr>
         <?php
-          echo "<tr>".
-              "<td>"."Nestle"."</td>".
-              "<td>"."012"."</td>".
-              "<td>"."(15)98390-7423"."</td>".
-              "<td>"."nestle@gmail.com"."</td>"."<td>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
-              '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
-              '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
+          // echo "<tr>".
+              // "<td>"."Nestle"."</td>".
+              // "<td>"."012"."</td>".
+              // "<td>"."(15)98390-7423"."</td>".
+              // "<td>"."nestle@gmail.com"."</td>"."<td>".
+              // '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
+              //  '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
+              // '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
+              // '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
           //     echo 
@@ -94,7 +114,8 @@ td {
           //   }
           // }
         ?>
-      </table>
+         
+    </table>
     </div>
   </div>
 </body>
