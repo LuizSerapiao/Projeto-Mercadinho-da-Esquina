@@ -13,7 +13,7 @@
 <body>
   <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
-  </header>  
+  </header>
   <div class="leftbar-gerente">
     <a href="pedidos.php">
       <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
@@ -31,13 +31,13 @@
       <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
-  
+
   <div class="content-gerente">
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
     <h1 class="title">Adicionar Produto</h1>
-    <form>
+    <form method="POST" action="produtos.php" >
       <div class="input-column">
         <h1 style="margin-top: 45px;">Nome</h1>
         <input class="input-txt" type="text" name="nome" required/>
@@ -48,10 +48,10 @@
           </div>
           <div>
             <h1 style="margin-top: 45px;">Valor</h1>
-            <input class="input-txt" style="width: 191px" type="number" name="valor" value="1" required/>
+            <input class="input-txt" style="width: 191px" step="0.01"type="number" name="valor" value="1" required/>
           </div>
         </div>
-      </div>   
+      </div>
       <input class="salvar" type="submit" name="add" value="SALVAR" />
     </form>
   </div>

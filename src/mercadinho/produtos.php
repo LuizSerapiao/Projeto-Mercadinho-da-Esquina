@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    
+
     <title></title>
 </head>
 <header class="header">
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div style="flex-direction: row; display: flex; align-items: center; margin-top:63px">
+    <!-- <div style="flex-direction: row; display: flex; align-items: center; margin-top:63px">
       <h1>Nome:&emsp;</h1>
       <h1>Unidade(s):&emsp;</h1>
       <h1>Preço(encomenda):&emsp;</h1>
@@ -57,8 +57,75 @@
         <img src="assets/dashicons_insert.png" style="height: 63px;">
       </button></a>
       <td> Nome </td>
-    
-    </div>
+
+    </div> -->
+    <table style="width: 100%; margin-left: 3%; margin-top: 38px;">
+      <tr>
+        <td>
+          <h1>Código:</h1>
+        </td>
+        <td>
+          <h1>Nome:</h1>
+        </td>
+        <td>
+          <h1>Valor (venda):</h1>
+        </td>
+        <td>
+          <h1>Quantidade (estoque):</h1>
+        </td>
+        <td>
+          <button>
+              <a href="inserir-produto.php">
+                  <img src="assets/dashicons_insert.png" style="height: 43px;">
+              </a>
+          </button>
+        </td>
+      </tr>
+      <?php
+
+          include_once ("Classes/Prod.php");
+
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+          $dbname = "mercadinho";
+
+          // Conexao com o servidor
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          }
+
+          $action = new Prod();
+          $action->listarProduto(null, $conn);
+          if ( isset( $_POST['add'])) {
+              $nome = $_REQUEST['nome'];
+              $valor = $_REQUEST['valor'];
+              $quantidade = $_REQUEST['quantidade'];
+
+              $action->adicionarProduto($nome, $valor,$quantidade, $conn);
+
+          }
+          else if ( isset( $_GET['rmv']) ) {
+              $id = $_REQUEST['id'];
+              $action->removeProduto($id, $conn);
+
+          }
+          else if ( isset( $_GET['edt'])) {
+              $id = $_REQUEST['id'];
+              $novo_nome = $_REQUEST['novo_nome'];
+              $novo_valor = $_REQUEST['novo_valor'];
+              $nova_quantidade = $_REQUEST['nova_quantidade'];
+
+              $action->editarProduto($id, $novo_nome, $novo_valor, $nova_quantidade, $conn);
+          }
+          else if (isset( $_POST['lst'])) {
+              if (!empty($_REQUEST['nome'])) {
+                  $nome = $_REQUEST['nome'];
+                  $action->listarProduto($nome, $conn);
+              }
+          }
+      ?>
   </div>
 </body>
 <!-- <h1>Produtos</h1> -->
@@ -97,8 +164,7 @@
 
 <br><br>
 
-<?php
-
+<!--
 include_once ("Classes/Prod.php");
 
 $servername = "localhost";
@@ -146,5 +212,5 @@ else if (isset( $_POST['lst'])) {
 }
 
 $conn->close();
-?>
+-->
 </html>
