@@ -14,7 +14,7 @@
         echo "<h1>123456</h1>";
       ?>
     </div>
-    <form action="/mercadinho/caixa.php?" method="get">
+    <form action="caixa.php?" method="get">
       <input type="submit" style="font-size: 38px; margin-top: 150px" value="Retornar ao Carrinho" />
     </form>
   </div>

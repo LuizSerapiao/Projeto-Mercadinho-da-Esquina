@@ -50,10 +50,10 @@
       ?>
     </table>
     <div class="caixa-buttons">
-      <form action="/mercadinho/devolver_produto.php?" method="get">
+      <form action="devolver_produto.php" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Devolver Produto" />
       </form>
-      <form action="/mercadinho/trocar_produto.php?" method="get">
+      <form action="trocar_produto.php" method="get">
         <input class="botao-substyle" type="submit" style="font-size: 38px" value="Trocar Produto" />
       </form>
       <form action="metodo-pagamento.php" method="get">
