@@ -2,6 +2,10 @@ create DATABASE mercadinho;
 
 create table funcionarios (
     id_funcionario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    endereco VARCHAR(50) NOT NULL,
+    telefone VARCHAR(11) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     usuario VARCHAR(50) NOT NULL,
     senha VARCHAR(50) NOT NULL,
     admin TINYINT NOT NULL DEFAULT 0

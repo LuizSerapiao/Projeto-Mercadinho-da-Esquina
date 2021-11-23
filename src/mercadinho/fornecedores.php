@@ -113,70 +113,18 @@ td {
               "<td>".$row['nome']."</td>".
               "<td>".$row['id_fornecedor']."</td>".
               "<td>".$row['telefone']."</td>".
-              "<td>".$row['email']."</td>"."<td>".
-              //  '<a href="editar-fornecedor.php">'.
-                // '<button  style="background-color: rgb(0,0,0,0); border: 0;">'.
-              //  '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".'</a>'.
-              '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
-              '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
+              "<td>".$row['email']."</td>"."<td>"."<tr>";
              }
          }
          else {
              echo "Nenhum fornecedor cadastrado";
          }
-           
-         
-         
-               // if( $ven->num_rows > 0){
-          //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
-          //         "<tr>".
-          //           "<td>".$registro['idVenda']."</td>".
-          //           "<td>".$registro['valTotal']."</td>".
-          //         "<tr>";
-          //   }
-          // }
         ?>
          
     </table>
     </div>
   </div>
 </body>
-
-<!-- <h1>Fornecedores</h1>
-<form action="gerente.php">
-    <input type="submit" value="Voltar" />
-</form>
-
-<B>Adicionar Fornecedor</B>
-<form action="fornecedores.php" method="post" autocomplete="off">
-
-    <input type="text" name="nome" maxlength="50" placeholder="Nome" required/>
-    <input type="text" name="telefone" size="11" placeholder="Telefone" required/>
-    <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" required/>
-    <input type="text" name="estado" maxlength="50" placeholder="Estado" />
-    <input type="text" name="cidade" maxlength="50" placeholder="Cidade" />
-    <input type="text" name="endereço" maxlength="50" placeholder="endereço" />
-
-    <input type="submit" name="add" value="adicionar" />
-</form>
-
-<form action="fornecedores_editar.php">
-    <input type="submit" name="edt" value="editar" />
-</form>
-
-<B>Procurar ou deletar fornecedores</B>
-<form action="fornecedores.php" method="POST">
-    <input type="text" name="nome" placeholder="Nome" required/>
-    <input type="submit" name="lst" value="Procurar" required/>
-    <input type="submit" name="rmv" value="remover" />
-</form>
-
-<form action="fornecedores.php" method="POST">
-    <input type="submit" name="lst" value="Listar Fornecedores" required/>
-
-    <br><br>
-</form> -->
 
 
     <br>

@@ -1,7 +1,7 @@
 <html lang="pt-br">
 <h1>Consultar Produto</h1>
 <!--- Caixas de entrada e botões --->
-<form action="lista_compras.php">
+<form action="produtos.php">
     <input type="submit" value="Voltar" />
 </form>
 

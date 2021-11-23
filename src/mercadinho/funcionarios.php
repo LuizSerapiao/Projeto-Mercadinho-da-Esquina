@@ -5,7 +5,7 @@
 </head>
 <!-- <style>
   button{
-    background-color: rgb(0,0,0,0); 
+    background-color: rgb(0,0,0,0);
     border: 0;
   }
 
@@ -52,31 +52,50 @@
           </td>
           <td>
             <a href="cadastrar-funcionario.php">
-              <button><img src="assets/dashicons_insert.png" style="height: 43px;"></button>
-            </a>
-            <a style="margin-left: 10px" href="editar-funcionario.php">
-              <button><img src="assets/Edit.png" style="height: 36px"/></button>
-            </a>
-            <a style="margin-left: 10px" href="deletar-funcionario.php">
-              <button>'.'<img src="assets/delete.png" style="height: 36px"/></button>
-            </a>
+              <button style="background-color: rgb(0,0,0,0); border: 0; ">
+            <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
+
+
+            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+            <img src="assets/Edit.png" style="height: 36px" /></button>
+
+
+            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+            <img src="assets/delete.png" style="height: 36px" /></button>
           </td>
         </tr>
         <?php
-          echo "<tr>".
-              "<td>".'<button>'."Luiz Felipe"."</button>"."</td>".
-              "<td>"."(15)98390-7423"."</td>"."<tr>";
-          // if( $ven->num_rows > 0){
-          //   while( $registro = $res->fetch_assoc() ){
-          //     echo 
-          //         "<tr>".
-          //           "<td>".$registro['idVenda']."</td>".
-          //           "<td>".$registro['valTotal']."</td>".
-          //         "<tr>";
-          //   }
-          // }
+         include_once ("Classes/Func.php");
+
+         $servername = "localhost";
+         $username = "root";
+         $password = "";
+         $dbname = "mercadinho";
+
+         // Create connection
+         $conn = new mysqli($servername, $username, $password, $dbname);
+         // Check connection
+         if ($conn->connect_error) {
+         die("Connection failed: " . $conn->connect_error);
+         }
+
+         $action = new Func();
+         $sql = "SELECT id_funcionario, nome, telefone
+         FROM funcionarios";
+         $result = $conn->query($sql);
+         if ($result and $result->num_rows > 0) {
+             // output data of each row
+             while($row = $result->fetch_assoc()) {
+              echo "<tr>".
+              "<td>".$row['nome']."</td>".
+              "<td>".$row['telefone']."</td>"."<tr>";
+             }
+         }
+         else {
+             echo "Nenhum funcionário cadastrado";
+         }
         ?>
-    </table> 
+    </table>
   </div>
   </div>
     <!-- <h1 class="title">Caixas</h1>
@@ -103,7 +122,7 @@
     <form action="caixas.php" method="POST">
         <input type="text" name="usuario" placeholder="Usuario" required />
         <input type="submit" name="lst" value="Procurar" required/>
-        <input type="submit" name="rmv" value="remover" /> 
+        <input type="submit" name="rmv" value="remover" />
     </form>
 
     <form action="caixas.php" method="POST">
@@ -127,11 +146,15 @@
 
     // Tratamento para cada opção escolhida
     if ( isset( $_POST['add'])) {
+        $nome = $_REQUEST['nome'];
+        $endereco = $_REQUEST['endereço'];
+        $telefone = $_REQUEST['telefone'];
+        $email = $_REQUEST['email'];
         $usuario = $_REQUEST['usuario'];
         $senha = $_REQUEST['senha'];
 
-        $sql = "INSERT INTO caixas (usuario, senha) 
-        VALUES ('$usuario','$senha')";
+        $sql = "INSERT INTO funcionarios (nome, endereco, telefone, email, usuario, senha)
+        VALUES ('$nome', '$endereco', '$telefone', '$email', '$usuario','$senha')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Caixa $usuario adicionado com sucesso!";
@@ -142,12 +165,12 @@
     }
     else if ( isset( $_POST['rmv']) ) {
         $usuario = $_REQUEST['usuario'];
-        $sql = "SELECT id, usuario, senha 
+        $sql = "SELECT id, usuario, senha
             FROM caixas
             WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
-            $sql = "DELETE FROM caixas 
+            $sql = "DELETE FROM funcionarios
         WHERE usuario = '$usuario'";
 
             if ($conn->query($sql) === TRUE) {
@@ -167,9 +190,9 @@
         $usuario = $_REQUEST['usuario'];
         $novo_usuario = $_REQUEST['novo_usuario'];
         $nova_senha = $_REQUEST['nova_senha'];
-        
-        $sql = "UPDATE caixas
-        SET usuario = '$novo_usuario', senha = '$nova_senha' 
+
+        $sql = "UPDATE funcionarios
+        SET usuario = '$novo_usuario', senha = '$nova_senha'
         WHERE usuario = '$usuario'";
 
 
@@ -184,8 +207,8 @@
         if (!empty($_REQUEST['usuario'])) {
             echo "<b>Resultado da busca:</b> <br>";
             $usuario = $_REQUEST['usuario'];
-            $sql = "SELECT id, usuario, senha 
-            FROM caixas
+            $sql = "SELECT id, usuario, senha
+            FROM funcionarios
             WHERE usuario = '$usuario'";
             $result = $conn->query($sql);
 
@@ -200,7 +223,7 @@
             }
         }
         else {
-            $sql = "SELECT id, usuario, senha 
+            $sql = "SELECT id, usuario, senha
             FROM caixas";
             $result = $conn->query($sql);
 
@@ -220,4 +243,3 @@
     $conn->close();
 ?>
 </html>
-

@@ -52,9 +52,12 @@
       <h1>Unidade(s):&emsp;</h1>
       <h1>Preço(encomenda):&emsp;</h1>
       <h1>Fornecedor:&emsp;</h1>
+      <a href= "caixa.php">
       <button style="background-color: rgb(0,0,0,0); border: 0;">
         <img src="assets/dashicons_insert.png" style="height: 63px;">
-      </button>
+      </button></a>
+      <td> Nome </td>
+    
     </div>
   </div>
 </body>
