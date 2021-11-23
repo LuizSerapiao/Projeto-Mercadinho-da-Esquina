@@ -13,7 +13,7 @@
 <body>
   <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
-  </header>  
+  </header>
   <div class="leftbar-gerente">
     <a href="pedidos.php">
       <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
@@ -33,7 +33,7 @@
   </div>
 </body>
 <!--- Caixas de entrada e botões --->
-<form action="pedidos.php">
+<form action="fornecedores.php">
     <input type="submit" value="Voltar" />
 </form>
 
@@ -56,20 +56,45 @@
 
     $action->listar_produtos_fornecedores($conn);
 
-    if ( isset( $_POST["pedir"])) {
-        $fornecedor = $_REQUEST['fornecedor'];
-        $produto = $_REQUEST['produto'];
-        $quantidade = $_REQUEST['quantidade'];
-        $action->adicionarProduto($fornecedor, $produto, $quantidade, $conn);
-    }
+    if ( isset( $_POST['ligar'])) {
+        $id_fornecedor = $_REQUEST['fornecedor'];
+        $sql = "SELECT id_fornecedor
+                FROM fornecedores
+                WHERE id_fornecedor = $id_fornecedor";
+        $result = $conn->query($sql);
 
+        if ($result and $result->num_rows > 0) {
+            $id_produto = $_REQUEST['produto'];
+            $sql = "SELECT id_produto
+                    FROM produtos
+                    WHERE id_produto = $id_produto";
+            $result = $conn->query($sql);
+
+            if ($result and $result->num_rows > 0) {
+                $valor = $_REQUEST['valor'];
+                $sql = "INSERT INTO produtos_fornecidos (id_fornecedor, id_produto, valor)
+                        VALUES ('$id_fornecedor','$id_produto', '$valor')";
+
+                if ($conn->query($sql) === TRUE) {
+                    header("Location:fornece.php");
+                }
+                else {
+                    echo "Erro ao criar ligação: " . $conn->error;
+                }
+            }
+        }
+        else {
+            echo "Fornecedor não encontrado!";
+        }
+    }
 ?>
 
- <form action="fazer_pedido.php" method="post" autocomplete="off">
+ <form action="fornece.php" method="post" autocomplete="off">
     <input type="text" name="fornecedor" placeholder="id_fornecedor" required />
     <br>
     <input type="text" name="produto" placeholder="id_produto" required/>
-    <input type="submit" name="pedir" value="Confirmar" />
+    <input type="text" name="valor" placeholder="valor" required/>
+    <input type="submit" name="ligar" value="Confirmar" />
  </form>
 
 </html>

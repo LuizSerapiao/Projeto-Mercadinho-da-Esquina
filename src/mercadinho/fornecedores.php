@@ -40,7 +40,7 @@ td {
     <!-- <button class="botao-logout"> -->
     <button style="background-color: rgb(0,0,0,0); border: 0; align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px"/>
-    </button> 
+    </button>
 
     <div style="margin-top: 76px">
       <h1 class="searchfield-title">Nome do Fornecedor:</h1>
@@ -73,7 +73,7 @@ td {
           <td>
             <h1>E-mail:</h1>
           </td>
-          <td> 
+          <td>
             <a href="cadastrar-fornecedor.php">
               <img src="assets/dashicons_insert.png" style="height: 36px"/>
             </a>
@@ -84,9 +84,9 @@ td {
               <img src="assets/delete.png" style="height: 36px" />
             </a>
           </td>
-          <td> 
+          <td>
         </tr>
-                
+
       </tr>
         <?php
          include_once ("Classes/Forn.php");
@@ -95,20 +95,19 @@ td {
          $username = "root";
          $password = "";
          $dbname = "mercadinho";
-     
+
          // Create connection
          $conn = new mysqli($servername, $username, $password, $dbname);
          // Check connection
          if ($conn->connect_error) {
          die("Connection failed: " . $conn->connect_error);
          }
-     
+
          $action = new Forn();
          $sql = "SELECT id_fornecedor, nome, telefone, email, estado, cidade, endereço
          FROM fornecedores";
          $result = $conn->query($sql);
 
-         echo "<B>Lista de Fornecedores:</B> <br>";
          if ($result and $result->num_rows > 0) {
              // output data of each row
              while($row = $result->fetch_assoc()) {
@@ -122,8 +121,9 @@ td {
          else {
              echo "Nenhum fornecedor cadastrado";
          }
+
         ?>
-         
+
     </table>
     </div>
   </div>
