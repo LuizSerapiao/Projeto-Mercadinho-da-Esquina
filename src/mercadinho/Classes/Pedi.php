@@ -11,7 +11,7 @@ class Pedi
                 JOIN produtos
                 ON pedidos.id_produto = produtos.id_produto";
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
+        if ($result and $result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 if ($row["recebido"] === '1') { $text = "<b>Recebido!</b>"; }
@@ -57,8 +57,8 @@ class Pedi
                         VALUES ('$produto', '$quantidade', '$total')";
 
                 if ($conn->query($sql) === TRUE) {
-                    echo "Pedido feito com sucesso!<br>
-                          Valor a ser pago: R$$total";
+                    echo "<h2>Pedido feito com sucesso!<br>
+                          Valor a ser pago: R$$total</h2>";
                       $sql = "SELECT quantidade_pedida
                               FROM produtos
                               WHERE id_produto = '$produto'"; // Atualizando o protudo
@@ -124,7 +124,7 @@ class Pedi
         if ($result and $result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $id_fornecedor = $row["id_fornecedor"];
-                echo "<b>Fornecedor -> </b>ID " . $id_fornecedor . "; Nome: " . $row["nome"];
+                echo "<h2>Fornecedor -> ID " . $id_fornecedor . " -> Nome: " . $row["nome"]."</h2>";
                 $sql = "SELECT produtos.id_produto, produtos_fornecidos.valor, produtos.nome
                         FROM produtos
                         JOIN produtos_fornecidos
@@ -134,7 +134,7 @@ class Pedi
                 if ($result1 and $result1->num_rows > 0) {
                     echo "<ol>";
                     while ($row1 = $result1->fetch_assoc()) {
-                        echo "<dt><b>-Produto -> </b>Id: " . $row1["id_produto"] . " Nome: " . $row1["nome"] . " Valor de compra: R$" . $row1["valor"] . "</dt>";
+                        echo "<h3><dt><b>-> Produto -> </b>Id: " . $row1["id_produto"] . " Nome: " . $row1["nome"] . " Valor de compra: R$" . $row1["valor"] . "</dt></h3>";
                     }
                     echo "</ol>";
                 }
@@ -155,7 +155,7 @@ class Pedi
                 $sql = "DELETE FROM pedidos
                         WHERE id_pedido = '$id'";
                 $result = $conn->query($sql);
-                if ($result) {header("Refresh:0");}
+                if ($result) {header("Location: pedidos.php");}
                 else {echo "Erro ao deletar no banco de dados.<br>";}
 
             }
