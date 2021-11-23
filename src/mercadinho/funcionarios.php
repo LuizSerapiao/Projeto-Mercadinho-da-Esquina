@@ -162,17 +162,17 @@
         }
     }
     else if ( isset( $_POST['rmv']) ) {
-        $usuario = $_REQUEST['usuario'];
-        $sql = "SELECT id, usuario, senha 
-            FROM caixas
-            WHERE usuario = '$usuario'";
+        $id_usuario = $_REQUEST['id_funcionario'];
+        $sql = "SELECT id_funcionario, senha 
+            FROM funcionarios
+            WHERE id_funcionario = '$id_usuario'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             $sql = "DELETE FROM funcionarios 
-        WHERE usuario = '$usuario'";
+        WHERE id_funcionario = '$id_usuario'";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Caixa $usuario deletado com sucesso!";
+                echo "Caixa $id_usuario deletado com sucesso!";
             }
             else {
                 echo "Erro ao deletar caixa: " . $conn->error;
