@@ -68,22 +68,42 @@ td {
           <td>
             <h1>E-mail:</h1>
           </td>
-          <td>
+          <td> 
             <button style="background-color: rgb(0,0,0,0); border: 0;">
-              <img src="assets/dashicons_insert.png" style="height: 43px;">
+              <img src="assets/dashicons_insert.png" style="height: 36px;name="edt value="editar">
+            </button>
             </button>
           </td>
         </tr>
+
+        <tr>
+        <td> Nestle </td>".
+         <td> 012</td>".
+         <td> (15)98390-7423</td>
+         <td> nestle@gmail.com </td>
+
+         <td>
+         <a href="fornecedores_editar.php">  
+         <button style="background-color: rgb(0,0,0,0); border: 0;">
+              <img src="assets/Edit.png" style="height: 36px"/></button></a>
+         </td>
+
+         <td> 
+         <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
+              <img src="assets/delete.png" style="height: 36px"/></button>
+         </td> 
+                
+      </tr>
         <?php
-          echo "<tr>".
-              "<td>"."Nestle"."</td>".
-              "<td>"."012"."</td>".
-              "<td>"."(15)98390-7423"."</td>".
-              "<td>"."nestle@gmail.com"."</td>"."<td>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
-              '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
-              '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
-              '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
+          // echo "<tr>".
+              // "<td>"."Nestle"."</td>".
+              // "<td>"."012"."</td>".
+              // "<td>"."(15)98390-7423"."</td>".
+              // "<td>"."nestle@gmail.com"."</td>"."<td>".
+              // '<button style="background-color: rgb(0,0,0,0); border: 0;">'.
+              //  '<img src="assets/Edit.png" style="height: 36px"/>'."</button>".
+              // '<button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">'.
+              // '<img src="assets/delete.png" style="height: 36px"/>'."</button>"."</td>"."<tr>";
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
           //     echo 
@@ -94,7 +114,8 @@ td {
           //   }
           // }
         ?>
-      </table>
+         
+    </table>
     </div>
   </div>
 </body>
