@@ -34,9 +34,9 @@ class Venda{
         }
     }
         function procurarVenda($id_venda, $conn){
-            $sql = "SELECT id_venda, nome, valor, quantidade
+            $sql = "SELECT id_venda, nome, valor, quantidade, id_produto
                  FROM (
-                     SELECT produtos_vendidos.id_venda, produtos.nome, produtos.valor, produtos_vendidos.quantidade
+                     SELECT produtos_vendidos.id_venda, produtos.nome, produtos.valor, produtos_vendidos.quantidade, produtos.id_produto
                      FROM produtos_vendidos
                      INNER JOIN produtos
                      ON produtos_vendidos.id_produto = produtos.id_produto
@@ -49,6 +49,7 @@ class Venda{
                     $valor = $valor + ($row["valor"]*$row["quantidade"]);
                     //echo "Código da compra: ".$row["id_venda"]. " <------> Produto Vendido: ". $row["nome"] . " <------> Quantidade: " .$row["quantidade"] . "<br>";
                     echo "<tr>".
+                          "<td>".$row["id_produto"]."</td>".
                           "<td>".$row["nome"]."</td>".
                           "<td>".$row["quantidade"]."</td>".
                           "<td>R$".$row["valor"]."</td>".
@@ -62,9 +63,9 @@ class Venda{
                       "<tr>";
             }
 
-            $sql = "SELECT id_venda, nome, valor, quantidade
+            $sql = "SELECT id_venda, nome, valor, quantidade, id_produto
                  FROM (
-                     SELECT devolucoes.id_venda, produtos.nome, produtos.valor, devolucoes.quantidade
+                     SELECT devolucoes.id_venda, produtos.nome, produtos.valor, devolucoes.quantidade, produtos.id_produto
                      FROM devolucoes
                      INNER JOIN produtos
                      ON devolucoes.id_produto = produtos.id_produto
@@ -73,6 +74,7 @@ class Venda{
             $result = $conn->query($sql);
             if ($result and $result->num_rows > 0) {
                 echo "<tr>".
+                      "<td> <h2>CODIGO</h2></td>".
                       "<td> <h2>DEVOLUÇÕES</h2> </td>".
                       "<td> <h2>QUANTIDADE </h2></td>".
                       "<td> <h2>VALOR</h2> </td>".
@@ -80,6 +82,7 @@ class Venda{
                 while($row = $result->fetch_assoc()) {
                     $valor = $valor - ($row["valor"]*$row["quantidade"]);
                     echo "<tr>".
+                          "<td>".$row["id_produto"]."</td>".
                           "<td>".$id_venda."</td>".
                           "<td>".$row["quantidade"]."</td>".
                           "<td>R$".$row["valor"]."</td>".
@@ -88,6 +91,7 @@ class Venda{
             }
             else {
                 echo "<tr>".
+                      "<td> <h2>CODIGO</h2></td>".
                       "<td> <h2>DEVOLUÇÕES</h2> </td>".
                       "<td> <h2>QUANTIDADE </h2></td>".
                       "<td> <h2>VALOR</h2> </td>".

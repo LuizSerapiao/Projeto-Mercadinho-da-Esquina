@@ -224,8 +224,8 @@ class ListaCompra
 
                 // Adiciona o produto e a quantidade devolvidos na tabela devoluçõe
                 // Essa tabela é usada para mostrar o valor real da venda apos uma devolução.
-                $sql = "INSERT INTO devolucoes (id_produto, quantidade)
-                         VALUES ('$id_produto_recebido','$quantidade_recebida')";
+                $sql = "INSERT INTO devolucoes (id_produto, id_venda, quantidade)
+                         VALUES ('$id_produto_recebido', '$id_venda','$quantidade_recebida')";
 
                 $result = $conn->query($sql);
                 if (!$result) {die ("<br>Erro inserindo produto na tabela devolucoes<br>");}
