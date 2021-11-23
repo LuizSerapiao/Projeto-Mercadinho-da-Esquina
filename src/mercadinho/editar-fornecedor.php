@@ -38,10 +38,10 @@
     </button>
     <h1 class="title">Editar Fornecedor</h1>
     <form action="fornecedores.php"  method="post" autocomplete="off">
+      <h1 style="margin-top: 45px;">Nome atual</h1>
+      <input class="input-txt" type="text" name="nome" maxlength="50" required/>
       <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
         <div class="input-column">
-          <h1 style="margin-top: 45px;">Nome atual</h1>
-          <input class="input-txt" type="text" name="nome" maxlength="50" required/>
           <h1 style="margin-top: 45px;">Nome</h1>
           <input class="input-txt" type="text" name="novo_nome" maxlength="50" required/>
           <h1 style="margin-top: 45px;">Telefone de Contato</h1>
