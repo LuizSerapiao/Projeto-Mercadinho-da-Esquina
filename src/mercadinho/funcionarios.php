@@ -52,17 +52,14 @@
           </td>
           <td> 
             <a href="cadastrar-funcionario.php">
-              <button style="background-color: rgb(0,0,0,0); border: 0; ">
-            <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
-
-          
+              <img src="assets/dashicons_insert.png" style="height: 36px"/>
+            </a>
             <a href= "editar-funcionario.php">
-            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-            <img src="assets/Edit.png" style="height: 36px" /></button></a>
-            
-          
-            <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-            <img src="assets/delete.png" style="height: 36px" /></button>
+              <img src="assets/Edit.png" style="height: 36px" />
+            </a>
+            <a href= "deletar-funcionario.php">
+              <img src="assets/delete.png" style="height: 36px" />
+            </a>
           </td>
         </tr>
         <?php
