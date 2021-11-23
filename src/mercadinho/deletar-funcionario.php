@@ -37,14 +37,10 @@
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
-    <h1 class="title">Cadastrar Funcionario</h1>
+    <h1 class="title">Deletar Funcionario</h1>
     <form>
       <h1 style="margin-top: 45px;">id_funcionario</h1>
       <input class="input-txt" type="text" name="id_funcionario" maxlength="10"  required/>
-      <h1 style="margin-top: 45px;">Novo Usuário</h1>
-      <input class="input-txt" type="text" name="usuario" maxlength="10"  required/>
-      <h1 style="margin-top: 45px;">Nova Senha</h1>
-      <input class="input-txt" type="password" name="senha" maxlength="10"  required/>
       <!-- <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly">
         <div class="input-column">
           <h1 style="margin-top: 45px;">Nome</h1>
@@ -63,7 +59,7 @@
           <input class="input-txt" type="password" name="senha" maxlength="10"  required/>
         </div>
       </div> -->
-      <input class="salvar" type="submit" name="add" value="SALVAR" />
+      <input class="salvar" type="submit" name="add" value="CONFIRMAR" />
     </form>
   </div>
 </body>

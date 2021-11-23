@@ -37,7 +37,7 @@
       <img src="assets/log-out-circle.png" style="height: 50px">
     </button>
     <h1 class="title">Editar Funcionario</h1>
-    <form action="fornecedores.php"  method="post" autocomplete="off">
+    <form action="funcionarios.php"  method="post" autocomplete="off">
       <h1 style="margin-top: 45px;">id_Funcionario</h1>
       <input class="input-txt" type="text" name="id_funcionario" required/>    
       <h1 style="margin-top: 45px;">Novo usuario</h1>
