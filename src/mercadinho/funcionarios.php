@@ -56,8 +56,9 @@
             <img src="assets/dashicons_insert.png" style="height: 36px"/></button></a>
 
           
+            <a href= "editar-funcionario.php">
             <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
-            <img src="assets/Edit.png" style="height: 36px" /></button>
+            <img src="assets/Edit.png" style="height: 36px" /></button></a>
             
           
             <button style="background-color: rgb(0,0,0,0); border: 0; margin-left: 10px">
@@ -187,17 +188,17 @@
 
     }
     else if ( isset( $_POST['edt'])) {
-        $usuario = $_REQUEST['usuario'];
+        $idusuario = $_REQUEST['id_usuario'];
         $novo_usuario = $_REQUEST['novo_usuario'];
         $nova_senha = $_REQUEST['nova_senha'];
         
         $sql = "UPDATE funcionarios
         SET usuario = '$novo_usuario', senha = '$nova_senha' 
-        WHERE usuario = '$usuario'";
+        WHERE id_usuario = '$idusuario'";
 
 
         if ($conn->query($sql) === TRUE) {
-            echo "Caixa $usuario editado com sucesso!";
+            echo "Caixa $idusuario editado com sucesso!";
         }
         else {
             echo "Erro ao editar caixa: " . $conn->error;
