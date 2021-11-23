@@ -34,7 +34,13 @@ class Pedi
             }
         }
         else {
-            echo "Nenhum pedido realizado!";
+            echo "<tr>".
+                 "<td> - </td>".
+                 "<td> <h2>Nenhum pedido realizado</h2> </td>".
+                 "<td> - </td>".
+                 "<td> - </td>".
+                 "<td> - </td>".
+                 "</tr>";
         }
     }
 

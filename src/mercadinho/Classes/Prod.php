@@ -78,7 +78,12 @@ class Prod
                 }
             }
             else {
-                echo "Nenhum produto cadastrado!";
+                echo "<tr>".
+                     "<td> - </td>".
+                     "<td> <h2>Nenhum produto cadastrado </h2></td>".
+                     "<td> - </td>".
+                     "<td> - </td>".
+                     "</tr>";
             }
         }
 
