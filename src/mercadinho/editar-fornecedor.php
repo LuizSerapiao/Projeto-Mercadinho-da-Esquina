@@ -15,19 +15,19 @@
     <h1 class="header-title">Mercadinho da Esquina</h1>
   </header>  
   <div class="leftbar-gerente">
-    <a href="http://localhost/mercadinho/pedidos.php?">
+    <a href="pedidos.php">
       <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
     </a>
-    <a href="http://localhost/mercadinho/vendas.php?">
+    <a href="vendas.php">
       <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">
     </a>
-    <a href="http://localhost/mercadinho/produtos.php?">
+    <a href="produtos.php">
       <img src="assets/Botao Produtos.png" class="img-botao-gerente" alt="PRODUTOS">
     </a>
-    <a href="http://localhost/mercadinho/fornecedores.php?">
+    <a href="fornecedores.php">
       <img src="assets/Botao Fornecedor.png" class="img-botao-gerente" alt="FORNECEDORES">
     </a>
-    <a href="http://localhost/mercadinho/funcionarios.php?">
+    <a href="funcionarios.php">
       <img src="assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
