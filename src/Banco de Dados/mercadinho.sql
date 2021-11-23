@@ -76,4 +76,4 @@ INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`) VALUES (NUL
 INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '1', '1');
 INSERT INTO `lista_compras` (`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL, '3', '2');
 
-INSERT INTO `funcionarios` (`id_funcionario`, `usuario`, `senha`, `admin`) VALUES (NULL, 'admin', 'admin', '1');
+INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `endereco`,`telefone`, `email`, `usuario`, `senha`, `admin`) VALUES (NULL, 'gerente', 'endereco', '34998770098', 'ger@contato.com','admin', 'admin', '1');
