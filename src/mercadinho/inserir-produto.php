@@ -35,7 +35,9 @@
 
   <div class="content-gerente">
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
-      <img src="assets/log-out-circle.png" style="height: 50px">
+        <a href="index.php">
+            <img src="assets/log-out-circle.png" style="height: 50px">
+        </a>
     </button>
     <h1 class="title">Adicionar Produto</h1>
     <form method="POST" action="produtos.php" >
