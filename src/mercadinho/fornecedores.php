@@ -74,13 +74,13 @@ td {
             <h1>E-mail:</h1>
           </td>
           <td>
-            <a href="cadastrar-fornecedor.php">
+            <a href="HTML/cadastrar-fornecedor.php">
               <img src="assets/dashicons_insert.png" style="height: 36px"/>
             </a>
-            <a href="editar-fornecedor.php">
+            <a href="HTML/editar-fornecedor.php">
               <img src="assets/Edit.png" style="height: 36px" />
             </a>
-            <a href="deletar-fornecedor.php">
+            <a href="HTML/deletar-fornecedor.php">
               <img src="assets/delete.png" style="height: 36px" />
             </a>
           </td>

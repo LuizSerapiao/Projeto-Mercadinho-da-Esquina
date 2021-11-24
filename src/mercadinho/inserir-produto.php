@@ -1,3 +1,4 @@
+
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +17,7 @@
   </header>
   <div class="leftbar-gerente">
     <a href="pedidos.php">
-      <img src="assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
+      <img src="../assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
     </a>
     <a href="vendas.php">
       <img src="assets/Botao Vendas.png" class="img-botao-gerente" alt="VENDAS">

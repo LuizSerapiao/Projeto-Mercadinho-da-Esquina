@@ -51,13 +51,13 @@
             <h1>Telefone:</h1>
           </td>
           <td> 
-            <a href="cadastrar-funcionario.php">
+            <a href="HTML/cadastrar-funcionario.php">
               <img src="assets/dashicons_insert.png" style="height: 36px"/>
             </a>
-            <a href= "editar-funcionario.php">
+            <a href= "HTML/editar-funcionario.php">
               <img src="assets/Edit.png" style="height: 36px" />
             </a>
-            <a href= "deletar-funcionario.php">
+            <a href= "HTML/deletar-funcionario.php">
               <img src="assets/delete.png" style="height: 36px" />
             </a>
           </td>
@@ -185,13 +185,13 @@
 
     }
     else if ( isset( $_POST['edt'])) {
-        $idusuario = $_REQUEST['id_usuario'];
+        $idusuario = $_REQUEST['id_funcionario'];
         $novo_usuario = $_REQUEST['novo_usuario'];
         $nova_senha = $_REQUEST['nova_senha'];
         
         $sql = "UPDATE funcionarios
         SET usuario = '$novo_usuario', senha = '$nova_senha' 
-        WHERE id_usuario = '$idusuario'";
+        WHERE id_funcionario = '$idusuario'";
 
 
         if ($conn->query($sql) === TRUE) {

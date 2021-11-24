@@ -10,7 +10,7 @@
     <br>
 </form> -->
 <head>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
 </head>
 <body>
   <header class="header">
@@ -21,10 +21,10 @@
     <form action="cartao.php" method="get">
       <input type="submit" style="font-size: 38px" value="Cartão de Crédito" />
     </form>
-    <form action="finalizar-compra.php" method="POST">
+    <form action="../finalizar-compra.php" method="POST">
       <input type="submit" style="font-size: 38px" name="finalizar" value="Dinheiro" />
     </form>
-    <a href="caixa.php">
+    <a href="../caixa.php">
       <input class="botao-substyle" type="button" name="add" value="CANCELAR" />
     </a>
   </div>

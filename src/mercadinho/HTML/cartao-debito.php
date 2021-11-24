@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
 </head>
 <body>
   <header class="header">
@@ -8,7 +8,7 @@
   </header>
   <div class="content">
     <h1 class="title">Digite sua Senha:</h1>
-    <form action="finalizar-compra.php" method="get" style="margin-top: 100px">
+    <form action="../finalizar-compra.php" method="get" style="margin-top: 100px">
       <?php
         echo"<h1>Total: R$ 50,00</h1>"
       ?>

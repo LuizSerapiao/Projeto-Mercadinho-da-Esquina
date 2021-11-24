@@ -2,14 +2,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
 </head>
 <body>
     <header class="header">
         <h1 class="header-title">Mercadinho da Esquina</h1>
     </header>
     <h1 class="title">Devolver Produto</h1>
-    <form action="caixa.php" method="POST">
+    <form action="../caixa.php" method="POST">
         <div>
                 <h1 style="margin-top: 71px;">Código do Produto:</h1>
                 <div style="display: flex; align-items: center;">
@@ -23,7 +23,7 @@
                 <input style ="width: 780px;" name="id_venda" type="text" required/>
             </div>
             <div style="margin-top: 113px; width: 780px; display: flex; justify-content: space-between">
-                <a href="caixa.php">
+                <a href="../caixa.php">
                     <input class="botao-substyle" type="button" value="VOLTAR" />
                 </a>
                 <input type="submit" name="devolver" value="CONFIRMAR" />
@@ -31,18 +31,6 @@
     </form>
 
 </body>
-<!-- <form action="lista_compras.php">
-    <input type="submit" value="Voltar" />
-</form>
-<h1> Devolver Produto </h1>
-<form action="lista_compras.php" method="post" autocomplete="off">
-    <b>Código do produto<br> </b>
-    <input type="number" name="id_produto" placeholder="Codigo Do Produto" required />
-    <input type="number" step="1" name="quantidade" placeholder="Qnt" required/> <br>
-    <b>Código da venda<br> </b>
-    <input type="number" name="id_venda" placeholder="Codigo Da Venda" required /> <br>
-
-    <input type="submit" name="devolver" value="Confirmar" />
 </form> -->
 
 </html>

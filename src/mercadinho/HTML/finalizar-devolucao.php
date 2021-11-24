@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
 </head>
 <body style="justify-content: space-evenly;">
     <header class="header">
@@ -16,7 +16,7 @@
       ?>
     </div>
 
-    <form action="/mercadinho/caixa.php?" method="get">
+    <form action="../mercadinho/caixa.php?" method="get">
       <input type="submit" style="font-size: 38px" value="Retornar ao Carrinho" />
     </form>
 

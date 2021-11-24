@@ -25,7 +25,7 @@
     <br>
 
 </form>
-<form action="caixas_editar.php">
+<form action="HTML/caixas_editar.php">
     <input type="submit" name="edt" value="editar" />
 </form>
 
