@@ -14,7 +14,7 @@
 <body>
   <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
-  </header>  
+  </header>
   <div class="leftbar-gerente">
     <a href="../pedidos.php">
       <img src="../assets/Botao Pedidos.png" class="img-botao-gerente" alt="PEDIDOS">
@@ -32,7 +32,7 @@
       <img src="../assets/Botao Caixa.png" class="img-botao-gerente" alt="CAIXA">
     </a>
   </div>
-  
+
   <div class="content-gerente">
     <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
       <img src="assets/log-out-circle.png" style="height: 50px">
@@ -46,7 +46,7 @@
           <h1 style="margin-top: 45px;">Telefone de Contato</h1>
           <input class="input-txt" type="text" name="telefone" size="11" required/>
           <h1 style="margin-top: 45px;">E-mail</h1>
-          <input class="input-txt" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+          <input class="input-txt" type="email" name="email" required/>
         </div>
         <div class="input-column">
           <h1 style="margin-top: 45px;">Estado</h1>
@@ -57,7 +57,7 @@
           <input class="input-txt" type="text" name="endereço" maxlength="50" />
         </div>
       </div>
-      <input class="salvar" type="submit" name="add" value="SALVAR" />
+      <input class="salvar" type="submit" name="add" value="SALVAR" style="cursor: pointer"/>
     </form>
   </div>
 </body>

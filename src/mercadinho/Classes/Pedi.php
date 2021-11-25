@@ -18,15 +18,15 @@ class Pedi
                 else { $text = "<b>Feito!</b>"; }
                 $id_pedido = $row["id_pedido"];
                 echo "<tr>".
-                     "<td>".$id_pedido."</td>".
-                     "<td>".$row["nome"]."</td>".
-                     "<td>".$row["quantidade"]."</td>".
-                     "<td>R$".$row["valor_total"]."</td>".
-                     "<td>".$text."</td>".
-                     '<td><a href="pedidos.php?id='.$id_pedido.'&completar=Marcar+como+recebido%21"/>'.
+                     '<td style="text-align: center;"><h2>'.$id_pedido."</h2></td>".
+                     '<td style="text-align: center;"><h2>'.$row["nome"]."</h2></td>".
+                     '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
+                     '<td style="text-align: center;"><h2>R$'.$row["valor_total"]."</h2></td>".
+                     '<td style="text-align: center;"><h2>'.$text."</h2></td>".
+                     '<td style="text-align: center;"><a href="pedidos.php?id='.$id_pedido.'&completar=Marcar+como+recebido%21"/>'.
                         '<img src="assets/confirm.png" style="height: 43px;">'.
-                     "</a></td>".
-                     '<td><a href="pedidos.php?id='.$id_pedido.'&cancelar=Cancelar+pedido%21"/>'.
+                     "</a>".
+                     '<a href="pedidos.php?id='.$id_pedido.'&cancelar=Cancelar+pedido%21"/>'.
                         '<img src="assets/delete.png" style="height: 43px;">'.
                      "</a></td>".
                      "</tr>" //teste.php?id=1&completar=Marcar+como+recebido%21
@@ -35,12 +35,13 @@ class Pedi
         }
         else {
             echo "<tr>".
-                 "<td> - </td>".
-                 "<td> <h2>Nenhum pedido realizado</h2> </td>".
-                 "<td> - </td>".
-                 "<td> - </td>".
-                 "<td> - </td>".
-                 "</tr>";
+                 '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
+                 '<td style="text-align: center;"> <h1>Ainda não  </h1></td>'.
+                 '<td style="text-align: center;">  <h1>foram </h1></td>'.
+                 '<td style="text-align: center;"> <h1>realizados</h1> </td>'.
+                 '<td style="text-align: center;"> <h1>pedidos!</h1>  </td>'.
+                 '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
+                 "<td>";
         }
     }
 
@@ -156,15 +157,11 @@ class Pedi
         $result = $conn->query($sql);
         if ($result and $result->num_rows > 0) { // Pedido existe
             $row = $result->fetch_assoc();
-            if ($row["recebido"] === '1') { echo "ERRO: Esse pedido já foi recebido, não pode ser cancelado!"; }
-            else {
-                $sql = "DELETE FROM pedidos
-                        WHERE id_pedido = '$id'";
-                $result = $conn->query($sql);
-                if ($result) {header("Location: pedidos.php");}
-                else {echo "Erro ao deletar no banco de dados.<br>";}
-
-            }
+            $sql = "DELETE FROM pedidos
+                    WHERE id_pedido = '$id'";
+            $result = $conn->query($sql);
+            if ($result) {header("Location: pedidos.php");}
+            else {echo "Erro ao deletar no banco de dados.<br>";}
         }
         else {
             echo "ERRO: pedido não encontrado!";

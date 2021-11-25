@@ -12,20 +12,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 </head>
-<body style="padding-top: 0;">
-    <header class="header-login">
+<body style="padding-top: 0; max-width: 100%; overflow-x: hidden;overflow-y:hidden;">
+    <header class="header-login" style="height: 250px;">
         <h1 class="title-login">Log-in</h1>
     </header>
     <form class="form-login" action="index.php" method="post" autocomplete="off">
         <div>
-            <h1 style="font-size: 36px; margin-top: 37px;">Usuário</h1>
+            <h1 style="font-size: 36px; margin-top: 30px;">Usuário</h1>
             <input style="width: 603px;" type="text" name="usuario" required/>
         </div>
         <div>
-            <h1 style="font-size: 36px; margin-top: 37px;">Senha</h1>
+            <h1 style="font-size: 36px; margin-top: 30px;">Senha</h1>
             <input style="width: 603px;" type="password" name="senha" required/>
         </div>
-        <input class="salvar" type="submit" value="ENTRAR" name="login"/>
+        <input class="salvar" type="submit" value="ENTRAR" name="login" style="margin-top: 50px;"/>
     </form>
 </body>
 
@@ -59,7 +59,7 @@
             }
         }
         else {
-            echo ("Erro: Nome de usuário ou senha errados!");
+            echo ("<h2>Erro: Nome de usuário ou senha errados!</h2>");
         }
     }
 ?>

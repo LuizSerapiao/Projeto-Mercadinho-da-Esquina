@@ -4,33 +4,64 @@ class Venda{
     function __construct(){
     }
 
-    function mostrarVenda($conn)
-    {
-        $sql = "SELECT id_venda, valor
-             FROM vendas";
+    function mostrarVenda($id_venda, $conn) {
+        if ($id_venda === NULL) {
+            $sql = "SELECT id_venda, valor
+                 FROM vendas";
 
-        $result = $conn->query($sql);
-        if ($result and $result->num_rows > 0) {
-            // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                // echo "Código da compra: " . $row["id_venda"] . " <------> Valor da compra: R$" . $row["valor"] . "<br>";
-                $id_venda = $row["id_venda"];
-                echo "<tr>".
-                      "<td>".$id_venda."</td>".
-                      "<td>R$".$row["valor"]."</td>".
-                      '<td><a href="venda.php?id_venda='.$id_venda.'&procurar=procurar%21"/>'.
-                         '<img src="assets/Search.png" style="height: 43px;">'.
-                      "</a></td>".
-                      '<td><a href="venda.php?id_venda='.$id_venda.'&excluir=excluir%21"/>'.
-                         '<img src="assets/delete.png" style="height: 43px;">'.
-                      "</a></td>".
-                      "<tr>";
+            $result = $conn->query($sql);
+            if ($result and $result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    // echo "Código da compra: " . $row["id_venda"] . " <------> Valor da compra: R$" . $row["valor"] . "<br>";
+                    $id_venda = $row["id_venda"];
+                    echo "<tr>".
+                          '<td></td><td style="text-align: center;"><h2>'.$id_venda."</h2></td>".
+                          '<td style="text-align: center;"><h2>R$'.$row["valor"]."</h2></td>".
+                          '<td style="text-align: center;"><a href="venda.php?id_venda='.$id_venda.'&procurar=procurar%21"/>'.
+                             '<img src="assets/Search.png" style="height: 43px;">'.
+                          "</a>".
+                          '<a href="venda.php?id_venda='.$id_venda.'&excluir=excluir%21"/>'.
+                             '<img src="assets/delete.png" style="height: 43px;">'.
+                          "</a></td><td></td>".
+                          "<tr>";
+                }
+            } else {
+                echo "<tr><td></td>".
+                     '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
+                     '<td style="text-align: center;"> <h1>Nenhuma venda registrada</h1> </td>'.
+                     '<td style="text-align: center;"> <h1>-----</h1> </td>'.
+                     "<td></td><tr>";
             }
-        } else {
-            echo "<tr>".
-                  "<td> <h2>Lista Vazia!</h2> </td>".
-                  "<td> - </td>".
-                  "<tr>";
+        }
+        else {
+            $sql = "SELECT id_venda, valor
+                    FROM vendas
+                    WHERE id_venda = $id_venda";
+                    $result = $conn->query($sql);
+            if ($result and $result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    // echo "Código da compra: " . $row["id_venda"] . " <------> Valor da compra: R$" . $row["valor"] . "<br>";
+                    $id_venda = $row["id_venda"];
+                    echo "<tr><td></td>".
+                          '<td style="text-align: center;"><h2>'.$id_venda."</h2></td>".
+                          '<td style="text-align: center;"><h2>R$'.$row["valor"]."<h2></td>".
+                          '<td style="text-align: center;"><a href="venda.php?id_venda='.$id_venda.'&procurar=procurar%21"/>'.
+                             '<img src="assets/Search.png" style="height: 43px;">'.
+                          "</a>".
+                          '<a href="venda.php?id_venda='.$id_venda.'&excluir=excluir%21"/>'.
+                             '<img src="assets/delete.png" style="height: 43px;">'.
+                          "</a></td>".
+                          "<td></td><tr>";
+                }
+            } else {
+                echo "<tr><td></td>".
+                     '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
+                     '<td style="text-align: center;"> <h1>Venda não encontrada</h1> </td>'.
+                     '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
+                     "<td></td><tr>";
+            }
         }
     }
         function procurarVenda($id_venda, $conn){
@@ -49,10 +80,10 @@ class Venda{
                     $valor = $valor + ($row["valor"]*$row["quantidade"]);
                     //echo "Código da compra: ".$row["id_venda"]. " <------> Produto Vendido: ". $row["nome"] . " <------> Quantidade: " .$row["quantidade"] . "<br>";
                     echo "<tr>".
-                          "<td>".$row["id_produto"]."</td>".
-                          "<td>".$row["nome"]."</td>".
-                          "<td>".$row["quantidade"]."</td>".
-                          "<td>R$".$row["valor"]."</td>".
+                          '<td style="text-align: center;"><h2>'.$row["id_produto"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>'.$row["nome"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>R$'.$row["valor"]."</h2></td>".
                           "<tr>";
                 }
             }
@@ -74,28 +105,28 @@ class Venda{
             $result = $conn->query($sql);
             if ($result and $result->num_rows > 0) {
                 echo "<tr>".
-                      "<td> <h2>CODIGO</h2></td>".
-                      "<td> <h2>DEVOLUÇÕES</h2> </td>".
-                      "<td> <h2>QUANTIDADE </h2></td>".
-                      "<td> <h2>VALOR</h2> </td>".
+                      '<td style="text-align: center;"><h2>CODIGO</h2></td>'.
+                      '<td style="text-align: center;"><h2>DEVOLUÇÕES</h2> </td>'.
+                      '<td style="text-align: center;"><h2>QUANTIDADE </h2></td>'.
+                      '<td style="text-align: center;"><h2>VALOR</h2> </td>'.
                       "<tr>";
                 while($row = $result->fetch_assoc()) {
-                    $valor = $valor - ($row["valor"]*$row["quantidade"]);
+                    // $valor = $valor - ($row["valor"]*$row["quantidade"]);
                     echo "<tr>".
-                          "<td>".$row["id_produto"]."</td>".
-                          "<td>".$id_venda."</td>".
-                          "<td>".$row["quantidade"]."</td>".
-                          "<td>R$".$row["valor"]."</td>".
+                          '<td style="text-align: center;"><h2>'.$row["id_produto"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>'.$id_venda."</h2></td>".
+                          '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>'.$row["valor"]."</h2></td>".
                           "<tr>";
                 }
             }
             else {
                 echo "<tr>".
-                      "<td> <h2>CODIGO</h2></td>".
-                      "<td> <h2>DEVOLUÇÕES</h2> </td>".
-                      "<td> <h2>QUANTIDADE </h2></td>".
-                      "<td> <h2>VALOR</h2> </td>".
-                      "<tr>";
+                     '<td style="text-align: center;"><h1>CODIGO</h1></td>'.
+                     '<td style="text-align: center;"><h1>DEVOLUÇÕES</h1> </td>'.
+                     '<td style="text-align: center;"><h1>QUANTIDADE </h1></td>'.
+                     '<td style="text-align: center;"><h1>VALOR</h1> </td>'.
+                     "<tr>";
             }
             return $valor;
         }
@@ -124,10 +155,15 @@ class Venda{
                 $result3 = $conn->query($sql);
                 if (!$result3) {die ("Não foi possível remover os produtos vendidos!");}
 
-                $sql = "DELETE FROM vendas
+                $sql = "DELETE FROM devolucoes
                         WHERE id_venda = '$id_venda'";
                 $result4 = $conn->query($sql);
-                if (!$result4) {echo ("Não foi possível remover a venda!");}
+                if (!$result4) {die ("Não foi possível remover as devoluções!");}
+
+                $sql = "DELETE FROM vendas
+                        WHERE id_venda = '$id_venda'";
+                $result5 = $conn->query($sql);
+                if (!$result5) {echo ("Não foi possível remover a venda!");}
                 else{header("Location: vendas.php");}
             }
 

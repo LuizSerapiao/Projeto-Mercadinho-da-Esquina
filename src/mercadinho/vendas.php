@@ -6,14 +6,14 @@
   <title></title>
 </head>
 
-<style>
+<!-- <style>
 table {
     border-collapse: separate;
     border-spacing: 0 70px;
 }
-</style>
+</style> -->
 
-<body>
+<body style="max-width: 100%; overflow-x: hidden;">
   <header class="header">
     <h1 class="header-title">Mercadinho da Esquina</h1>
   </header>
@@ -37,31 +37,54 @@ table {
 
   <div class="content-gerente">
     <!-- <button class="botao-logout"> -->
-    <button style="background-color: rgb(0,0,0,0); border: 0; align-self: end; margin-right: 13px; margin-top: 11px;">
+    <!-- <button style="background-color: rgb(0,0,0,0); border: 0; align-self: end; margin-right: 13px; margin-top: 11px;">
+        <a href="index.php">
+            <img src="assets/log-out-circle.png" style="height: 50px">
+        </a>
+    </button> -->
+    <button style="align-self: end; margin-right: 13px; margin-top: 11px;">
         <a href="index.php">
             <img src="assets/log-out-circle.png" style="height: 50px">
         </a>
     </button>
-
-    <!-- <div style="margin-top: 76px">
-      <h1 class="search-title">Código da Venda</h1>
-      <div class="search-field-layout">
-        <input class="search-field" type="text"/>
-        <button class="search-button">
-          <img class="search-icon" src="assets/Search.png"/>
-        </button>
-      </div>
-    </div> -->
     <h1 class="title">Vendas:</h1>
-    <div style="width: 100%; max-width: 1366px; margin-top: 38px;">
+    <div style="margin-top: 10px">
+      <!-- <h1 class="search-title">Código da Venda</h1> -->
+      <div class="search-field-layout">
+          <form action="vendas.php" method="GET" style="display: inline;">
+            <input class="search-field" type="text" name="id_venda" placeholder="Procurar venda por código"/>
+            <button class="search-button" name="procurar" value="Procurar" style="cursor: pointer;">
+              <img class="search-icon" src="assets/Search.png"/>
+            </button>
+          </form>
+      </div>
+    </div>
+    <!-- <input type="text" name="id_venda" placeholder="Código da venda" required />
+    <input type="submit" name="procurar" value="Procurar" />
+    <input type="submit" name="excluir" value="Excluir" /> -->
+    <!-- <div style="width: 100%; max-width: 1366px; margin-top: 38px;"> -->
       <table style="width: 100%; margin-left: 3%; margin-top: 38px;">
+          <colgroup>
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 40%;">
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 15%;">
+          </colgroup>
         <tr>
-          <td>
+            <th>
+            </th>
+          <th>
             <h1>Código de Venda:</h1>
-          </td>
-          <td>
+          </th>
+          <th>
             <h1>Valor(R$):</h1>
-          </td>
+          </th>
+          <th>
+            <h1>Opções:</h1>
+          </th>
+          <th>
+          </th>
           <!-- <td>
             <h1>Detalhes</h1>
           </td>
@@ -84,7 +107,13 @@ table {
             }
 
             $action = new Venda();
-            $action ->mostrarVenda($conn);
+            if ( isset( $_GET['procurar'] )) {
+                $id_venda = $_REQUEST['id_venda'];
+                $valor = $action->mostrarVenda($id_venda, $conn);
+            }
+            else {
+                $action ->mostrarVenda(NULL, $conn);
+            }
 
           // if( $ven->num_rows > 0){
           //   while( $registro = $res->fetch_assoc() ){
@@ -97,7 +126,7 @@ table {
           // }
         ?>
       </table>
-    </div>
+    <!-- </div> -->
   </div>
 </body>
 
@@ -127,11 +156,11 @@ table {
          $id_venda = $_REQUEST['id_venda'];
          $action->excluirVenda($id_venda, $conn);
      }  -->
- <br><b>Buscar detalhes sobre uma venda</b>
+ <!-- <br><b>Buscar detalhes sobre uma venda</b>
  <form action="venda.php" method="GET">
      <input type="text" name="id_venda" placeholder="Código da venda" required />
      <input type="submit" name="procurar" value="Procurar" />
      <input type="submit" name="excluir" value="Excluir" />
- </form>
+ </form> -->
 
 </html>

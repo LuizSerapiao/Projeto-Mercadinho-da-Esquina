@@ -8,7 +8,7 @@
     <h1 class="header-title">Mercadinho da Esquina</h1>
     </header>
     <h1 class="title">Trocar Produto</h1>
-    <form action="caixa.php" method="post" autocomplete="off">
+    <form action="../caixa.php" method="post" autocomplete="off">
         <div>
             <h1 style="margin-top: 32px;">Código do Produto Devolvido</h1>
             <div style="display: flex; align-items: center;">
@@ -30,7 +30,7 @@
             <input style ="width: 780px;" type="text" name="id_venda" required/>
         </div>
         <div style="width: 780px; display: flex; justify-content: space-between">
-            <a href="caixa.php">
+            <a href="../caixa.php">
                 <input class="botao-substyle" type="button" name="cancel" value="CANCELAR" />
             </a>
             <input type="submit" name="trocar" value="CONFIRMAR" />
