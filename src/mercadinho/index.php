@@ -25,7 +25,7 @@
             <h1 style="font-size: 36px; margin-top: 30px;">Senha</h1>
             <input style="width: 603px;" type="password" name="senha" required/>
         </div>
-        <input class="salvar" type="submit" value="ENTRAR" name="login" style="margin-top: 50px;"/>
+        <input class="salvar" type="submit" value="ENTRAR" name="login" style="margin-top: 50px; cursor: pointer"/>
     </form>
 </body>
 

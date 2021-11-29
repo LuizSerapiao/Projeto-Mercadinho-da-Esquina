@@ -98,7 +98,7 @@
             <?php
                 if (!isset( $_GET['relacionar'])) {
                     echo "<button>".
-                         '<a href="inserir-produto.php">'.
+                         '<a href="./HTML/inserir-produto.html">'.
                             '<img src="assets/dashicons_insert.png" style="height: 43px;">'.
                         '</a>'.
                     '</button>';

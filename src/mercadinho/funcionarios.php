@@ -65,7 +65,7 @@ height: 70px;
                     <h1>Tipo de conta:</h1>
                 </th>
                 <th>
-                    <a href="HTML/cadastrar-funcionario.php">
+                    <a href="HTML/cadastrar-funcionario.html">
                         <img src="assets/dashicons_insert.png" style="height: 36px"/>
                     </a>
                 </th>

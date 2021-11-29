@@ -103,7 +103,7 @@ td {
                         <h1>E-mail:</h1>
                     </th>
                     <th>
-                        <a href="HTML/cadastrar-fornecedor.php">
+                        <a href="HTML/cadastrar-fornecedor.html">
                             <img src="assets/dashicons_insert.png" style="height: 36px"/>
                         </a>
                     </th>

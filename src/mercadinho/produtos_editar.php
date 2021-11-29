@@ -42,22 +42,39 @@
     <form action="produtos.php" method="GET">
       <div class="input-column">
           <?php
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+          $dbname = "mercadinho";
+
+          // Conexao com o servidor
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+          }
+
           if ( isset( $_GET['edt'])) {
               $id = $_REQUEST['id'];
-              echo
-                '<h1 style="margin-top: 45px;">Id produto sendo alterado</h1>'.
-                '<input class="input-txt" type="text"name="id" value="'.$id.'" readonly="readonly"/><br>'.
-                '<h1 style="margin-top: 45px;">Nome</h1>'.
-                '<input class="input-txt" type="text" name="novo_nome" value="Novo nome" required/>'.
-                '<div>'.
-                  '<h1 style="margin-top: 45px;">Valor</h1>'.
-                  '<input class="input-txt" type="number" name="novo_valor" value="1" required/>'.
-                '</div>'.
-                '<div>'.
-                  '<h1 style="margin-top: 45px;">Quantidade</h1>'.
-                  '<input class="input-txt" type="number" name="nova_quantidade" value="1" required/>'.
-                '</div>'.
-                '<input class="salvar" type="submit" name="edt" value="edt" />';
+              $sql = "SELECT *
+                      FROM produtos
+                      WHERE id_produto = $id";
+              $result = $conn->query($sql);
+              if ($result and $result->num_rows > 0) {
+                  $row = $result->fetch_assoc();
+                  echo
+                    '<input class="input-txt" hidden type="text"name="id" value="'.$id.'" readonly="readonly"/><br>'.
+                    '<h1 style="margin-top: 45px;">Nome</h1>'.
+                    '<input class="input-txt" type="text" name="novo_nome" value="'.$row["nome"].'" required/>'.
+                    '<div>'.
+                      '<h1 style="margin-top: 45px;">Valor</h1>'.
+                      '<input class="input-txt" type="number" step="0.01" name="novo_valor" value="'.$row["valor"].'" required/>'.
+                    '</div>'.
+                    '<div>'.
+                      '<h1 style="margin-top: 45px;">Quantidade</h1>'.
+                      '<input class="input-txt" type="number" name="nova_quantidade" value="'.$row["quantidade"].'" required/>'.
+                    '</div>'.
+                    '<input class="salvar" type="submit" name="edt" value="SALVAR" style="cursor: pointer"/>';
+                }
             }
         ?>
     </form>

@@ -57,18 +57,32 @@ class Func
                 else {
                     $text = "Atendente";
                 }
-                echo "<tr>".
-                     '<td style="text-align: center;"><h2>'.$row["nome"].'</h2></td>'.
-                     '<td style="text-align: center;"><h2>'.$row["email"].'</h2></td>'.
-                     '<td style="text-align: center;"><h2>'.$row["usuario"].'</h2></td>'.
-                     '<td style="text-align: center;"><h2>'.$text.'</h2></td>'.
-                     '<td style="text-align: center;"><a href="./HTML/editar-funcionario.php?id='.$id.'&edt=editar%21"/>'.
-                        '<img src="assets/Edit.png" style="height: 38px;">'.
-                     "</a>".
-                     '<a href="funcionarios.php?id='.$id.'&rmv=Remover%21"/>'.
-                        '<img src="assets/delete.png" style="height: 43px;">'.
-                     "</a></td>".
-                     "</tr>";
+                if ($id === '1') {
+                    echo "<tr>".
+                         '<td style="text-align: center;"><h2>'.$row["nome"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$row["email"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$row["usuario"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$text.'</h2></td>'.
+                         '<td style="text-align: center;">'.
+                            '<img src="assets/info.png" style="height: 38px; cursor: help;"'.
+                            'title="O usuário padrão foi configurado na instalação do sistema, para solicitar&#013;'.
+                            'qualquer mudança, entre em contato através do telefone (35) 98800-0085">'.
+                         "</tr>";
+                }
+                else {
+                    echo "<tr>".
+                         '<td style="text-align: center;"><h2>'.$row["nome"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$row["email"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$row["usuario"].'</h2></td>'.
+                         '<td style="text-align: center;"><h2>'.$text.'</h2></td>'.
+                         '<td style="text-align: center;"><a href="./editar-funcionario.php?id='.$id.'&edt=editar%21"/>'.
+                            '<img src="assets/Edit.png" style="height: 38px;">'.
+                         "</a>".
+                         '<a href="funcionarios.php?id='.$id.'&rmv=Remover%21"/>'.
+                            '<img src="assets/delete.png" style="height: 43px;">'.
+                         "</a></td>".
+                         "</tr>";
+                }
             }
         }
         else {

@@ -34,7 +34,7 @@
 </body>
 <!--- Caixas de entrada e botões --->
 <form action="pedidos.php">
-    <input type="submit" value="Voltar" />
+    <input type="submit" value="Voltar" style="cursor: pointer"/>
 </form>
 <?php
 
@@ -66,7 +66,7 @@
      <br>
      <input type="text" name="produto" placeholder="id_produto" required/>
      <input type="number" step="1" name="quantidade" placeholder="Quantidade" required/>
-     <input type="submit" name="pedir" value="Fazer Pedido" />
+     <input type="submit" name="pedir" value="Fazer Pedido" style="cursor: pointer"/>
  </form>
  <?php
 

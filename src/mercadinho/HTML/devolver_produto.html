@@ -1,0 +1,36 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">Mercadinho da Esquina</h1>
+    </header>
+    <h1 class="title">Devolver Produto</h1>
+    <form action="../finalizar-compra.php" method="POST">
+        <div>
+            <h1 style="margin-top: 71px;">Código do Produto:</h1>
+            <div style="display: flex; align-items: center;">
+                <input style ="width: 603px;" type="text" name="id_produto" required/>
+                <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
+                <input style ="width: 109px; margin-left: 18px;" type="number" name="quantidade" value="1" required/>
+            </div>
+        </div>
+        <div>
+            <h1 style="margin-top: 30px;">Código de Venda:</h1>
+            <input style ="width: 780px;" name="id_venda" type="text" required/>
+        </div>
+        <div style="margin-top: 0px; width: 780px; display: flex; justify-content: space-between">
+            <a href="../caixa.php" style="cursor: default">
+                <input class="botao-substyle" type="button" value="VOLTAR" style="cursor: pointer"/>
+            </a>
+            <input type="submit" name="devolver" value="CONFIRMAR" style="cursor: pointer" />
+        </div>
+    </form>
+
+</body>
+</form>
+
+</html>

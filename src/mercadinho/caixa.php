@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 </head>
-<body>
+<body style="padding-top: 0; max-width: 100%; overflow-x: hidden;">
   <header class="header">
   <h1 class="header-title">Mercadinho da Esquina</h1>
   </header>
@@ -22,7 +22,7 @@
                 <input style ="width: 603px;" name="codigo" type="text" required/>
                 <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
                 <input style ="width: 109px; margin-left: 18px;" type="number" name="quantidade" value="1" required/>
-                <button type="submit" name="add" style="margin-left: 15px">
+                <button type="submit" name="add" style="margin-left: 15px; cursor: pointer">
                   <img src="assets/dashicons_insert.png" />
                 </button>
             </form>
@@ -88,14 +88,14 @@
     </table>
     <div style="width: 95%; height: 10px; background-color: #25ABD6; margin-top: 93px"></div>
     <div class="caixa-buttons">
-      <form action="HTML/devolver_produto.php" method="get">
-        <input class="botao-substyle" type="submit" style="font-size: 38px" value="Devolver Produto" />
+      <form action="./HTML/devolver_produto.html" method="get">
+        <input class="botao-substyle" type="submit" style="font-size: 38px; cursor: pointer" value="Devolver Produto" />
       </form>
-      <form action="HTML/trocar_produto.php" method="get">
-        <input class="botao-substyle" type="submit" style="font-size: 38px" value="Trocar Produto" />
+          <form action="HTML/trocar_produto.html" method="get">
+        <input class="botao-substyle" type="submit" style="font-size: 38px; cursor: pointer" value="Trocar Produto" />
       </form>
-      <form action="HTML/metodo-pagamento.php" method="get">
-        <input class="botao-substyle" type="submit" style="font-size: 38px" value="Finalizar Compra" />
+      <form action="HTML/metodo-pagamento.html" method="get">
+        <input class="botao-substyle" type="submit" style="font-size: 38px; cursor: pointer" value="Finalizar Compra" />
       </form>
     </div>
   </div>

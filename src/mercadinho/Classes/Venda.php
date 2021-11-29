@@ -78,13 +78,22 @@ class Venda{
             if ($result and $result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     $valor = $valor + ($row["valor"]*$row["quantidade"]);
-                    //echo "Código da compra: ".$row["id_venda"]. " <------> Produto Vendido: ". $row["nome"] . " <------> Quantidade: " .$row["quantidade"] . "<br>";
-                    echo "<tr>".
-                          '<td style="text-align: center;"><h2>'.$row["id_produto"]."</h2></td>".
-                          '<td style="text-align: center;"><h2>'.$row["nome"]."</h2></td>".
-                          '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
-                          '<td style="text-align: center;"><h2>R$'.$row["valor"]."</h2></td>".
-                          "<tr>";
+                    if ($row["quantidade"] === '0') {
+                        echo "<tr>".
+                              '<td style="text-align: center; text-decoration: line-through;"><h2>'.$row["id_produto"]."</h2></td>".
+                              '<td style="text-align: center; text-decoration: line-through;"><h2>'.$row["nome"]."</h2></td>".
+                              '<td style="text-align: center; text-decoration: line-through;"><h2>'.$row["quantidade"]."</h2></td>".
+                              '<td style="text-align: center; text-decoration: line-through;"><h2>R$'.$row["valor"]."</h2></td>".
+                              "<tr>";
+                    }
+                    else {
+                        echo "<tr>".
+                              '<td style="text-align: center;"><h2>'.$row["id_produto"]."</h2></td>".
+                              '<td style="text-align: center;"><h2>'.$row["nome"]."</h2></td>".
+                              '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
+                              '<td style="text-align: center;"><h2>R$'.$row["valor"]."</h2></td>".
+                              "<tr>";
+                    }
                 }
             }
             else {
@@ -114,9 +123,9 @@ class Venda{
                     // $valor = $valor - ($row["valor"]*$row["quantidade"]);
                     echo "<tr>".
                           '<td style="text-align: center;"><h2>'.$row["id_produto"]."</h2></td>".
-                          '<td style="text-align: center;"><h2>'.$id_venda."</h2></td>".
+                          '<td style="text-align: center;style="text-decoration: line-through;"><h2>'.$row["nome"]."</h2></td>".
                           '<td style="text-align: center;"><h2>'.$row["quantidade"]."</h2></td>".
-                          '<td style="text-align: center;"><h2>'.$row["valor"]."</h2></td>".
+                          '<td style="text-align: center;"><h2>R$'.$row["valor"]."</h2></td>".
                           "<tr>";
                 }
             }

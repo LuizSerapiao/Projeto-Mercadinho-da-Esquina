@@ -65,7 +65,7 @@ class Forn
                     '<td style="text-align: center;"><h2>'.$id_fornecedor."</h2></td>".
                     '<td style="text-align: center;"><h2>'.$row['telefone']."</h2></td>".
                     '<td style="text-align: center;"><h2>'.$row['email']."</h2></td>".
-                    '<td style="text-align: center;"><a href="./HTML/editar-fornecedor.php?id='.$id_fornecedor.'&edt=editar%21"/>'.
+                    '<td style="text-align: center;"><a href="./editar-fornecedor.php?id='.$id_fornecedor.'&edt=editar%21"/>'.
                        '<img src="assets/Edit.png" style="height: 40px;">'.
                     "</a>".
                     '<a href="fornecedores.php?id='.$id_fornecedor.'&rmv=remover%21"/>'.
@@ -104,7 +104,7 @@ class Forn
                     '<td style="text-align: center;"><h2>'.$id_fornecedor."</h2></td>".
                     '<td style="text-align: center;"><h2>'.$row['telefone']."</h2></td>".
                     '<td style="text-align: center;"><h2>'.$row['email']."</h2></td>".
-                    '<td style="text-align: center;"><a href="./HTML/editar-fornecedor.php?id='.$id_fornecedor.'&edt=editar%21"/>'.
+                    '<td style="text-align: center;"><a href="./editar-fornecedor.php?id='.$id_fornecedor.'&edt=editar%21"/>'.
                        '<img src="assets/Edit.png" style="height: 40px;">'.
                     "</a>".
                     '<a href="fornecedores.php?id='.$id_fornecedor.'&rmv=remover%21"/>'.

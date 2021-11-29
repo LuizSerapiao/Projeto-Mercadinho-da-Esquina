@@ -1,0 +1,42 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+</head>
+
+<body style="max-width: 100%; overflow-x: hidden;">
+    <header class="header">
+        <h1 class="header-title">Mercadinho da Esquina</h1>
+    </header>
+    <h1 class="title"style="margin-top: 10px;">Trocar Produto</h1>
+    <form action="../finalizar-compra.php" method="post" autocomplete="off">
+        <div >
+            <h1 style="margin-top: 20px;">Código do Produto Devolvido</h1>
+            <div style="display: flex; align-items: center;">
+                <input style ="width: 603px;" name="id_produto_recebido" type="text" required/>
+                <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
+                <input style ="width: 109px; margin-left: 18px;" name="quantidade_recebida" type="number" value="1" required/>
+            </div>
+        </div>
+        <div>
+            <h1 style="margin-top: 20px;">Código do novo Produto</h1>
+            <div style="display: flex; align-items: center;">
+                <input style ="width: 603px;" name="id_produto_trocado" type="text" required/>
+                <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
+                <input style ="width: 109px; margin-left: 18px;" name="quantidade_trocada" type="number" value="1" required/>
+            </div>
+        </div>
+        <div>
+            <h1 style="margin-top: 20px;">Código de Venda</h1>
+            <input style ="width: 780px;" type="text" name="id_venda" required/>
+        </div>
+        <div style="margin-top: -30px; width: 780px; display: flex; justify-content: space-between">
+            <a href="../caixa.php" style="cursor: default">
+                <input class="botao-substyle" type="button" name="cancel" value="CANCELAR" style="cursor: pointer" />
+            </a>
+            <input type="submit" name="trocar" value="CONFIRMAR" style="cursor: pointer"/>
+        </div>
+    </form>
+
+</body>
+</html>
