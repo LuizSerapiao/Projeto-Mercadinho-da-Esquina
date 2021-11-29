@@ -61,6 +61,18 @@ th, td{
   white-space: nowrap;
 }
 
+.select-style{
+  margin-top: 81px;
+  width: 357px;
+  height: 88px;
+  background-color: #F5F2F2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-size: 36px;
+}
+
 .content{
   width: 100%;
   max-width: 1366px;

@@ -82,7 +82,7 @@
                  '<input class="input-txt" type="text" name="senha" maxlength="10" value="'.$row["senha"].'" required/>'.
                  '</div>'.
                  '</div>'.
-                     '<select name="admin">'.
+                     '<select name="admin" class="select-style">'.
                          '<option value="1">Gerente</option>'.
                          '<option value="0">Atendente</option>'.
                  '<input class="salvar" type="submit" name="edt" value="SALVAR" style="cursor: pointer;"/>'.
