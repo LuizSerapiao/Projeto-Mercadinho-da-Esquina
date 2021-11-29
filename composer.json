@@ -1,0 +1,21 @@
+{
+    "name": "ana/projeto-mercadinho-da-esquina",
+    "description": "Aplicativo que gerencia compra e venda de produtos em um mercadinho.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/php-timer": "^5.0",
+        "phpunit/phpunit": "9.5.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ana\\ProjetoMercadinhoDaEsquina\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "annielu2",
+            "email": "aluizacalixto@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

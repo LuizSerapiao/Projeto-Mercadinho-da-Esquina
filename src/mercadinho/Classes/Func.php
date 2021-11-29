@@ -10,9 +10,11 @@ class Func
 
         if ($conn->query($sql) === TRUE) {
             header("Location:funcionarios.php");
+            return true;
         }
         else {
             echo "Erro ao adicionar caixa: " . $sql . "<br>" . $conn->error;
+            return false;
         }
     }
 
@@ -22,9 +24,11 @@ class Func
 
         if ($conn->query($sql) === TRUE) {
             header("Location:funcionarios.php");
-            exit;
+            return true;
+
         } else {
             echo "Erro ao deletar funcionario: " . $conn->error;
+            return false;
         }
     }
 
