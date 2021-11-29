@@ -36,9 +36,20 @@ Utilizando XAMPP:
 
 ## Tecnologias
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MYSQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) <br>
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) <br>
+![MYSQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) <br>
+![GIT](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) <br>
+![SELENIUM](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white) <br>
+![XAMPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white) <br>
+![APACHE](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=Apache&logoColor=white) <br>
+
+## Boas práticas de programação
+
+1. Organizamos os códigos de modo que os arquivos contendo as classes que controlam o CRUD, estão na pasta Classes. 
+2. Os arquivos responsáveis pelo html da página estão contidos na pasta HTML.
+3. Os arquivos png que são utilizados nos botões estão organizados na pasta assets.
+4. Na pasta styles estão os arquivos css.
 
 ## Documentação
 
@@ -55,5 +66,3 @@ Versão 2.0
 - Luiz Felipe Baptista Serapião
 - Ana Luiza Faria Calixto
 - Tiago de Oliveira Carlos
-
-## Licença
