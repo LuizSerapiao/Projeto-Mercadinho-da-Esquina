@@ -40,11 +40,6 @@
     <h1 class="title">Editar Funcionario</h1>
     <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "mercadinho";
-
     // Conexao com o servidor
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
