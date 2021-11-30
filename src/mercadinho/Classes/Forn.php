@@ -42,10 +42,12 @@ class Forn
         WHERE id_fornecedor='$id'";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:fornecedores.php");
+            //header("Location:fornecedores.php");
+            return true;
         }
         else {
             echo "Erro ao editar caixa: " . $conn->error;
+            return false;
         }
     }
 
