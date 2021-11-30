@@ -32,4 +32,22 @@ class FornTeste extends \PHPUnit\Framework\TestCase {
 
     }
 
+    public function testEditarFornecedor(){
+        $obj = new Forn();
+        $servername = "127.0.0.1";
+        $username = "root";
+        $password = "";
+        $dbname = "mercadinho";
+        $con=mysqli_connect($servername, $username, $password, $dbname);
+        $id_fornecedor = 2;
+        $nome = "Garoto";
+        $telefone = "27993321502";
+        $email = "garoto@contato.com";
+        $estado = "ES";
+        $cidade = "Vila Velha";
+        $endereco = "Praça Meyerfreund,";
+        $this->assertEquals(true, $obj->editarFornecedor($id_fornecedor,$nome, $telefone, $email, $estado, $cidade, $endereco, $con));
+
+    }
+
 }
