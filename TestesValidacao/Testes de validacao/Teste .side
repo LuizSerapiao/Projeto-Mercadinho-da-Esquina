@@ -4,166 +4,6 @@
   "name": "Teste ",
   "url": "https://127.0.0.1/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php",
   "tests": [{
-    "id": "ac38703b-ed94-4827-aaaf-48640e58cb85",
-    "name": "CT01 Validar pedido do produto",
-    "commands": [{
-      "id": "bab1a02c-12f0-46e2-a7f1-e9366201d5f8",
-      "comment": "",
-      "command": "open",
-      "target": "/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8962c3c3-d5a8-4d30-9157-f4d4899786f9",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1382x744",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b6eae9dc-56ca-49d7-b65a-98a1cc93ed5b",
-      "comment": "",
-      "command": "click",
-      "target": "name=usuario",
-      "targets": [
-        ["name=usuario", "name"],
-        ["css=div:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='usuario']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9e6dd92d-f7e2-4175-9a01-c6a4b0b62f08",
-      "comment": "",
-      "command": "type",
-      "target": "name=usuario",
-      "targets": [
-        ["name=usuario", "name"],
-        ["css=div:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='usuario']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "admin"
-    }, {
-      "id": "8ac93aae-c212-43da-81a6-fbbcbee51476",
-      "comment": "",
-      "command": "type",
-      "target": "name=senha",
-      "targets": [
-        ["name=senha", "name"],
-        ["css=div:nth-child(2) > input", "css:finder"],
-        ["xpath=//input[@name='senha']", "xpath:attributes"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "admin"
-    }, {
-      "id": "a2b482b7-ea96-4cda-bec5-2aa57a5cea80",
-      "comment": "",
-      "command": "sendKeys",
-      "target": "name=senha",
-      "targets": [
-        ["name=senha", "name"],
-        ["css=div:nth-child(2) > input", "css:finder"],
-        ["xpath=//input[@name='senha']", "xpath:attributes"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
-    }, {
-      "id": "10e3819d-7846-47ab-bae3-39931f27fe25",
-      "comment": "",
-      "command": "click",
-      "target": "css=td > button img",
-      "targets": [
-        ["css=td > button img", "css:finder"],
-        ["xpath=//td[6]/button/a/img", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "61cfa11a-827d-41f4-9a3d-b1c3dc689de5",
-      "comment": "",
-      "command": "click",
-      "target": "name=fornecedor",
-      "targets": [
-        ["name=fornecedor", "name"],
-        ["css=form:nth-child(4) > input:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='fornecedor']", "xpath:attributes"],
-        ["xpath=//form[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "08c93e87-b0fe-44cf-9611-ae28a36e4201",
-      "comment": "",
-      "command": "type",
-      "target": "name=fornecedor",
-      "targets": [
-        ["name=fornecedor", "name"],
-        ["css=form:nth-child(4) > input:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='fornecedor']", "xpath:attributes"],
-        ["xpath=//form[2]/input", "xpath:position"]
-      ],
-      "value": "1"
-    }, {
-      "id": "83b4e0d9-e136-4cf4-b6cf-571f6f2354cb",
-      "comment": "",
-      "command": "click",
-      "target": "name=produto",
-      "targets": [
-        ["name=produto", "name"],
-        ["css=input:nth-child(3)", "css:finder"],
-        ["xpath=//input[@name='produto']", "xpath:attributes"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ed325a0e-cd2c-4c02-87ab-30e9c103313c",
-      "comment": "",
-      "command": "type",
-      "target": "name=produto",
-      "targets": [
-        ["name=produto", "name"],
-        ["css=input:nth-child(3)", "css:finder"],
-        ["xpath=//input[@name='produto']", "xpath:attributes"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": "1"
-    }, {
-      "id": "9bba95fc-36c7-4eaf-9c8a-7cce94ddf12d",
-      "comment": "",
-      "command": "click",
-      "target": "name=quantidade",
-      "targets": [
-        ["name=quantidade", "name"],
-        ["css=input:nth-child(4)", "css:finder"],
-        ["xpath=//input[@name='quantidade']", "xpath:attributes"],
-        ["xpath=//input[3]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4073b48d-0162-4b4b-80de-ba79d1d0b089",
-      "comment": "",
-      "command": "type",
-      "target": "name=quantidade",
-      "targets": [
-        ["name=quantidade", "name"],
-        ["css=input:nth-child(4)", "css:finder"],
-        ["xpath=//input[@name='quantidade']", "xpath:attributes"],
-        ["xpath=//input[3]", "xpath:position"]
-      ],
-      "value": "5"
-    }, {
-      "id": "e072f6d8-4a93-41d0-877e-c3875e8e4556",
-      "comment": "",
-      "command": "click",
-      "target": "name=pedir",
-      "targets": [
-        ["name=pedir", "name"],
-        ["css=input:nth-child(5)", "css:finder"],
-        ["xpath=//input[@name='pedir']", "xpath:attributes"],
-        ["xpath=//input[4]", "xpath:position"]
-      ],
-      "value": ""
-    }]
-  }, {
     "id": "c4dab38c-0c02-44ef-b420-c586071d5ec8",
     "name": "CT02 Validar edição do funcionário",
     "commands": [{
@@ -265,7 +105,7 @@
         ["xpath=//input[@name='nome']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "Marcos"
+      "value": "Maria Eduarda"
     }, {
       "id": "1e699da1-571e-4679-bd68-d381e8f1e79c",
       "comment": "",
@@ -280,24 +120,17 @@
       "value": ""
     }]
   }, {
-    "id": "fb790076-d237-4ba1-a51d-caed0698bfcb",
-    "name": "CT03 Remover produto do caixa",
+    "id": "1ca61507-c833-49d4-aaf0-48478cbd96cd",
+    "name": "CT01 Validar pedido de produto",
     "commands": [{
-      "id": "d008aeca-a45f-4410-b124-7d2962970910",
+      "id": "1a3a27eb-0228-4e60-a9de-142c471b8788",
       "comment": "",
       "command": "open",
       "target": "https://127.0.0.1/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php",
       "targets": [],
       "value": ""
     }, {
-      "id": "2a45bcfe-bc4e-40a1-97d3-e80b80d1c264",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "792x728",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8b434ea2-d412-4962-a036-08103d2372c3",
+      "id": "81063942-dd26-4d49-84cf-131a9b1154b6",
       "comment": "",
       "command": "click",
       "target": "name=usuario",
@@ -309,7 +142,7 @@
       ],
       "value": ""
     }, {
-      "id": "7e8738a0-6eeb-418f-ad3b-f5038dc370e8",
+      "id": "ffa4960d-bb5a-47a2-937e-deba778ecdd2",
       "comment": "",
       "command": "type",
       "target": "name=usuario",
@@ -319,9 +152,9 @@
         ["xpath=//input[@name='usuario']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "admin"
     }, {
-      "id": "2b3fcb34-a4ac-4d21-b84e-a5179956293f",
+      "id": "4c1ed59b-8e1c-4152-85de-a9b2cf6fa3fd",
       "comment": "",
       "command": "type",
       "target": "name=senha",
@@ -331,9 +164,9 @@
         ["xpath=//input[@name='senha']", "xpath:attributes"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "admin"
     }, {
-      "id": "d79e44af-7c80-46ef-841d-4567c2725dde",
+      "id": "2c455fbe-dba3-4072-b336-595ea5486eac",
       "comment": "",
       "command": "sendKeys",
       "target": "name=senha",
@@ -345,35 +178,130 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "82187d9a-ca1e-4d80-ae28-cff87c97adf5",
+      "id": "26e0710c-4012-4ab7-bcbc-61b3566bdd5a",
       "comment": "",
       "command": "click",
       "target": "css=td img",
       "targets": [
         ["css=td img", "css:finder"],
-        ["xpath=//td[5]/a/img", "xpath:position"]
+        ["xpath=//td[6]/button/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33742758-a432-4d94-bc34-c33dfa268ee7",
+      "comment": "",
+      "command": "click",
+      "target": "name=fornecedor",
+      "targets": [
+        ["name=fornecedor", "name"],
+        ["css=form:nth-child(4) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='fornecedor']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13aeabb6-c440-405d-aa0e-e86fe80f68a8",
+      "comment": "",
+      "command": "type",
+      "target": "name=fornecedor",
+      "targets": [
+        ["name=fornecedor", "name"],
+        ["css=form:nth-child(4) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='fornecedor']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "e708ff74-e9f9-4d05-9b97-5118c13c0114",
+      "comment": "",
+      "command": "click",
+      "target": "name=produto",
+      "targets": [
+        ["name=produto", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='produto']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83c05290-b430-4d1a-9d77-f3f80b1388da",
+      "comment": "",
+      "command": "type",
+      "target": "name=produto",
+      "targets": [
+        ["name=produto", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='produto']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "4"
+    }, {
+      "id": "e7615b3e-20b7-4e3a-bdb7-465a19899f1a",
+      "comment": "",
+      "command": "click",
+      "target": "name=quantidade",
+      "targets": [
+        ["name=quantidade", "name"],
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='quantidade']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3163fa2c-0dac-4f32-9462-31c69363b83e",
+      "comment": "",
+      "command": "type",
+      "target": "name=quantidade",
+      "targets": [
+        ["name=quantidade", "name"],
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='quantidade']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "5eb58bec-227c-4ac1-9921-fd218f70e9ab",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=quantidade",
+      "targets": [
+        ["name=quantidade", "name"],
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='quantidade']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3f6bfd14-73bf-4b9b-bf0f-0f8e0120e6c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > input",
+      "targets": [
+        ["css=form:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@value='Voltar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }]
   }, {
-    "id": "30d6a1e4-f624-4a06-9c9a-3e7ccf7caa25",
-    "name": "CT04 Pagar compra com cartão de crédito",
+    "id": "9a43f4d4-59f2-4dda-adcb-69c1697cf2f8",
+    "name": "CT03 Validar remoção produtos",
     "commands": [{
-      "id": "1f77214c-6d9e-45ab-9ce9-c35e2bfef9df",
+      "id": "2084f9fb-a49d-4f08-934d-2c77f8ea3c25",
       "comment": "",
       "command": "open",
       "target": "https://127.0.0.1/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php",
       "targets": [],
       "value": ""
     }, {
-      "id": "7bedddbe-9fed-4d99-80ce-58e8367d3a72",
+      "id": "a5137c32-80ad-43d5-8ced-c1f3d1f0ada1",
       "comment": "",
       "command": "setWindowSize",
-      "target": "831x604",
+      "target": "1294x741",
       "targets": [],
       "value": ""
     }, {
-      "id": "804e1f13-6ddb-4c40-99c5-3caf1ad99d77",
+      "id": "9668d159-67c4-4e66-bc0a-b4b8661af9da",
       "comment": "",
       "command": "click",
       "target": "name=usuario",
@@ -385,7 +313,7 @@
       ],
       "value": ""
     }, {
-      "id": "25f63dcb-493b-4441-80c4-af9c8f7df24b",
+      "id": "7f1c2e99-e259-401d-b4c9-7a4034e523f5",
       "comment": "",
       "command": "type",
       "target": "name=usuario",
@@ -397,7 +325,7 @@
       ],
       "value": "user"
     }, {
-      "id": "b08e7800-362f-4ab2-ab3d-7c808e27ce50",
+      "id": "a41aaf4b-7839-44e7-90c7-d530e9cd16c7",
       "comment": "",
       "command": "type",
       "target": "name=senha",
@@ -409,7 +337,7 @@
       ],
       "value": "user"
     }, {
-      "id": "ec56a4d7-c1d8-40f0-9079-763d3b441607",
+      "id": "698ce819-1220-4f37-a1f3-cfc269695199",
       "comment": "",
       "command": "sendKeys",
       "target": "name=senha",
@@ -421,7 +349,83 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "c9606c74-eeb7-49d2-9cb6-392ff81749d8",
+      "id": "1851315f-dfd5-439e-82a5-08d07b62cddb",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) img",
+      "targets": [
+        ["css=tr:nth-child(2) img", "css:finder"],
+        ["xpath=//td[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f9f58857-33b6-43e4-b80d-b6418563aab7",
+    "name": "CT04 Validar pagamento cartão de crédito",
+    "commands": [{
+      "id": "8840dc03-3a76-4d44-8447-5caa050b3cd5",
+      "comment": "",
+      "command": "open",
+      "target": "https://127.0.0.1/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "561060ab-dee3-491c-933f-9bb36835cf51",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x741",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3353e661-88bd-4e5d-aa83-8ab8791540d3",
+      "comment": "",
+      "command": "click",
+      "target": "name=usuario",
+      "targets": [
+        ["name=usuario", "name"],
+        ["css=div:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='usuario']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2626ee02-ac9a-40af-b2be-2f0f1937ebac",
+      "comment": "",
+      "command": "type",
+      "target": "name=usuario",
+      "targets": [
+        ["name=usuario", "name"],
+        ["css=div:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='usuario']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "586ea90f-de59-45a7-b5e4-58b43dfeabc3",
+      "comment": "",
+      "command": "type",
+      "target": "name=senha",
+      "targets": [
+        ["name=senha", "name"],
+        ["css=div:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='senha']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "c4c4aa9f-d34a-474c-86a4-568387f4ca04",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=senha",
+      "targets": [
+        ["name=senha", "name"],
+        ["css=div:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='senha']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "6e6410eb-cb51-435e-bafb-db8140962566",
       "comment": "",
       "command": "click",
       "target": "css=form:nth-child(3) > .botao-substyle",
@@ -432,18 +436,18 @@
       ],
       "value": ""
     }, {
-      "id": "06e9ff3d-1b8c-4982-afd7-5d338ada086f",
+      "id": "01737079-dcf0-4a8c-b4ae-3f720c14fda0",
       "comment": "",
       "command": "click",
       "target": "css=form:nth-child(2) > input",
       "targets": [
         ["css=form:nth-child(2) > input", "css:finder"],
-        ["xpath=//input[@value='Cartão de Crédito']", "xpath:attributes"],
+        ["xpath=//input[@value='Cartão']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "a286c3f1-bbca-4f6b-9ad9-bf900b817d4d",
+      "id": "c704e20f-fe2d-440f-9b88-1c8958713eb3",
       "comment": "",
       "command": "click",
       "target": "css=form:nth-child(3) > .botao-substyle",
@@ -454,7 +458,7 @@
       ],
       "value": ""
     }, {
-      "id": "26257243-9e48-4a7d-bc37-c057c6dde824",
+      "id": "def10506-e398-415a-9d1d-85ed747060dd",
       "comment": "",
       "command": "click",
       "target": "css=div:nth-child(2) > input",
@@ -465,7 +469,7 @@
       ],
       "value": ""
     }, {
-      "id": "723c28e0-2ed4-46de-9333-c0b2e81a2927",
+      "id": "2450173e-f49f-4d3f-b4a9-0eae0f9d6db4",
       "comment": "",
       "command": "type",
       "target": "css=div:nth-child(2) > input",
@@ -474,16 +478,17 @@
         ["xpath=//input[@type='password']", "xpath:attributes"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "4312"
+      "value": "123"
     }, {
-      "id": "90666dc6-b6f0-4fdc-9d58-01d3d4af9e5a",
+      "id": "91c4bee7-9fac-45b7-b29a-15cfa236772e",
       "comment": "",
       "command": "click",
-      "target": "css=.botao-substyle:nth-child(3)",
+      "target": "name=finalizar",
       "targets": [
-        ["css=.botao-substyle:nth-child(3)", "css:finder"],
-        ["xpath=//input[@value='Finalizar']", "xpath:attributes"],
-        ["xpath=//form/input", "xpath:position"]
+        ["name=finalizar", "name"],
+        ["css=.botao-substyle:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='finalizar']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
       ],
       "value": ""
     }]
@@ -494,7 +499,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["ac38703b-ed94-4827-aaaf-48640e58cb85"]
+    "tests": []
   }],
   "urls": ["https://127.0.0.1/", "https://127.0.0.1/Projeto-Mercadinho-da-Esquina/src/mercadinho/index.php"],
   "plugins": []
