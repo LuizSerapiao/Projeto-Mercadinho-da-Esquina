@@ -70,11 +70,16 @@ create table pedidos (
 );
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `endereco`,`telefone`, `email`, `usuario`, `senha`, `admin`) VALUES (NULL, 'gerente', 'endereco', '34998770098', 'ger@contato.com','admin', 'admin', '1');
+INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `endereco`,`telefone`, `email`, `usuario`, `senha`, `admin`) VALUES (NULL, 'funcionario', 'endereco', '349934221245', 'func@gmail.com','user', 'user', '0');
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Nescau 700g', '15,00', '30', '0');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Arroz Tipo 1 1kg', '5', '50', '0');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Macarrão Instantâneo', '2', '25', '0');
 INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `quantidade`, `quantidade_pedida`) VALUES (NULL, 'Café Tipuana Especial', '15.99', '10', '0');
+
+INSERT INTO `lista_compras`(`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL , '3', '15');
+INSERT INTO `lista_compras`(`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL , '1', '5');
+INSERT INTO `lista_compras`(`id_lista_compras`, `id_produto`, `quantidade`) VALUES (NULL , '2', '10');
 
 INSERT INTO `fornecedores` (`id_fornecedor`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`) VALUES (NULL, 'Cafesal', '3512345678', 'Cafesal@ufla.com', 'Minas Gerais', 'Lavras', 'Ufla');
 INSERT INTO `fornecedores` (`id_fornecedor`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`) VALUES (NULL, 'Rex', '3598765432', 'Rex@outlook.com', 'Minas Gerais', 'Lavras', 'Avenida Evaristo Gomes Guerra, 123');
