@@ -40,7 +40,6 @@
         </button>
         <h1 class="title">Editar Fornecedor</h1>
         <?php
-        include_once ("./Classes/Prod.php");
 
         $servername = "localhost";
         $username = "root";
@@ -53,7 +52,6 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $action = new Prod();
         if ( isset( $_GET['edt'])) {
             $id = $_REQUEST['id'];
             $sql = "SELECT *
@@ -70,7 +68,7 @@
                      '<h1 style="margin-top: 45px;">Nome</h1>'.
                      '<input class="input-txt" type="text" name="novo_nome" maxlength="50" value="'.$row["nome"].'"required/>'.
                      '<h1 style="margin-top: 45px;">Telefone de Contato</h1>'.
-                     '<input class="input-txt" type="text" name="novo_telefone" size="11" value="'.$row["telefone"].'" required/>'.
+                     '<input class="input-txt" type="text" name="novo_telefone" pattern="\+?[0-9]{2}[0-9]{4,5}[0-9]{4}" title="12 12345 6789" size="11" value="'.$row["telefone"].'" required/>'.
                      '<h1 style="margin-top: 45px;">E-mail</h1>'.
                      '<input class="input-txt" type="email" name="novo_email" value="'.$row["email"].'" required/>'.
                      '</div>'.

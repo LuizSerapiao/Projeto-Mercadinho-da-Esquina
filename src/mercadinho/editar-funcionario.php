@@ -39,7 +39,6 @@
     </button>
     <h1 class="title">Editar Funcionario</h1>
     <?php
-    include_once ("./Classes/Prod.php");
 
     $servername = "localhost";
     $username = "root";
@@ -52,7 +51,6 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $action = new Prod();
     if ( isset( $_GET['edt'])) {
         $id = $_REQUEST['id'];
         $sql = "SELECT *
@@ -69,7 +67,7 @@
                  '<input hidden class="input-txt" type="text" name="id" value="'.$row["id_funcionario"].'"/>'.
                  '<input class="input-txt" type="text" name="nome" value="'.$row["nome"].'" maxlength="50" required/>'.
                  '<h1 style="margin-top: 45px;">Telefone de Contato</h1>'.
-                 '<input class="input-txt" type="text" name="telefone" value="'.$row["telefone"].'" size="11" required/>'.
+                 '<input class="input-txt" type="text" name="telefone" value="'.$row["telefone"].'"pattern="\+?[0-9]{2}[0-9]{4,5}[0-9]{4}" title="12 12345 6789" size="11" required/>'.
                  '<h1 style="margin-top: 45px;">E-mail</h1>'.
                  '<input class="input-txt" type="email" name="email" value="'.$row["email"].'" required/>'.
                  '</div>'.
@@ -79,7 +77,7 @@
                  '<h1 style="margin-top: 45px;">Usuário</h1>'.
                  '<input class="input-txt" type="text" name="usuario" maxlength="10" value="'.$row["usuario"].'" required/>'.
                  '<h1 style="margin-top: 45px;">Senha</h1>'.
-                 '<input class="input-txt" type="text" name="senha" maxlength="10" value="'.$row["senha"].'" required/>'.
+                 '<input class="input-txt" type="text" name="senha" minlength="8" maxlength="50" value="'.$row["senha"].'" required/>'.
                  '</div>'.
                  '</div>'.
                      '<select name="admin" class="select-style">'.

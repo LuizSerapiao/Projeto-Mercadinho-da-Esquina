@@ -18,7 +18,7 @@
       <div>
       <h1 style="margin-top: 32px;">Código do Produto:</h1>
         <div style="display: flex; align-items: center;">
-            <form action="consultar_produto.php" method="GET">
+            <form>
                 <input style ="width: 603px;" name="codigo" type="text" required/>
                 <h1 style ="font-size: 24px; margin-left: 15px;">Un.</h1>
                 <input style ="width: 109px; margin-left: 18px;" type="number" name="quantidade" value="1" required/>

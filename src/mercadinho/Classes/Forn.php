@@ -127,31 +127,36 @@ class Forn
     }
 
     function relacionar($id_produto, $id_fornecedor, $valor, $conn){
-        $sql = "SELECT id_fornecedor
-                FROM fornecedores
-                WHERE id_fornecedor = $id_fornecedor";
-        $result = $conn->query($sql);
-
-        if ($result and $result->num_rows > 0) {
-            $sql = "SELECT id_produto
-                    FROM produtos
-                    WHERE id_produto = $id_produto";
+        if ($valor >= 0) {
+            $sql = "SELECT id_fornecedor
+                    FROM fornecedores
+                    WHERE id_fornecedor = $id_fornecedor";
             $result = $conn->query($sql);
 
             if ($result and $result->num_rows > 0) {
-                $sql = "INSERT INTO produtos_fornecidos (id_fornecedor, id_produto, valor)
-                        VALUES ('$id_fornecedor','$id_produto', '$valor')";
+                $sql = "SELECT id_produto
+                        FROM produtos
+                        WHERE id_produto = $id_produto";
+                $result = $conn->query($sql);
 
-                if ($conn->query($sql) === TRUE) {
-                    header("Location:fornecedores.php");
+                if ($result and $result->num_rows > 0) {
+                    $sql = "INSERT INTO produtos_fornecidos (id_fornecedor, id_produto, valor)
+                            VALUES ('$id_fornecedor','$id_produto', '$valor')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        header("Location:fornecedores.php");
+                    }
+                    else {
+                        echo "Erro ao criar ligação: " . $conn->error;
+                    }
                 }
-                else {
-                    echo "Erro ao criar ligação: " . $conn->error;
-                }
+            }
+            else {
+                echo "Fornecedor não encontrado!";
             }
         }
         else {
-            echo "Fornecedor não encontrado!";
+            echo "<h2>Valor inválido</h2>";
         }
     }
 }

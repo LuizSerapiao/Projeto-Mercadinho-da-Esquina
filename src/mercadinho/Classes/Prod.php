@@ -6,15 +6,25 @@ class Prod
     }
 
     function adicionarProduto($nome, $valor, $quantidade, $conn){
-        $sql = "INSERT INTO produtos (nome, valor, quantidade)
-        VALUES ('$nome','$valor', '$quantidade')";
+        if ($valor >= 0) {
+            if ($quantidade >= 0) {
+                $sql = "INSERT INTO produtos (nome, valor, quantidade)
+                VALUES ('$nome','$valor', '$quantidade')";
 
-        if ($conn->query($sql) === TRUE) {
-            // echo "Produto $nome adicionado com sucesso!";
-            header("Location:produtos.php");
+                if ($conn->query($sql) === TRUE) {
+                    // echo "Produto $nome adicionado com sucesso!";
+                    header("Location:produtos.php");
+                }
+                else {
+                    echo "Erro ao adicionar produto: " . $sql . "<br>" . $conn->error;
+                }
+            }
+            else {
+                echo '<h2>A quantidade '.$quantidade.' é inválida!</h2>';
+            }
         }
         else {
-            echo "Erro ao adicionar produto: " . $sql . "<br>" . $conn->error;
+            echo '<h2>O valor '.$valor.' é inválido!</h2>';
         }
     }
 
@@ -44,17 +54,26 @@ class Prod
     }
 
     function editarProduto($id, $novo_nome, $novo_valor, $nova_quantidade, $conn){
+        if ($novo_valor >= 0) {
+            if ($nova_quantidade >= 0) {
+                $sql = "UPDATE produtos
+                SET nome = '$novo_nome', valor = '$novo_valor', quantidade = $nova_quantidade
+                WHERE id_produto = '$id'";
 
-        $sql = "UPDATE produtos
-        SET nome = '$novo_nome', valor = '$novo_valor', quantidade = $nova_quantidade
-        WHERE id_produto = '$id'";
-
-        if ($conn->query($sql) === TRUE) {
-             // echo "produto editado com sucesso!";
-            header("Location:produtos.php");
+                if ($conn->query($sql) === TRUE) {
+                     // echo "produto editado com sucesso!";
+                    header("Location:produtos.php");
+                }
+                else {
+                    echo "Erro ao editar produto: " . $conn->error;
+                }
+            }
+            else {
+                echo '<h2>A quantidade '.$nova_quantidade.' é inválida!</h2>';
+            }
         }
         else {
-            echo "Erro ao editar produto: " . $conn->error;
+            echo '<h2>O valor '.$novo_valor.' é inválido!</h2>';
         }
     }
 
