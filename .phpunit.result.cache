@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":274:{a:2:{s:7:"defects";a:2:{s:32:"FuncTest::testRemoverFuncionario";i:4;s:30:"FornTeste::testListarFonecedor";i:3;}s:5:"times";a:3:{s:32:"FuncTest::testRemoverFuncionario";d:0.002;s:34:"FornTeste::testcadastrarFornecedor";d:0.002;s:30:"FornTeste::testListarFonecedor";d:0.001;}}}

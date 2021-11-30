@@ -10,11 +10,9 @@ class Func
 
         if ($conn->query($sql) === TRUE) {
             header("Location:funcionarios.php");
-            return true;
         }
         else {
             echo "Erro ao adicionar caixa: " . $sql . "<br>" . $conn->error;
-            return false;
         }
     }
 
@@ -23,7 +21,7 @@ class Func
                 WHERE id_funcionario = '$id'";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:funcionarios.php");
+            //header("Location:funcionarios.php");
             return true;
 
         } else {
@@ -88,6 +86,7 @@ class Func
                          "</tr>";
                 }
             }
+
         }
         else {
             echo "<tr>".
@@ -97,6 +96,7 @@ class Func
                  '<td style="text-align: center;"> <h1>cadastrado</h1> </td>'.
                  '<td style="text-align: center;"> <h1>-----</h1> </td>'.
                  "<td>";
+
         }
     }
 }
