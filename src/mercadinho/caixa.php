@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 </head>
-<body style="padding-top: 0; max-width: 100%; overflow-x: hidden;">
+<body style=" margin-top: 100px; padding-top: 0; max-width: 100%; overflow-x: hidden;">
   <header class="header">
   <h1 class="header-title">Mercadinho da Esquina</h1>
   </header>
