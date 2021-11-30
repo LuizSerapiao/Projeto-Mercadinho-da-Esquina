@@ -9,10 +9,12 @@ class Func
         VALUES ('$nome', '$endereco', '$telefone', '$email', '$usuario','$senha', '$admin')";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:funcionarios.php");
+            //header("Location:funcionarios.php");
+            return true;
         }
         else {
             echo "Erro ao adicionar caixa: " . $sql . "<br>" . $conn->error;
+            return false;
         }
     }
 
@@ -37,10 +39,12 @@ class Func
         WHERE id_funcionario = '$id'";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:funcionarios.php");
+            //header("Location:funcionarios.php");
+            return true;
         }
         else {
             echo "Erro ao editar funcionario: " . $conn->error;
+            return false;
         }
     }
 
