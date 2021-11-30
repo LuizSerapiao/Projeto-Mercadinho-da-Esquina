@@ -155,15 +155,19 @@ class Forn
                             VALUES ('$id_fornecedor','$id_produto', '$valor')";
 
                     if ($conn->query($sql) === TRUE) {
-                        header("Location:fornecedores.php");
+                        //header("Location:fornecedores.php");
+                        return true;
                     }
                     else {
                         echo "Erro ao criar ligação: " . $conn->error;
+                        return false;
                     }
                 }
+
             }
             else {
                 echo "Fornecedor não encontrado!";
+                return false;
             }
         }
         else {
