@@ -10,10 +10,12 @@ class Forn
         VALUES ('$nome','$telefone', '$email', '$estado', '$cidade', '$endereco')";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:fornecedores.php");
+            //header("Location:fornecedores.php");
+            return true;
         }
         else {
             echo "Erro ao adicionar caixa: " . $sql . "<br>" . $conn->error;
+            return false;
         }
     }
 
@@ -40,10 +42,12 @@ class Forn
         WHERE id_fornecedor='$id'";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:fornecedores.php");
+            //header("Location:fornecedores.php");
+            return true;
         }
         else {
             echo "Erro ao editar caixa: " . $conn->error;
+            return false;
         }
     }
 
@@ -73,6 +77,8 @@ class Forn
                     "</a>".
                     "<tr>";
                 }
+
+
             }
             else {
                 echo "<tr>".
@@ -83,6 +89,7 @@ class Forn
                      '<td style="text-align: center;"> <h1>no sistema</h1>  </td>'.
                      '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
                      "<td>";
+
             }
         }
 
@@ -112,6 +119,8 @@ class Forn
                     "</a>".
                     "<tr>";
                 }
+
+                return "Encontrado!";
             }
             else {
                 echo "<tr>".
@@ -122,6 +131,8 @@ class Forn
                      '<td style="text-align: center;"> <h1>no sistema</h1>  </td>'.
                      '<td style="text-align: center;"> <h1>-----</h1>  </td>'.
                      "<td>";
+
+                      return "Não encontrado!";
             }
         }
     }
