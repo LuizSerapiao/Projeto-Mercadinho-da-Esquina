@@ -50,4 +50,16 @@ class FornTeste extends \PHPUnit\Framework\TestCase {
 
     }
 
+    public function testRelacionar(){
+        $obj = new Forn();
+        $servername = "127.0.0.1";
+        $username = "root";
+        $password = "";
+        $dbname = "mercadinho";
+        $con=mysqli_connect($servername, $username, $password, $dbname);
+        $id_fornecedor = 3;
+        $id_produto = 3;
+        $valor = 50;
+        $this->assertEquals(false, $obj->relacionar($id_produto, $id_fornecedor, $valor, $con));
+    }
 }

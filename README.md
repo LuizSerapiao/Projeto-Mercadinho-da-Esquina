@@ -50,12 +50,14 @@ Utilizando XAMPP:
 2. Os arquivos responsáveis pelo html da página estão contidos na pasta HTML.
 3. Os arquivos png que são utilizados nos botões estão organizados na pasta assets.
 4. Na pasta styles estão os arquivos css.
+5. Na pasta TestesUni estão contidos os testes unitários.
+6. Na pasta TestesValidacao estão contidos o teste de validação e o pdf contendo os casos de teste.
 
 ## Documentação
 
 ## Versão
 
-Versão 2.0 
+Versão 3.0 
 
 ## Status do projeto
 
